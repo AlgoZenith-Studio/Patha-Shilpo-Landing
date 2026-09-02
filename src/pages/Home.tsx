@@ -104,7 +104,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               </div>
 
               {/* Trust Line */}
-              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-palette-espresso/80 font-mono">
+              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-palette-espresso/90 font-rowan font-semibold">
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-700" />
                   <span>Built on Bhashini ULCA</span>

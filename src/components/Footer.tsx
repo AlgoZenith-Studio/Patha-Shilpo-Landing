@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
               'স্মার্ট ক্যাটালগিং স্তর, যা একটি ছবি ও একটি বলা বাক্যকে প্রকাশিত, যাচাইকৃত পণ্য তালিকায় রূপান্তরিত করে, ৩৫.২ লক্ষ গ্রামীণ ভারতীয় কারিগরের জন্য অফলাইন-প্রথম।'
             )}
           </p>
-          <div className="flex items-center gap-2 pt-2 text-xs text-paper/60">
+          <div className="flex items-center gap-2 pt-2 text-xs text-paper/70 font-rowan font-medium">
             <ShieldCheck className="w-4 h-4 text-palette-sand" />
             <span>Built on Bhashini · Publishes to GeM & ONDC</span>
           </div>
