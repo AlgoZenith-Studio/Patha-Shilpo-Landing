@@ -66,6 +66,35 @@
   font-display: swap;
 }
 
+/*
+ * Bengali face (Lipighor "Li Shohid Shafkat Samir", Unicode build — the ANSI
+ * builds carry no Bengali codepoints and would not render this site's text).
+ *
+ * `unicode-range` scopes it to the Bengali block, so it sits inside the normal
+ * font stacks and is matched per-glyph: Latin and Devanagari keep their own
+ * faces. Note it still loads in every locale, because the language switcher
+ * renders "বাংলা" at all times — hence the WOFF2 build rather than the raw TTF.
+ */
+@font-face {
+  font-family: 'Shohid Shafkat Samir';
+  src: url('/fonts/ShohidShafkatSamir-Unicode.woff2') format('woff2'),
+       url('/fonts/ShohidShafkatSamir-Unicode.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0980-09FF, U+200C-200D, U+25CC;
+}
+
+@font-face {
+  font-family: 'Shohid Shafkat Samir';
+  src: url('/fonts/ShohidShafkatSamir-Unicode-Italic.woff2') format('woff2'),
+       url('/fonts/ShohidShafkatSamir-Unicode-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0980-09FF, U+200C-200D, U+25CC;
+}
+
 html {
   scroll-behavior: smooth;
 }

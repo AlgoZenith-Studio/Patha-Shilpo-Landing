@@ -34,7 +34,7 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
-  const { language, t } = useLanguage();
+  const { language, t, pick } = useLanguage();
   const [selectedArtisanForRfq, setSelectedArtisanForRfq] = useState<{ name: string; craft: string } | null>(null);
 
   return (
@@ -63,23 +63,24 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               {/* Pill Badge */}
               <div className="inline-flex items-center gap-2 bg-palette-butter/80 text-palette-espresso px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold border border-palette-sand/60 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-palette-clay" />
-                <span>{t('Offline-first · Voice-only · Zero commission', 'ऑफलाइन · केवल आवाज़ · शून्य कमीशन')}</span>
+                <span>{t('Offline-first · Voice-only · Zero commission', 'ऑफलाइन · केवल आवाज़ · शून्य कमीशन', 'অফলাইন · শুধু কণ্ঠস্বর · শূন্য কমিশন')}</span>
               </div>
 
               {/* H1 Title */}
               <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl lg:text-6xl text-palette-espresso tracking-tight leading-[1.1]">
-                {language === 'hi' ? (
-                  <>आपकी कला। <br /><span className="text-palette-clay">आपका दाम।</span> आपका नाम।</>
-                ) : (
-                  <>Your craft. <br /><span className="text-palette-clay">Your price.</span> Your name.</>
-                )}
+                {pick({
+                  en: <>Your craft. <br /><span className="text-palette-clay">Your price.</span> Your name.</>,
+                  hi: <>आपकी कला। <br /><span className="text-palette-clay">आपका दाम।</span> आपका नाम।</>,
+                  bn: <>আপনার শিল্প। <br /><span className="text-palette-clay">আপনার দাম।</span> আপনার নাম।</>,
+                })}
               </h1>
 
               {/* Subheading */}
               <p className="font-sans text-base sm:text-lg text-palette-espresso/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 {t(
                   'Pathashilpa turns a photograph and a spoken sentence into a live, fairly priced product listing — in about ninety seconds, even with no internet.',
-                  'पाथाशिल्पा एक तस्वीर और एक बोले गए वाक्य को 90 सेकंड में एक लाइव, उचित मूल्य वाली उत्पाद लिस्टिंग में बदल देता है — बिना किसी इंटरनेट के।'
+                  'पाथाशिल्पा एक तस्वीर और एक बोले गए वाक्य को 90 सेकंड में एक लाइव, उचित मूल्य वाली उत्पाद लिस्टिंग में बदल देता है — बिना किसी इंटरनेट के।',
+                  'পাথশিল্প একটি ছবি ও একটি বলা বাক্যকে প্রায় নব্বই সেকেন্ডে একটি লাইভ, ন্যায্য মূল্যের পণ্য তালিকায় রূপান্তরিত করে — ইন্টারনেট ছাড়াই।'
                 )}
               </p>
 
@@ -90,14 +91,14 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-palette-clay hover:bg-palette-clay/90 text-white px-7 py-3.5 rounded-full text-sm font-bold shadow-clay hover:-translate-y-0.5 transition-all"
                 >
                   <Sparkles className="w-4 h-4 text-palette-butter" />
-                  <span>{t('Try 90-Second AI Demo', '90-सेकंड AI डेमो आज़माएं')}</span>
+                  <span>{t('Try 90-Second AI Demo', '90-सेकंड AI डेमो आज़माएं', '৯০ সেকেন্ডের AI ডেমো দেখুন')}</span>
                 </button>
 
                 <Link
                   to="/for-artisans"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso px-6 py-3.5 rounded-full text-sm font-semibold border border-palette-sand/80 shadow-xs transition-colors"
                 >
-                  <span>{t('For Artisans', 'कारीगरों के लिए')}</span>
+                  <span>{t('For Artisans', 'कारीगरों के लिए', 'কারিগরদের জন্য')}</span>
                   <ArrowRight className="w-4 h-4 text-palette-clay" />
                 </Link>
               </div>
@@ -138,7 +139,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                 0.2%
               </div>
               <p className="text-xs font-semibold text-palette-espresso">
-                {t('of handloom sales happen online', 'हथकरघा बिक्री का केवल ऑनलाइन हिस्सा')}
+                {t('of handloom sales happen online', 'हथकरघा बिक्री का केवल ऑनलाइन हिस्सा', 'তাঁত পণ্যের অনলাইন বিক্রির অংশ')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
                 Source: 4th All India Handloom Census, via IDR
@@ -151,7 +152,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                 95.5%
               </div>
               <p className="text-xs font-semibold text-palette-espresso">
-                {t('rural mobile owners have a smartphone', 'ग्रामीण मोबाइल धारकों के पास स्मार्टफोन')}
+                {t('rural mobile owners have a smartphone', 'ग्रामीण मोबाइल धारकों के पास स्मार्टफोन', 'গ্রামীণ মোবাইল ব্যবহারকারীর কাছে স্মার্টফোন')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
                 Source: NSO Telecom Survey 2025
@@ -164,7 +165,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                 67%
               </div>
               <p className="text-xs font-semibold text-palette-espresso">
-                {t('handloom households earn under ₹5,000/mo', 'हथकरघा परिवारों की आय ₹5,000/माह से कम')}
+                {t('handloom households earn under ₹5,000/mo', 'हथकरघा परिवारों की आय ₹5,000/माह से कम', 'তাঁতি পরিবারের মাসিক আয় ₹৫,০০০-এর কম')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
                 Source: PIB, Ministry of Textiles
@@ -177,7 +178,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                 35.2 Lakh
               </div>
               <p className="text-xs font-semibold text-palette-espresso">
-                {t('weavers & allied handicraft workers', 'बुनकर एवं संबंधित हस्तशिल्प कर्मी')}
+                {t('weavers & allied handicraft workers', 'बुनकर एवं संबंधित हस्तशिल्प कर्मी', 'তাঁতি ও সংশ্লিষ্ট হস্তশিল্প কর্মী')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
                 Source: PIB, Ministry of Textiles
@@ -199,12 +200,13 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 relative z-10">
           <span className="font-mono text-xs uppercase tracking-widest text-palette-sand font-bold">
-            {t('The Foundational Insight', 'मौलिक दृष्टिकोण')}
+            {t('The Foundational Insight', 'मौलिक दृष्टिकोण', 'মূল উপলব্ধি')}
           </span>
           <blockquote className="font-rowan text-2xl sm:text-3xl md:text-4xl font-normal leading-relaxed text-paper">
             "{t(
               '0.2% online against 95.5% smartphone ownership. The device barrier is already gone. What is missing is software the artisan can operate.',
-              '95.5% स्मार्टफोन के मुकाबले केवल 0.2% ऑनलाइन बिक्री। फोन पहले से उनके हाथ में है। कमी सिर्फ ऐसे सॉफ्टवेयर की है जिसे वे आसानी से चला सकें।'
+              '95.5% स्मार्टफोन के मुकाबले केवल 0.2% ऑनलाइन बिक्री। फोन पहले से उनके हाथ में है। कमी सिर्फ ऐसे सॉफ्टवेयर की है जिसे वे आसानी से चला सकें।',
+              '৯৫.৫% স্মার্টফোনের বিপরীতে মাত্র ০.২% অনলাইন বিক্রি। ফোন আগে থেকেই তাঁদের হাতে। অভাব কেবল এমন সফটওয়্যারের, যা তাঁরা চালাতে পারেন।'
             )}"
           </blockquote>
           <p className="font-pally text-lg text-palette-butter">
@@ -226,10 +228,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-            {t('The 3-Action Workflow', '3 सरल चरण')}
+            {t('The 3-Action Workflow', '3 सरल चरण', '৩টি সহজ ধাপ')}
           </span>
           <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
-            {t('How an Artisan Creates a Listing in 90 Seconds', 'कारीगर 90 सेकंड में लिस्टिंग कैसे बनाता है')}
+            {t('How an Artisan Creates a Listing in 90 Seconds', 'कारीगर 90 सेकंड में लिस्टिंग कैसे बनाता है', '৯০ সেকেন্ডে কারিগর কীভাবে তালিকা তৈরি করেন')}
           </h2>
           <p className="text-sm text-palette-wood">
             {t(
@@ -250,7 +252,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="space-y-1">
               <span className="text-[11px] font-mono text-palette-wood uppercase font-bold">Step 1 · 20 Seconds</span>
               <h3 className="font-lora font-bold text-xl text-palette-espresso">
-                {t('Photograph it', 'तस्वीर लें')}
+                {t('Photograph it', 'तस्वीर लें', 'ছবি তুলুন')}
               </h3>
             </div>
             <p className="text-xs text-palette-espresso/80 leading-relaxed">
@@ -269,7 +271,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="space-y-1">
               <span className="text-[11px] font-mono text-palette-wood uppercase font-bold">Step 2 · 30 Seconds</span>
               <h3 className="font-lora font-bold text-xl text-palette-espresso">
-                {t('Speak about it', 'अपनी भाषा में बोलें')}
+                {t('Speak about it', 'अपनी भाषा में बोलें', 'নিজের ভাষায় বলুন')}
               </h3>
             </div>
             <p className="text-xs text-palette-espresso/80 leading-relaxed">
@@ -288,7 +290,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="space-y-1">
               <span className="text-[11px] font-mono text-palette-wood uppercase font-bold">Step 3 · 40 Seconds</span>
               <h3 className="font-lora font-bold text-xl text-palette-espresso">
-                {t('It goes live', 'लाइव प्रकाशित')}
+                {t('It goes live', 'लाइव प्रकाशित', 'লাইভ প্রকাশিত')}
               </h3>
             </div>
             <p className="text-xs text-palette-espresso/80 leading-relaxed">
@@ -316,10 +318,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-            {t('Core Differentiators', '5 मुख्य अंतर')}
+            {t('Core Differentiators', '5 मुख्य अंतर', 'মূল পার্থক্য')}
           </span>
           <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
-            {t('Not Another Marketplace. The Layer That Creates the Listing.', 'कोई अन्य बाज़ार नहीं, बल्कि लिस्टिंग बनाने वाली तकनीक।')}
+            {t('Not Another Marketplace. The Layer That Creates the Listing.', 'कोई अन्य बाज़ार नहीं, बल्कि लिस्टिंग बनाने वाली तकनीक।', 'আরেকটি বাজার নয়। তালিকা তৈরির স্তর।')}
           </h2>
         </div>
         </Reveal>
@@ -414,10 +416,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-2">
             <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-              {t('Verified Indigenous Clusters', 'सत्यापित स्वदेशी क्लस्टर')}
+              {t('Verified Indigenous Clusters', 'सत्यापित स्वदेशी क्लस्टर', 'যাচাইকৃত দেশীয় ক্লাস্টার')}
             </span>
             <h2 className="font-rowan font-bold text-3xl text-palette-espresso">
-              {t('Meet the Masters Behind the Craft', 'कला के पीछे के उस्ताद कारीगरों से मिलें')}
+              {t('Meet the Masters Behind the Craft', 'कला के पीछे के उस्ताद कारीगरों से मिलें', 'শিল্পের পিছনের কারিগরদের সঙ্গে পরিচিত হন')}
             </h2>
           </div>
 
@@ -506,10 +508,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
           <Reveal>
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-              {t('Voices From the Cluster', 'क्लस्टर की आवाज़ें')}
+              {t('Voices From the Cluster', 'क्लस्टर की आवाज़ें', 'ক্লাস্টারের কণ্ঠস্বর')}
             </span>
             <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
-              {t('What Artisans and Buyers Say', 'कारीगर और खरीदार क्या कहते हैं')}
+              {t('What Artisans and Buyers Say', 'कारीगर और खरीदार क्या कहते हैं', 'কারিগর ও ক্রেতারা কী বলেন')}
             </h2>
             <p className="text-sm text-palette-wood">
               {t(
@@ -542,10 +544,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-            {t('Capability Matrix', 'सटीक तुलना')}
+            {t('Capability Matrix', 'सटीक तुलना', 'সক্ষমতার তুলনা')}
           </span>
           <h2 className="font-rowan font-bold text-3xl text-palette-espresso">
-            {t('How Pathashilpa Compares to Legacy Platforms', 'पारंपरिक प्लेटफॉर्म्स से तुलना')}
+            {t('How Pathashilpa Compares to Legacy Platforms', 'पारंपरिक प्लेटफॉर्म्स से तुलना', 'প্রচলিত প্ল্যাটফর্মের সঙ্গে তুলনা')}
           </h2>
         </div>
         </Reveal>
@@ -636,10 +638,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             />
             <div className="relative space-y-4">
               <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-                {t('For Rural Artisans & Weavers', 'ग्रामीण कारीगरों व बुनकरों के लिए')}
+                {t('For Rural Artisans & Weavers', 'ग्रामीण कारीगरों व बुनकरों के लिए', 'গ্রামীণ কারিগর ও তাঁতিদের জন্য')}
               </span>
               <h3 className="font-rowan font-bold text-2xl text-palette-espresso">
-                {t('Sell Without Typing. Sell at Your Fair Price.', 'बिना टाइपिंग के बेचें। अपने तय दाम पर बेचें।')}
+                {t('Sell Without Typing. Sell at Your Fair Price.', 'बिना टाइपिंग के बेचें। अपने तय दाम पर बेचें।', 'টাইপ না করেই বিক্রি করুন। নিজের ন্যায্য দামে বিক্রি করুন।')}
               </h3>
               <ul className="space-y-2.5 text-xs text-palette-espresso/80">
                 <li className="flex items-center gap-2">
@@ -677,10 +679,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             />
             <div className="relative space-y-4">
               <span className="text-xs font-mono uppercase text-palette-sand font-bold tracking-wider">
-                {t('For Retail & Institutional Buyers', 'खरीदारों व सरकारी एजेंसियों के लिए')}
+                {t('For Retail & Institutional Buyers', 'खरीदारों व सरकारी एजेंसियों के लिए', 'খুচরা ও প্রাতিষ্ঠানিক ক্রেতাদের জন্য')}
               </span>
               <h3 className="font-rowan font-bold text-2xl text-paper">
-                {t('100% Verified GI Provenance. Direct Maker Contact.', 'शत-प्रतिशत प्रमाणित जीआई हस्तशिल्प। सीधा कारीगर संपर्क।')}
+                {t('100% Verified GI Provenance. Direct Maker Contact.', 'शत-प्रतिशत प्रमाणित जीआई हस्तशिल्प। सीधा कारीगर संपर्क।', '১০০% যাচাইকৃত GI উৎস। সরাসরি কারিগরের সঙ্গে যোগাযোগ।')}
               </h3>
               <ul className="space-y-2.5 text-xs text-paper/80">
                 <li className="flex items-center gap-2">
@@ -726,7 +728,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <blockquote className="font-rowan text-2xl sm:text-3xl md:text-4xl font-bold text-palette-espresso max-w-2xl mx-auto leading-snug">
               "{t(
                 'Every rival starts at the server. We start in the artisan’s hand.',
-                'हर दूसरा मंच सर्वर से शुरू होता है। हम कारीगर के हाथ से शुरू करते हैं।'
+                'हर दूसरा मंच सर्वर से शुरू होता है। हम कारीगर के हाथ से शुरू करते हैं।',
+                'প্রতিটি প্রতিদ্বন্দ্বী শুরু করে সার্ভার থেকে। আমরা শুরু করি কারিগরের হাত থেকে।'
               )}"
             </blockquote>
             <p className="text-xs text-palette-wood max-w-md mx-auto">

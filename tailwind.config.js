@@ -20,13 +20,29 @@ export default {
         inkMuted: '#7A6B5D',
       },
       fontFamily: {
-        rowan: ['Rowan', 'serif'],
-        lora: ['Lora', 'serif'],
-        // Pally carries no Devanagari, so Hindi falls through to a Devanagari
-        // face per-glyph rather than to an arbitrary system default.
-        pally: ['Pally', '"Noto Sans Devanagari"', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
+        // None of the Latin faces carry Devanagari or Bengali. Bengali is
+        // served by the bundled Shohid Shafkat Samir (scoped by unicode-range
+        // in index.css); Hindi falls through to a named Devanagari face rather
+        // than to an arbitrary system default. Matching is per-glyph, so Latin
+        // always keeps the primary face.
+        rowan: ['Rowan', '"Shohid Shafkat Samir"', '"Noto Serif Devanagari"', 'serif'],
+        lora: ['Lora', '"Shohid Shafkat Samir"', '"Noto Serif Devanagari"', 'serif'],
+        pally: [
+          'Pally',
+          '"Shohid Shafkat Samir"',
+          '"Noto Sans Devanagari"',
+          'system-ui',
+          'sans-serif',
+        ],
+        sans: [
+          'Inter',
+          '"Shohid Shafkat Samir"',
+          '"Noto Sans Devanagari"',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
+        mono: ['"IBM Plex Mono"', '"Shohid Shafkat Samir"', 'monospace'],
       },
       boxShadow: {
         'soft': '0 4px 20px -2px rgba(81, 58, 36, 0.06), 0 2px 6px -1px rgba(81, 58, 36, 0.04)',

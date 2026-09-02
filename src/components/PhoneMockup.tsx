@@ -87,10 +87,10 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
   const [inView, setInView] = useState(false);
 
   const steps = [
-    { labelEn: 'Photo', labelHi: 'फोटो', icon: Camera },
-    { labelEn: 'Voice', labelHi: 'आवाज़', icon: Mic },
-    { labelEn: 'Costs', labelHi: 'लागत', icon: IndianRupee },
-    { labelEn: 'Publish', labelHi: 'प्रकाशन', icon: Store },
+    { labelEn: 'Photo', labelHi: 'फोटो', labelBn: 'ছবি', icon: Camera },
+    { labelEn: 'Voice', labelHi: 'आवाज़', labelBn: 'কণ্ঠ', icon: Mic },
+    { labelEn: 'Costs', labelHi: 'लागत', labelBn: 'খরচ', icon: IndianRupee },
+    { labelEn: 'Publish', labelHi: 'प्रकाशन', labelBn: 'প্রকাশ', icon: Store },
   ];
 
   useEffect(() => {
@@ -118,7 +118,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
       <Panel className="relative overflow-hidden bg-gradient-to-b from-white to-paperAlt">
         <span className="absolute top-2 left-2 z-10 flex items-center gap-1 rounded-full bg-palette-espresso/85 px-2 py-0.5 text-[9px] font-mono text-paper backdrop-blur-sm">
           <Camera className="h-2.5 w-2.5 text-palette-butter" />
-          {t('Live viewfinder', 'कैमरा चालू')}
+          {t('Live viewfinder', 'कैमरा चालू', 'ক্যামেরা চালু')}
         </span>
         <div className="relative my-1 flex h-44 w-full items-center justify-center">
           {/* framing guides */}
@@ -128,11 +128,11 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
       </Panel>
 
       <Panel className="space-y-2">
-        <Eyebrow>{t('On-device quality check', 'फोन पर गुणवत्ता जाँच')}</Eyebrow>
+        <Eyebrow>{t('On-device quality check', 'फोन पर गुणवत्ता जाँच', 'ফোনেই গুণমান যাচাই')}</Eyebrow>
         {[
-          [t('Sharpness', 'स्पष्टता'), t('Pass', 'ठीक')],
-          [t('Brightness', 'रोशनी'), t('Corrected', 'सुधारी गई')],
-          [t('Background', 'पृष्ठभूमि'), t('Removed', 'हटाई गई')],
+          [t('Sharpness', 'स्पष्टता', 'স্পষ্টতা'), t('Pass', 'ठीक', 'ঠিক')],
+          [t('Brightness', 'रोशनी', 'আলো'), t('Corrected', 'सुधारी गई', 'সংশোধিত')],
+          [t('Background', 'पृष्ठभूमि', 'পটভূমি'), t('Removed', 'हटाई गई', 'সরানো হয়েছে')],
         ].map(([k, v]) => (
           <div key={k} className="flex items-center justify-between font-mono text-[11px]">
             <span className="text-palette-espresso/75">{k}</span>
@@ -164,7 +164,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
           ))}
         </div>
         <p className="font-pally text-xs text-palette-espresso/80">
-          {t('Listening — speak in your own language', 'सुन रहे हैं — अपनी भाषा में बोलें')}
+          {t('Listening — speak in your own language', 'सुन रहे हैं — अपनी भाषा में बोलें', 'শুনছি — নিজের ভাষায় বলুন')}
         </p>
       </Panel>
 
@@ -224,7 +224,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
       <Panel className="relative overflow-hidden bg-gradient-to-b from-white to-paperAlt">
         <span className="absolute top-2 left-2 z-10 flex items-center gap-1 rounded-full bg-palette-espresso/85 px-2 py-0.5 text-[9px] font-mono text-paper backdrop-blur-sm">
           <Sparkles className="h-2.5 w-2.5 text-palette-butter" />
-          {t('Background removed', 'पृष्ठभूमि हटाई गई')}
+          {t('Background removed', 'पृष्ठभूमि हटाई गई', 'পটভূমি সরানো হয়েছে')}
         </span>
         <div className="relative my-1 flex h-36 w-full items-center justify-center">
           <SareeArtwork className="h-full w-full drop-shadow-md" />
@@ -249,7 +249,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-xs font-bold text-palette-espresso">
             <Tag className="h-3.5 w-3.5 text-palette-clay" />
-            {t('Fair price', 'उचित मूल्य')}
+            {t('Fair price', 'उचित मूल्य', 'ন্যায্য মূল্য')}
           </span>
           <span className="font-rowan text-lg font-extrabold text-palette-clay">₹3,750</span>
         </div>
@@ -261,8 +261,8 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
             className={cn('h-3.5 w-3.5 text-palette-butter', playingAudio && 'animate-bounce')}
           />
           {playingAudio
-            ? t('Explaining the price…', 'कारण बता रहे हैं…')
-            : t('Hear why this price', 'कीमत का कारण सुनें')}
+            ? t('Explaining the price…', 'कारण बता रहे हैं…', 'দাম ব্যাখ্যা করা হচ্ছে…')
+            : t('Hear why this price', 'कीमत का कारण सुनें', 'এই দামের কারণ শুনুন')}
         </button>
       </div>
     </div>,
@@ -337,7 +337,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
                 </span>
                 <span className="-mt-0.5 flex items-center gap-1 text-[9px] text-palette-wood">
                   <Icon className="h-2.5 w-2.5" />
-                  {t(steps[index].labelEn, steps[index].labelHi)}
+                  {t(steps[index].labelEn, steps[index].labelHi, steps[index].labelBn)}
                 </span>
               </div>
             </div>
@@ -382,7 +382,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
               {index < 3 ? (
                 <>
                   <Icon className="h-4 w-4 text-palette-butter" />
-                  {t('Continue', 'आगे बढ़ें')}
+                  {t('Continue', 'आगे बढ़ें', 'এগিয়ে যান')}
                 </>
               ) : published ? (
                 <>
@@ -400,10 +400,10 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
               {isOffline ? (
                 <>
                   <RefreshCw className="mr-1 inline h-2.5 w-2.5" />
-                  {t('Saved offline — syncs when signal returns', 'ऑफलाइन सेव — नेटवर्क आते ही सिंक')}
+                  {t('Saved offline — syncs when signal returns', 'ऑफलाइन सेव — नेटवर्क आते ही सिंक', 'অফলাইনে সংরক্ষিত — সিগন্যাল ফিরলে সিঙ্ক')}
                 </>
               ) : (
-                t('Publishes to your storefront, GeM and ONDC', 'आपकी दुकान, GeM और ONDC पर प्रकाशित')
+                t('Publishes to your storefront, GeM and ONDC', 'आपकी दुकान, GeM और ONDC पर प्रकाशित', 'আপনার দোকান, GeM ও ONDC-তে প্রকাশিত')
               )}
             </p>
           </div>
@@ -414,13 +414,13 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
       <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
         <span className="mr-1 flex items-center gap-1.5 rounded-full border border-palette-sand bg-palette-butter/70 px-2.5 py-1.5 font-mono text-[10px] font-bold text-palette-espresso">
           <span className="text-palette-clay">90s</span>
-          {t('total', 'कुल')}
+          {t('total', 'कुल', 'মোট')}
         </span>
         {steps.map((s, i) => (
           <button
             key={s.labelEn}
             onClick={() => setIndex(i)}
-            aria-label={t(s.labelEn, s.labelHi)}
+            aria-label={t(s.labelEn, s.labelHi, s.labelBn)}
             aria-current={i === index}
             className={cn(
               'group flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 transition-all',
@@ -436,7 +436,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
                 i === index ? 'max-w-[70px] opacity-100' : 'max-w-0 opacity-0'
               )}
             >
-              {t(s.labelEn, s.labelHi)}
+              {t(s.labelEn, s.labelHi, s.labelBn)}
             </span>
           </button>
         ))}

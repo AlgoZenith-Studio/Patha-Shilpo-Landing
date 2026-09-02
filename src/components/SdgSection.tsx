@@ -15,7 +15,7 @@ const CYCLE_MS = 2800;
  * takes over the spotlight; reduced-motion stops it travelling altogether.
  */
 export const SdgSection: React.FC = () => {
-  const { language, t } = useLanguage();
+  const { t, pick } = useLanguage();
   const { ref, inView } = useInView<HTMLDivElement>();
   const [active, setActive] = useState(0);
   const [held, setHeld] = useState<number | null>(null);
@@ -39,25 +39,26 @@ export const SdgSection: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="inline-flex items-center gap-2 text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
             <Globe2 className="w-4 h-4" />
-            {t('United Nations Global Goals', 'संयुक्त राष्ट्र वैश्विक लक्ष्य')}
+            {t('United Nations Global Goals', 'संयुक्त राष्ट्र वैश्विक लक्ष्य', 'জাতিসংঘের বৈশ্বিক লক্ষ্য')}
           </span>
           <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
             {t(
-              'Seven Goals, Built Into the Product',
-              'सात वैश्विक लक्ष्य, उत्पाद की बुनियाद में'
+              'Six Goals, Built Into the Product',
+              'छह वैश्विक लक्ष्य, उत्पाद की बुनियाद में',
+              'ছয়টি লক্ষ্য, পণ্যের ভিত্তিতেই'
             )}
           </h2>
           <p className="text-sm text-palette-espresso/75">
             {t(
               'Not a statement of intent — each goal below names the specific mechanism that advances it.',
-              'केवल इरादा नहीं — हर लक्ष्य के साथ वह ठोस तरीका दिया गया है जिससे वह पूरा होता है।'
+              'केवल इरादा नहीं — हर लक्ष्य के साथ वह ठोस तरीका दिया गया है जिससे वह पूरा होता है।',
+              'শুধু অঙ্গীকার নয় — প্রতিটি লক্ষ্যের সঙ্গে সেই নির্দিষ্ট উপায় দেওয়া আছে যা তা এগিয়ে নেয়।'
             )}
           </p>
         </div>
 
-        {/* Goal grid — the featured card spans two columns so seven cards fill
-            two rows of four exactly. */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        {/* Six goals fill two even rows of three. */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {SDG_GOALS.map((goal, i) => {
             const lit = spotlight === i;
             return (
@@ -78,8 +79,7 @@ export const SdgSection: React.FC = () => {
                   'transition-all duration-500 ease-out motion-reduce:transition-none',
                   'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-paperAlt',
                   lit ? 'border-transparent -translate-y-1' : 'border-palette-sand/60',
-                  inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6',
-                  goal.featured && 'sm:col-span-2'
+                  inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 )}
               >
                 {/* Colour wash, revealed only while lit */}
@@ -92,20 +92,7 @@ export const SdgSection: React.FC = () => {
                   )}
                 />
 
-                {/* Accent rule that draws itself when the section arrives */}
-                <span
-                  aria-hidden="true"
-                  style={{
-                    backgroundColor: goal.color,
-                    transitionDelay: inView ? `${i * 70 + 180}ms` : '0ms',
-                  }}
-                  className={cn(
-                    'absolute left-0 top-0 h-full w-1 origin-top transition-transform duration-700 ease-out motion-reduce:transition-none',
-                    inView ? 'scale-y-100' : 'scale-y-0'
-                  )}
-                />
-
-                <div className="relative space-y-3 pl-3">
+                <div className="relative space-y-3">
                   <div className="flex items-center gap-3">
                     <span
                       style={{
@@ -121,17 +108,12 @@ export const SdgSection: React.FC = () => {
                       {goal.number}
                     </span>
                     <h3 className="font-lora font-bold text-base leading-tight text-palette-espresso">
-                      {language === 'hi' ? goal.titleHi : goal.titleEn}
+                      {pick({ en: goal.titleEn, hi: goal.titleHi, bn: goal.titleBn })}
                     </h3>
                   </div>
 
-                  <p
-                    className={cn(
-                      'text-xs leading-relaxed text-palette-espresso/75',
-                      goal.featured && 'sm:text-[13px]'
-                    )}
-                  >
-                    {language === 'hi' ? goal.mechanismHi : goal.mechanismEn}
+                  <p className="text-xs leading-relaxed text-palette-espresso/75">
+                    {pick({ en: goal.mechanismEn, hi: goal.mechanismHi, bn: goal.mechanismBn })}
                   </p>
                 </div>
               </button>
@@ -142,7 +124,8 @@ export const SdgSection: React.FC = () => {
         <p className="text-center text-[11px] font-mono text-palette-espresso/60">
           {t(
             'Goal names and colours are those of the UN Sustainable Development Goals. Pathashilpa is not affiliated with or endorsed by the United Nations.',
-            'लक्ष्यों के नाम एवं रंग संयुक्त राष्ट्र सतत विकास लक्ष्यों के हैं। पाथाशिल्पा का संयुक्त राष्ट्र से कोई संबंध या अनुमोदन नहीं है।'
+            'लक्ष्यों के नाम एवं रंग संयुक्त राष्ट्र सतत विकास लक्ष्यों के हैं। पाथाशिल्पा का संयुक्त राष्ट्र से कोई संबंध या अनुमोदन नहीं है।',
+            'লক্ষ্যের নাম ও রং জাতিসংঘের টেকসই উন্নয়ন লক্ষ্যের। পাথশিল্পের সঙ্গে জাতিসংঘের কোনও সম্পর্ক বা অনুমোদন নেই।'
           )}
         </p>
       </div>

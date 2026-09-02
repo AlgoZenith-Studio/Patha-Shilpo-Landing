@@ -1,4 +1,4 @@
-export type Language = 'en' | 'hi';
+export type Language = 'en' | 'hi' | 'bn';
 
 export interface Artisan {
   id: string;
@@ -46,11 +46,11 @@ export interface SdgGoal {
   color: string;
   titleEn: string;
   titleHi: string;
+  titleBn: string;
   /** The specific mechanism in the product that advances this goal. */
   mechanismEn: string;
   mechanismHi: string;
-  /** Wider card in the grid. */
-  featured?: boolean;
+  mechanismBn: string;
 }
 
 export interface Testimonial {

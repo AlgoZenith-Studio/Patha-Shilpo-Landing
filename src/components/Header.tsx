@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage, LANGUAGES } from '../context/LanguageContext';
 import { Menu, X, Globe, Sparkles } from 'lucide-react';
 
 interface HeaderProps {
@@ -15,12 +15,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
   // `wide: true` links only appear once there is room for them (xl and up).
   // They stay reachable from the mobile drawer and the footer at every width.
   const navLinks = [
-    { to: '/how-it-works', labelEn: 'How it works', labelHi: 'कैसे काम करता है' },
-    { to: '/for-artisans', labelEn: 'For Artisans', labelHi: 'कारीगरों के लिए' },
-    { to: '/for-buyers', labelEn: 'For Buyers', labelHi: 'खरीदारों के लिए' },
-    { to: '/pricing', labelEn: 'Pricing', labelHi: 'मूल्य निर्धारण' },
-    { to: '/about', labelEn: 'About', labelHi: 'हमारे बारे में' },
-    { to: '/artisan-charter', labelEn: 'Artisan Charter', labelHi: 'कारीगर अधिकार पत्र', wide: true },
+    { to: '/how-it-works', labelEn: 'How it works', labelHi: 'कैसे काम करता है', labelBn: 'কীভাবে কাজ করে' },
+    { to: '/for-artisans', labelEn: 'For Artisans', labelHi: 'कारीगरों के लिए', labelBn: 'কারিগরদের জন্য' },
+    { to: '/for-buyers', labelEn: 'For Buyers', labelHi: 'खरीदारों के लिए', labelBn: 'ক্রেতাদের জন্য' },
+    { to: '/pricing', labelEn: 'Pricing', labelHi: 'मूल्य निर्धारण', labelBn: 'মূল্য নির্ধারণ' },
+    { to: '/about', labelEn: 'About', labelHi: 'हमारे बारे में', labelBn: 'আমাদের সম্পর্কে' },
+    { to: '/artisan-charter', labelEn: 'Artisan Charter', labelHi: 'कारीगर अधिकार पत्र', labelBn: 'কারিগর অধিকারপত্র', wide: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                 PATHASHILPA
               </span>
               <span className="hidden sm:block font-pally text-[11px] leading-none mt-1.5 text-palette-wood whitespace-nowrap">
-                {t('Your craft. Your price. Your name.', 'आपकी कला। आपका दाम। आपका नाम।')}
+                {t('Your craft. Your price. Your name.', 'आपकी कला। आपका दाम। आपका नाम।', 'আপনার শিল্প। আপনার দাম। আপনার নাম।')}
               </span>
             </span>
           </Link>
@@ -61,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                     : 'text-palette-espresso/75 hover:text-palette-clay'
                 }`}
               >
-                {t(link.labelEn, link.labelHi)}
+                {t(link.labelEn, link.labelHi, link.labelBn)}
                 {isActive(link.to) && (
                   <span className="absolute inset-x-2 bottom-0 h-[3px] rounded-t-full bg-palette-clay" />
                 )}
@@ -73,30 +73,21 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             {/* Language switcher */}
             <div className="flex items-center gap-0.5 bg-paperAlt rounded-full p-0.5 border border-palette-sand/60 text-xs font-medium">
-              <button
-                onClick={() => setLanguage('en')}
-                aria-pressed={language === 'en'}
-                className={`px-2.5 py-1 rounded-full leading-none transition-colors ${
-                  language === 'en'
-                    ? 'bg-palette-espresso text-paper font-semibold'
-                    : 'text-palette-espresso/70 hover:text-palette-espresso'
-                }`}
-                title="English"
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLanguage('hi')}
-                aria-pressed={language === 'hi'}
-                className={`px-2.5 py-1 rounded-full leading-none transition-colors ${
-                  language === 'hi'
-                    ? 'bg-palette-espresso text-paper font-semibold'
-                    : 'text-palette-espresso/70 hover:text-palette-espresso'
-                }`}
-                title="हिन्दी (Hindi)"
-              >
-                हिं
-              </button>
+              {LANGUAGES.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => setLanguage(l.code)}
+                  aria-pressed={language === l.code}
+                  title={l.full}
+                  className={`px-2.5 py-1 rounded-full leading-none transition-colors ${
+                    language === l.code
+                      ? 'bg-palette-espresso text-paper font-semibold'
+                      : 'text-palette-espresso/70 hover:text-palette-espresso'
+                  }`}
+                >
+                  {l.short}
+                </button>
+              ))}
             </div>
 
             {/* Primary CTA */}
@@ -105,19 +96,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
               className="inline-flex items-center gap-2 whitespace-nowrap bg-palette-clay hover:bg-palette-clay/90 text-white pl-3.5 pr-4 py-2.5 rounded-full text-[13px] font-semibold leading-none shadow-clay transition-transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <Sparkles className="w-4 h-4 text-palette-butter" />
-              <span>{t('90s AI Demo', '90 सेकंड डेमो')}</span>
+              <span>{t('AI Demo', 'AI डेमो', 'AI ডেমো')}</span>
             </button>
           </div>
 
           {/* Mobile controls */}
           <div className="flex items-center gap-2 lg:hidden shrink-0">
+            {/* Cycles EN → हिं → বাং */}
             <button
-              onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+              onClick={() => {
+                const i = LANGUAGES.findIndex((l) => l.code === language);
+                setLanguage(LANGUAGES[(i + 1) % LANGUAGES.length].code);
+              }}
               className="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-full bg-paperAlt border border-palette-sand/60 text-palette-espresso text-xs font-semibold leading-none"
-              title={language === 'en' ? 'हिन्दी में देखें' : 'View in English'}
+              title={`${LANGUAGES.find((l) => l.code === language)?.full} — tap to change language`}
             >
               <Globe className="w-3.5 h-3.5" />
-              <span>{language === 'en' ? 'हिं' : 'EN'}</span>
+              <span>{LANGUAGES.find((l) => l.code === language)?.short}</span>
             </button>
 
             <button
@@ -149,7 +144,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                       : 'text-palette-espresso/90 hover:bg-paperAlt'
                   }`}
                 >
-                  {t(link.labelEn, link.labelHi)}
+                  {t(link.labelEn, link.labelHi, link.labelBn)}
                 </Link>
               ))}
             </nav>
@@ -163,14 +158,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                 className="w-full inline-flex justify-center items-center gap-2 bg-palette-clay text-white px-4 py-3 rounded-craft text-sm font-semibold shadow-clay"
               >
                 <Sparkles className="w-4 h-4 text-palette-butter" />
-                <span>{t('Launch 90s AI Listing Demo', '90 सेकंड AI डेमो चलाएं')}</span>
+                <span>{t('Launch AI Listing Demo', 'AI लिस्टिंग डेमो चलाएं', 'AI লিস্টিং ডেমো চালান')}</span>
               </button>
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center px-4 py-2.5 rounded-craft border border-palette-sand text-palette-espresso text-sm font-medium hover:bg-paperAlt"
               >
-                {t('Contact & Cluster Support', 'संपर्क एवं क्लस्टर सहायता')}
+                {t('Contact & Cluster Support', 'संपर्क एवं क्लस्टर सहायता', 'যোগাযোগ ও ক্লাস্টার সহায়তা')}
               </Link>
             </div>
           </div>

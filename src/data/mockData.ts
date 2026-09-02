@@ -12,71 +12,79 @@ export const SDG_GOALS: SdgGoal[] = [
     color: '#E5243B',
     titleEn: 'No Poverty',
     titleHi: 'गरीबी उन्मूलन',
+    titleBn: 'দারিদ্র্যমুক্তি',
     mechanismEn:
       'A deterministic cost floor — (material + hours × ₹150) × 1.15 — is calculated before any listing can be published, so a distress sale below the cost of materials and labour is structurally impossible. 67% of handloom households earn under ₹5,000 a month.',
     mechanismHi:
       'हर लिस्टिंग से पहले लागत आधार तय होता है — (कच्चा माल + घंटे × ₹150) × 1.15 — ताकि कोई भी कारीगर लागत से कम दाम पर बेचने को मजबूर न हो। 67% हथकरघा परिवार ₹5,000 प्रति माह से कम कमाते हैं।',
-    featured: true,
-  },
-  {
-    number: 5,
-    color: '#FF3A21',
-    titleEn: 'Gender Equality',
-    titleHi: 'लैंगिक समानता',
-    mechanismEn:
-      'The entire flow is voice-operated. No typing, no English, no literacy requirement — removing the barriers that keep women weavers off every existing platform.',
-    mechanismHi:
-      'पूरी प्रक्रिया आवाज़ से चलती है। न टाइपिंग, न अंग्रेज़ी, न साक्षरता की शर्त — वही बाधाएँ जो महिला बुनकरों को हर मौजूदा मंच से बाहर रखती हैं।',
+    mechanismBn:
+      'প্রতিটি তালিকা প্রকাশের আগেই খরচের ভিত্তি হিসাব হয় — (কাঁচামাল + ঘণ্টা × ₹১৫০) × ১.১৫ — ফলে কাঁচামাল ও শ্রমের খরচের চেয়ে কম দামে বিক্রি করা কাঠামোগতভাবেই অসম্ভব। ৬৭% তাঁতি পরিবারের মাসিক আয় ₹৫,০০০-এর কম।',
   },
   {
     number: 8,
     color: '#A21942',
     titleEn: 'Decent Work & Economic Growth',
     titleHi: 'सम्मानजनक कार्य एवं आर्थिक वृद्धि',
+    titleBn: 'উপযুক্ত কাজ ও অর্থনৈতিক প্রবৃদ্ধি',
     mechanismEn:
       'A ₹150/hour skilled-labour benchmark is priced into every listing, and the artisan pays zero commission — keeping 100% of the agreed price.',
     mechanismHi:
       'हर लिस्टिंग में ₹150 प्रति घंटा कुशल मजदूरी शामिल होती है, और कारीगर से कोई कमीशन नहीं — पूरा दाम कारीगर का।',
+    mechanismBn:
+      'প্রতিটি তালিকায় ঘণ্টাপ্রতি ₹১৫০ দক্ষ শ্রমের মান ধরা থাকে, আর কারিগরকে কোনও কমিশন দিতে হয় না — সম্মত দামের পুরো ১০০% তাঁরই থাকে।',
   },
   {
     number: 9,
     color: '#FD6925',
     titleEn: 'Industry, Innovation & Infrastructure',
     titleHi: 'उद्योग, नवाचार एवं अवसंरचना',
+    titleBn: 'শিল্প, উদ্ভাবন ও পরিকাঠামো',
     mechanismEn:
       'On-device AI completes the full listing with no network at all, on a ₹6,000 Android handset, then syncs in payloads under 400 KB when signal returns.',
     mechanismHi:
       'फोन पर मौजूद AI बिना किसी नेटवर्क के ₹6,000 के एंड्रॉयड पर पूरी लिस्टिंग बनाता है, और सिग्नल आते ही 400 KB से कम में सिंक कर देता है।',
+    mechanismBn:
+      'ফোনের নিজস্ব AI কোনও নেটওয়ার্ক ছাড়াই ₹৬,০০০ দামের অ্যান্ড্রয়েডে পুরো তালিকা তৈরি করে, আর সিগন্যাল ফিরলে ৪০০ KB-এর কম ডেটায় সিঙ্ক করে নেয়।',
   },
   {
     number: 10,
     color: '#DD1367',
     titleEn: 'Reduced Inequalities',
     titleHi: 'असमानताओं में कमी',
+    titleBn: 'বৈষম্য হ্রাস',
     mechanismEn:
       'Just 0.2% of handloom sales happen online, while 95.5% of rural mobile owners already hold a smartphone. The device gap closed years ago; this closes the software gap.',
     mechanismHi:
       'हथकरघा की केवल 0.2% बिक्री ऑनलाइन होती है, जबकि 95.5% ग्रामीण मोबाइल धारकों के पास स्मार्टफोन है। फोन की कमी नहीं — सॉफ्टवेयर की कमी है।',
+    mechanismBn:
+      'তাঁত পণ্যের মাত্র ০.২% বিক্রি অনলাইনে হয়, অথচ ৯৫.৫% গ্রামীণ মোবাইল ব্যবহারকারীর কাছেই স্মার্টফোন আছে। যন্ত্রের ফারাক বহু আগেই মিটেছে; এটি মেটায় সফটওয়্যারের ফারাক।',
   },
   {
-    number: 12,
-    color: '#BF8B2E',
-    titleEn: 'Responsible Consumption & Production',
-    titleHi: 'जिम्मेदार उपभोग एवं उत्पादन',
+    // Goal 11 target 11.4 — safeguarding cultural heritage.
+    number: 11,
+    color: '#FD9D24',
+    titleEn: 'Sustainable Cities & Communities',
+    titleHi: 'टिकाऊ शहर एवं समुदाय',
+    titleBn: 'টেকসই শহর ও জনপদ',
     mechanismEn:
-      'Production begins only against confirmed enquiries, so no capital sits in unsold stock — and a GI provenance block keeps powerloom goods from being sold as handmade.',
+      'Every listing carries the Geographical Indication cluster that made it — Chanderi, Bastar, Madhubani — so a living craft tradition stays tied to its place, and a powerloom copy cannot pass as its heritage.',
     mechanismHi:
-      'उत्पादन केवल पुष्ट ऑर्डर पर शुरू होता है, इसलिए अनबिके माल में पूँजी नहीं फँसती — और जीआई प्रमाणन मशीनी माल को हस्तनिर्मित बताकर बिकने नहीं देता।',
+      'हर लिस्टिंग पर उसका जीआई क्लस्टर दर्ज रहता है — चंदेरी, बस्तर, मधुबनी — ताकि जीवित शिल्प परंपरा अपनी जगह से जुड़ी रहे और मशीनी नकल उसकी विरासत बनकर न बिक सके।',
+    mechanismBn:
+      'প্রতিটি তালিকায় তার GI ক্লাস্টারের নাম থাকে — চান্দেরি, বস্তার, মধুবনী — যাতে জীবন্ত শিল্পধারা তার নিজের জায়গার সঙ্গে যুক্ত থাকে এবং যন্ত্রে বোনা নকল তার ঐতিহ্য বলে বিক্রি না হয়।',
   },
   {
     number: 17,
     color: '#19486A',
     titleEn: 'Partnerships for the Goals',
     titleHi: 'लक्ष्यों हेतु साझेदारी',
+    titleBn: 'লক্ষ্য অর্জনে অংশীদারিত্ব',
     mechanismEn:
       'Built on public digital infrastructure rather than a walled garden — Bhashini for speech, ONDC for open commerce, GeM for government procurement.',
     mechanismHi:
       'किसी बंद मंच पर नहीं, बल्कि सार्वजनिक डिजिटल अवसंरचना पर आधारित — भाषिणी, ONDC और GeM के साथ।',
+    mechanismBn:
+      'কোনও বদ্ধ প্ল্যাটফর্মে নয়, সরকারি ডিজিটাল পরিকাঠামোর উপরেই গড়া — কণ্ঠস্বরের জন্য ভাষিণী, উন্মুক্ত বাণিজ্যের জন্য ONDC, সরকারি ক্রয়ের জন্য GeM।',
   },
 ];
 

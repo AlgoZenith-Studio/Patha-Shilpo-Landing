@@ -92,7 +92,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               : 'bg-paperAlt text-palette-wood'
           )}
         >
-          {isArtisan ? t('Artisan', 'कारीगर') : t('Buyer', 'खरीदार')}
+          {isArtisan ? t('Artisan', 'कारीगर', 'কারিগর') : t('Buyer', 'खरीदार', 'ক্রেতা')}
         </span>
       </div>
 
@@ -174,7 +174,7 @@ export const StaggerTestimonials: React.FC = () => {
       className="relative w-full overflow-hidden bg-paperAlt/60 border-y border-palette-sand/40"
       role="group"
       aria-roledescription="carousel"
-      aria-label={t('Pilot feedback from artisans and buyers', 'कारीगरों और खरीदारों की प्रतिक्रिया')}
+      aria-label={t('Pilot feedback from artisans and buyers', 'कारीगरों और खरीदारों की प्रतिक्रिया', 'কারিগর ও ক্রেতাদের প্রতিক্রিয়া')}
       style={{ height: 540 }}
     >
       <MediaBackdrop
@@ -204,14 +204,14 @@ export const StaggerTestimonials: React.FC = () => {
         <button
           onClick={() => handleMove(-1)}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-palette-sand text-palette-espresso transition-colors hover:bg-palette-clay hover:text-white hover:border-palette-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-palette-clay focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
-          aria-label={t('Previous testimonial', 'पिछली प्रतिक्रिया')}
+          aria-label={t('Previous testimonial', 'पिछली प्रतिक्रिया', 'আগের প্রতিক্রিয়া')}
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={() => handleMove(1)}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-palette-sand text-palette-espresso transition-colors hover:bg-palette-clay hover:text-white hover:border-palette-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-palette-clay focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
-          aria-label={t('Next testimonial', 'अगली प्रतिक्रिया')}
+          aria-label={t('Next testimonial', 'अगली प्रतिक्रिया', 'পরের প্রতিক্রিয়া')}
         >
           <ChevronRight className="w-5 h-5" />
         </button>
