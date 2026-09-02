@@ -1,4 +1,84 @@
-import { Artisan, PressArticle, FaqItem, Testimonial } from '../types';
+import { Artisan, PressArticle, FaqItem, Testimonial, SdgGoal } from '../types';
+
+/**
+ * UN Sustainable Development Goals the product is designed to advance.
+ * Every mechanism below points at a real, shipped behaviour — the pricing
+ * formula, the offline engine, the public rails — rather than an aspiration.
+ * Colours are the official UN goal colours.
+ */
+export const SDG_GOALS: SdgGoal[] = [
+  {
+    number: 1,
+    color: '#E5243B',
+    titleEn: 'No Poverty',
+    titleHi: 'गरीबी उन्मूलन',
+    mechanismEn:
+      'A deterministic cost floor — (material + hours × ₹150) × 1.15 — is calculated before any listing can be published, so a distress sale below the cost of materials and labour is structurally impossible. 67% of handloom households earn under ₹5,000 a month.',
+    mechanismHi:
+      'हर लिस्टिंग से पहले लागत आधार तय होता है — (कच्चा माल + घंटे × ₹150) × 1.15 — ताकि कोई भी कारीगर लागत से कम दाम पर बेचने को मजबूर न हो। 67% हथकरघा परिवार ₹5,000 प्रति माह से कम कमाते हैं।',
+    featured: true,
+  },
+  {
+    number: 5,
+    color: '#FF3A21',
+    titleEn: 'Gender Equality',
+    titleHi: 'लैंगिक समानता',
+    mechanismEn:
+      'The entire flow is voice-operated. No typing, no English, no literacy requirement — removing the barriers that keep women weavers off every existing platform.',
+    mechanismHi:
+      'पूरी प्रक्रिया आवाज़ से चलती है। न टाइपिंग, न अंग्रेज़ी, न साक्षरता की शर्त — वही बाधाएँ जो महिला बुनकरों को हर मौजूदा मंच से बाहर रखती हैं।',
+  },
+  {
+    number: 8,
+    color: '#A21942',
+    titleEn: 'Decent Work & Economic Growth',
+    titleHi: 'सम्मानजनक कार्य एवं आर्थिक वृद्धि',
+    mechanismEn:
+      'A ₹150/hour skilled-labour benchmark is priced into every listing, and the artisan pays zero commission — keeping 100% of the agreed price.',
+    mechanismHi:
+      'हर लिस्टिंग में ₹150 प्रति घंटा कुशल मजदूरी शामिल होती है, और कारीगर से कोई कमीशन नहीं — पूरा दाम कारीगर का।',
+  },
+  {
+    number: 9,
+    color: '#FD6925',
+    titleEn: 'Industry, Innovation & Infrastructure',
+    titleHi: 'उद्योग, नवाचार एवं अवसंरचना',
+    mechanismEn:
+      'On-device AI completes the full listing with no network at all, on a ₹6,000 Android handset, then syncs in payloads under 400 KB when signal returns.',
+    mechanismHi:
+      'फोन पर मौजूद AI बिना किसी नेटवर्क के ₹6,000 के एंड्रॉयड पर पूरी लिस्टिंग बनाता है, और सिग्नल आते ही 400 KB से कम में सिंक कर देता है।',
+  },
+  {
+    number: 10,
+    color: '#DD1367',
+    titleEn: 'Reduced Inequalities',
+    titleHi: 'असमानताओं में कमी',
+    mechanismEn:
+      'Just 0.2% of handloom sales happen online, while 95.5% of rural mobile owners already hold a smartphone. The device gap closed years ago; this closes the software gap.',
+    mechanismHi:
+      'हथकरघा की केवल 0.2% बिक्री ऑनलाइन होती है, जबकि 95.5% ग्रामीण मोबाइल धारकों के पास स्मार्टफोन है। फोन की कमी नहीं — सॉफ्टवेयर की कमी है।',
+  },
+  {
+    number: 12,
+    color: '#BF8B2E',
+    titleEn: 'Responsible Consumption & Production',
+    titleHi: 'जिम्मेदार उपभोग एवं उत्पादन',
+    mechanismEn:
+      'Production begins only against confirmed enquiries, so no capital sits in unsold stock — and a GI provenance block keeps powerloom goods from being sold as handmade.',
+    mechanismHi:
+      'उत्पादन केवल पुष्ट ऑर्डर पर शुरू होता है, इसलिए अनबिके माल में पूँजी नहीं फँसती — और जीआई प्रमाणन मशीनी माल को हस्तनिर्मित बताकर बिकने नहीं देता।',
+  },
+  {
+    number: 17,
+    color: '#19486A',
+    titleEn: 'Partnerships for the Goals',
+    titleHi: 'लक्ष्यों हेतु साझेदारी',
+    mechanismEn:
+      'Built on public digital infrastructure rather than a walled garden — Bhashini for speech, ONDC for open commerce, GeM for government procurement.',
+    mechanismHi:
+      'किसी बंद मंच पर नहीं, बल्कि सार्वजनिक डिजिटल अवसंरचना पर आधारित — भाषिणी, ONDC और GeM के साथ।',
+  },
+];
 
 export const FEATURED_ARTISANS: Artisan[] = [
   {

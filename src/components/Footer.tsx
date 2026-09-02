@@ -8,16 +8,16 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-palette-espresso text-paper/90 border-t border-palette-wood/40">
-      {/* Top Banner / SIH 2026 Hackathon Pill */}
+      {/* Top utility bar */}
       <div className="border-b border-white/10 bg-black/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 bg-palette-butter text-palette-espresso px-2.5 py-1 rounded-full font-bold font-mono text-[11px]">
-              <Award className="w-3.5 h-3.5 text-palette-clay" />
-              SMART INDIA HACKATHON 2026
-            </span>
-            <span className="text-paper/70 hidden md:inline">
-              Problem Statement: AI-Driven Market Linkage for Marginalized Artisans
+            <Award className="w-3.5 h-3.5 text-palette-sand" />
+            <span className="text-paper/75">
+              {t(
+                'AI-driven market linkage for India’s rural artisan clusters',
+                'भारत के ग्रामीण कारीगर क्लस्टरों के लिए AI आधारित बाज़ार पहुँच'
+              )}
             </span>
           </div>
 
@@ -179,7 +179,7 @@ export const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-palette-wood/20 py-6 text-center text-xs text-paper/60">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© 2026 Pathashilpa. All rights reserved. Built for Smart India Hackathon 2026.</p>
+          <p>© 2026 Pathashilpa. All rights reserved.</p>
           <p className="flex items-center gap-1">
             <HeartHandshake className="w-3.5 h-3.5 text-palette-clay" />
             <span>Dedicated to the indigenous weaving & handicraft clusters of India.</span>

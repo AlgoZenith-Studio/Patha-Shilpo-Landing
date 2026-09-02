@@ -39,6 +39,20 @@ export interface FaqItem {
   aHi: string;
 }
 
+export interface SdgGoal {
+  /** Official UN goal number. */
+  number: number;
+  /** Official UN goal colour, used as an accent only. */
+  color: string;
+  titleEn: string;
+  titleHi: string;
+  /** The specific mechanism in the product that advances this goal. */
+  mechanismEn: string;
+  mechanismHi: string;
+  /** Wider card in the grid. */
+  featured?: boolean;
+}
+
 export interface Testimonial {
   id: number;
   role: 'artisan' | 'buyer';

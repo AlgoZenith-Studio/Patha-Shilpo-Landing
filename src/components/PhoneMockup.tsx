@@ -1,236 +1,447 @@
-import React, { useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
-import { 
-  Wifi, 
-  WifiOff, 
-  Volume2, 
-  Sparkles, 
-  CheckCircle2, 
-  Layers, 
-  ShieldCheck, 
-  ChevronRight, 
-  Camera, 
-  Mic, 
-  Tag, 
-  Share2 
+import React, { useEffect, useRef, useState } from 'react';
+import {
+  Wifi,
+  WifiOff,
+  Volume2,
+  Sparkles,
+  CheckCircle2,
+  Check,
+  ShieldCheck,
+  Camera,
+  Mic,
+  Tag,
+  Share2,
+  IndianRupee,
+  Store,
+  RefreshCw,
 } from 'lucide-react';
+import { cn } from '../lib/utils';
+import { useLanguage } from '../context/LanguageContext';
 
-interface PhoneMockupProps {
-  interactive?: boolean;
-}
+const ADVANCE_MS = 4200;
 
-export const PhoneMockup: React.FC<PhoneMockupProps> = ({ interactive = true }) => {
+/** The saree cut-out, shared by the capture and review screens. */
+const SareeArtwork: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 240 180" className={cn('object-contain', className)}>
+    <defs>
+      <linearGradient id="sareeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#8B3A2F" />
+        <stop offset="50%" stopColor="#cc915c" />
+        <stop offset="100%" stopColor="#513a24" />
+      </linearGradient>
+      <pattern id="zariPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+        <path d="M 0,8 L 8,0 L 16,8 L 8,16 Z" fill="none" stroke="#fffbb6" strokeWidth="1" />
+      </pattern>
+    </defs>
+    <path
+      d="M 30,30 Q 120,15 210,35 Q 220,130 190,160 Q 100,165 40,150 Q 20,90 30,30 Z"
+      fill="url(#sareeGrad)"
+    />
+    <path
+      d="M 30,30 Q 120,15 210,35 L 200,65 Q 120,45 35,55 Z"
+      fill="url(#zariPattern)"
+      stroke="#d4a262"
+      strokeWidth="1.5"
+    />
+    <path d="M 40,150 Q 100,165 190,160 L 180,135 Q 100,140 45,128 Z" fill="#d4a262" opacity="0.9" />
+    <circle cx="120" cy="95" r="28" fill="#fffbb6" opacity="0.15" />
+    {[70, 90, 110].map((y, i) => (
+      <line
+        key={y}
+        x1={60 + i * 5}
+        y1={y}
+        x2={170 - i * 5}
+        y2={y}
+        stroke="#fffbb6"
+        strokeWidth="0.75"
+        strokeDasharray="3,3"
+        opacity="0.6"
+      />
+    ))}
+  </svg>
+);
+
+const Panel: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className,
+}) => (
+  <div className={cn('bg-white rounded-craft border border-borderSoft p-3', className)}>
+    {children}
+  </div>
+);
+
+const Eyebrow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="block text-[10px] font-mono uppercase tracking-wider font-semibold text-palette-wood">
+    {children}
+  </span>
+);
+
+export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive = true }) => {
   const { t } = useLanguage();
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const [isOffline, setIsOffline] = useState(false);
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [published, setPublished] = useState(false);
+  const [playingAudio, setPlayingAudio] = useState(false);
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  const steps = [
+    { labelEn: 'Photo', labelHi: 'फोटो', icon: Camera },
+    { labelEn: 'Voice', labelHi: 'आवाज़', icon: Mic },
+    { labelEn: 'Costs', labelHi: 'लागत', icon: IndianRupee },
+    { labelEn: 'Publish', labelHi: 'प्रकाशन', icon: Store },
+  ];
+
+  useEffect(() => {
+    const el = hostRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), {
+      threshold: 0.2,
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Advance on its own, but never while hovered, off-screen, or when the
+  // viewer has asked for reduced motion.
+  useEffect(() => {
+    if (!interactive || paused || !inView) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const id = setInterval(() => setIndex((i) => (i + 1) % steps.length), ADVANCE_MS);
+    return () => clearInterval(id);
+  }, [interactive, paused, inView, steps.length]);
+
+  const screens = [
+    /* 1 · Capture -------------------------------------------------------- */
+    <div key="photo" className="space-y-3">
+      <Panel className="relative overflow-hidden bg-gradient-to-b from-white to-paperAlt">
+        <span className="absolute top-2 left-2 z-10 flex items-center gap-1 rounded-full bg-palette-espresso/85 px-2 py-0.5 text-[9px] font-mono text-paper backdrop-blur-sm">
+          <Camera className="h-2.5 w-2.5 text-palette-butter" />
+          {t('Live viewfinder', 'कैमरा चालू')}
+        </span>
+        <div className="relative my-1 flex h-44 w-full items-center justify-center">
+          {/* framing guides */}
+          <span className="absolute inset-4 rounded-lg border border-dashed border-palette-clay/40" />
+          <SareeArtwork className="h-full w-full drop-shadow-md" />
+        </div>
+      </Panel>
+
+      <Panel className="space-y-2">
+        <Eyebrow>{t('On-device quality check', 'फोन पर गुणवत्ता जाँच')}</Eyebrow>
+        {[
+          [t('Sharpness', 'स्पष्टता'), t('Pass', 'ठीक')],
+          [t('Brightness', 'रोशनी'), t('Corrected', 'सुधारी गई')],
+          [t('Background', 'पृष्ठभूमि'), t('Removed', 'हटाई गई')],
+        ].map(([k, v]) => (
+          <div key={k} className="flex items-center justify-between font-mono text-[11px]">
+            <span className="text-palette-espresso/75">{k}</span>
+            <span className="flex items-center gap-1 font-bold text-emerald-700">
+              <Check className="h-3 w-3" /> {v}
+            </span>
+          </div>
+        ))}
+      </Panel>
+    </div>,
+
+    /* 2 · Voice ---------------------------------------------------------- */
+    <div key="voice" className="space-y-3">
+      <Panel className="space-y-3 text-center">
+        <div className="relative mx-auto flex h-20 w-20 items-center justify-center">
+          <span className="absolute inset-0 animate-ping rounded-full bg-palette-clay/25 motion-reduce:animate-none" />
+          <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-palette-clay text-white shadow-lg">
+            <Mic className="h-7 w-7" />
+          </span>
+        </div>
+        {/* waveform */}
+        <div className="flex h-8 items-end justify-center gap-[3px]">
+          {[7, 14, 22, 30, 18, 26, 12, 20, 30, 16, 9, 24, 14, 8].map((h, i) => (
+            <span
+              key={i}
+              style={{ height: `${h}px`, animationDelay: `${i * 90}ms` }}
+              className="w-[3px] rounded-full bg-palette-sand motion-safe:animate-pulse"
+            />
+          ))}
+        </div>
+        <p className="font-pally text-xs text-palette-espresso/80">
+          {t('Listening — speak in your own language', 'सुन रहे हैं — अपनी भाषा में बोलें')}
+        </p>
+      </Panel>
+
+      <Panel className="space-y-2 bg-paperAlt">
+        <div className="flex items-center justify-between font-mono text-[10px] text-palette-wood">
+          <span>Bhashini STT</span>
+          <span className="font-bold text-emerald-700">98.4%</span>
+        </div>
+        <p className="text-[13px] font-medium italic leading-snug text-palette-espresso">
+          “यह शुद्ध चंदेरी सिल्क साड़ी है, पारंपरिक सुनहरी ज़री का काम है।”
+        </p>
+        <p className="border-t border-palette-sand/40 pt-2 text-[11px] leading-snug text-palette-espresso/70">
+          <strong className="font-semibold">EN ·</strong> Handwoven pure silk Chanderi saree with
+          traditional gold zari pallu.
+        </p>
+      </Panel>
+    </div>,
+
+    /* 3 · Costs ---------------------------------------------------------- */
+    <div key="costs" className="space-y-3">
+      <Panel className="space-y-2">
+        <Eyebrow>कच्चा माल · Material cost</Eyebrow>
+        <div className="flex items-baseline gap-1">
+          <span className="font-rowan text-xl font-bold text-palette-espresso">₹</span>
+          <span className="font-mono text-2xl font-bold text-palette-clay">1,400</span>
+        </div>
+      </Panel>
+
+      <Panel className="space-y-2">
+        <Eyebrow>काम के घंटे · Hours of work</Eyebrow>
+        <div className="flex items-baseline gap-1.5">
+          <span className="font-mono text-2xl font-bold text-palette-clay">8</span>
+          <span className="font-rowan text-sm font-bold text-palette-espresso">घंटे</span>
+        </div>
+      </Panel>
+
+      <div className="space-y-1.5 rounded-craft bg-palette-espresso p-3 text-paper">
+        <div className="flex items-center justify-between font-mono text-[10px] text-paper/70">
+          <span>{t('Labour @ ₹150/hr', 'मजदूरी ₹150/घंटा')}</span>
+          <span>₹1,200</span>
+        </div>
+        <div className="flex items-center justify-between font-mono text-[10px] text-paper/70">
+          <span>{t('+15% contingency', '+15% सुरक्षा')}</span>
+          <span>₹390</span>
+        </div>
+        <div className="flex items-center justify-between border-t border-white/15 pt-1.5">
+          <span className="font-mono text-[10px] text-palette-sand">
+            {t('Cost floor', 'लागत आधार')}
+          </span>
+          <span className="font-rowan text-lg font-bold text-palette-butter">₹2,990</span>
+        </div>
+      </div>
+    </div>,
+
+    /* 4 · Review & publish ----------------------------------------------- */
+    <div key="review" className="space-y-3">
+      <Panel className="relative overflow-hidden bg-gradient-to-b from-white to-paperAlt">
+        <span className="absolute top-2 left-2 z-10 flex items-center gap-1 rounded-full bg-palette-espresso/85 px-2 py-0.5 text-[9px] font-mono text-paper backdrop-blur-sm">
+          <Sparkles className="h-2.5 w-2.5 text-palette-butter" />
+          {t('Background removed', 'पृष्ठभूमि हटाई गई')}
+        </span>
+        <div className="relative my-1 flex h-36 w-full items-center justify-center">
+          <SareeArtwork className="h-full w-full drop-shadow-md" />
+          <span className="absolute bottom-1 right-1 flex items-center gap-1 rounded-full border border-palette-sand bg-palette-butter px-2 py-0.5 text-[9px] font-bold text-palette-espresso">
+            <ShieldCheck className="h-2.5 w-2.5 text-palette-clay" />
+            GI: Chanderi
+          </span>
+        </div>
+      </Panel>
+
+      <Panel className="space-y-1">
+        <Eyebrow>शीर्षक · AI title</Eyebrow>
+        <h4 className="font-lora text-sm font-bold leading-snug text-palette-espresso">
+          हाथ से बुनी चंदेरी सिल्क साड़ी (ज़री बॉर्डर)
+        </h4>
+        <p className="text-[11px] italic text-palette-espresso/70">
+          Handwoven Chanderi Pure Silk Saree with Gold Zari
+        </p>
+      </Panel>
+
+      <div className="space-y-2 rounded-craft border border-palette-sand/50 bg-gradient-to-br from-palette-butter/40 via-white to-palette-sand/20 p-3">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-1.5 text-xs font-bold text-palette-espresso">
+            <Tag className="h-3.5 w-3.5 text-palette-clay" />
+            {t('Fair price', 'उचित मूल्य')}
+          </span>
+          <span className="font-rowan text-lg font-extrabold text-palette-clay">₹3,750</span>
+        </div>
+        <button
+          onClick={() => interactive && setPlayingAudio((v) => !v)}
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-palette-espresso px-3 py-1.5 text-[10px] font-semibold text-paper transition-colors hover:bg-palette-espresso/90"
+        >
+          <Volume2
+            className={cn('h-3.5 w-3.5 text-palette-butter', playingAudio && 'animate-bounce')}
+          />
+          {playingAudio
+            ? t('Explaining the price…', 'कारण बता रहे हैं…')
+            : t('Hear why this price', 'कीमत का कारण सुनें')}
+        </button>
+      </div>
+    </div>,
+  ];
+
+  const Icon = steps[index].icon;
 
   return (
-    <div className="relative mx-auto max-w-[340px] sm:max-w-[360px] select-none">
-      {/* Ambient Glow */}
-      <div className="absolute -inset-4 bg-gradient-to-tr from-palette-clay/30 via-palette-sand/20 to-palette-butter/40 rounded-[50px] blur-2xl opacity-75 -z-10" />
+    <div
+      ref={hostRef}
+      className="relative mx-auto w-full max-w-[340px] select-none sm:max-w-[360px]"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Ambient glow */}
+      <div className="absolute -inset-6 -z-10 rounded-[56px] bg-gradient-to-tr from-palette-clay/25 via-palette-sand/20 to-palette-butter/40 opacity-75 blur-3xl" />
 
-      {/* Phone Outer Chassis */}
-      <div className="relative rounded-[42px] border-[9px] border-palette-espresso bg-palette-espresso shadow-2xl p-2.5 overflow-hidden">
-        {/* Notch / Camera Bar */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-4 bg-palette-espresso rounded-full z-30 flex items-center justify-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-neutral-900 border border-neutral-700" />
-          <div className="w-1.5 h-1.5 rounded-full bg-blue-900/60" />
+      {/* Chassis — tilts into the page on wide screens, straightens on hover */}
+      <div
+        className={cn(
+          'relative rounded-[42px] border-[9px] border-palette-espresso bg-palette-espresso p-2.5 shadow-2xl',
+          'transition-transform duration-700 ease-out motion-reduce:transition-none',
+          'lg:[transform:perspective(1600px)_rotateY(-10deg)_rotateX(3deg)]',
+          'lg:hover:[transform:perspective(1600px)_rotateY(0deg)_rotateX(0deg)_scale(1.02)]'
+        )}
+      >
+        {/* Notch */}
+        <div className="absolute top-4 left-1/2 z-30 flex h-4 w-28 -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-palette-espresso">
+          <span className="h-2.5 w-2.5 rounded-full border border-neutral-700 bg-neutral-900" />
+          <span className="h-1.5 w-1.5 rounded-full bg-blue-900/60" />
         </div>
 
-        {/* Screen Content */}
-        <div className="rounded-[32px] bg-paper overflow-hidden flex flex-col h-[650px] border border-borderSoft relative font-sans text-palette-espresso">
-          {/* Android Status Bar */}
-          <div className="bg-palette-espresso text-paper/90 px-5 pt-3 pb-2 text-[11px] font-mono flex items-center justify-between z-20">
+        <div className="relative flex h-[620px] flex-col overflow-hidden rounded-[32px] border border-borderSoft bg-paper font-sans text-palette-espresso">
+          {/* Status bar */}
+          <div className="z-20 flex items-center justify-between bg-palette-espresso px-5 pt-3 pb-2 font-mono text-[11px] text-paper/90">
             <span>09:41</span>
             <div className="flex items-center gap-2">
-              <button 
-                onClick={() => interactive && setIsOffline(!isOffline)}
-                className={`flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] transition-colors ${
-                  isOffline ? 'bg-amber-500/20 text-amber-300 font-bold' : 'bg-emerald-500/20 text-emerald-300'
-                }`}
-                title="Toggle Offline/Online Simulation"
+              <button
+                onClick={() => interactive && setIsOffline((v) => !v)}
+                title="Toggle network"
+                className={cn(
+                  'flex items-center gap-1 rounded px-1.5 py-0.5 text-[9px] transition-colors',
+                  isOffline
+                    ? 'bg-amber-500/20 font-bold text-amber-300'
+                    : 'bg-emerald-500/20 text-emerald-300'
+                )}
               >
-                {isOffline ? <WifiOff className="w-3 h-3 text-amber-400" /> : <Wifi className="w-3 h-3 text-emerald-400" />}
-                <span>{isOffline ? 'OFFLINE DRAFT' : '4G LIVE'}</span>
+                {isOffline ? (
+                  <WifiOff className="h-3 w-3 text-amber-400" />
+                ) : (
+                  <Wifi className="h-3 w-3 text-emerald-400" />
+                )}
+                {isOffline ? 'OFFLINE' : '4G LIVE'}
               </button>
-              <div className="w-4 h-2 border border-paper/60 rounded-sm p-0.5 flex items-center">
-                <div className="w-full h-full bg-paper/80 rounded-xs" />
-              </div>
+              <span className="flex h-2 w-4 items-center rounded-sm border border-paper/60 p-0.5">
+                <span className="h-full w-full rounded-xs bg-paper/80" />
+              </span>
             </div>
           </div>
 
-          {/* App Header */}
-          <div className="bg-paper border-b border-borderSoft px-4 py-2.5 flex items-center justify-between">
+          {/* App header */}
+          <div className="flex items-center justify-between border-b border-borderSoft bg-paper px-4 py-2.5">
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="logo" className="w-6 h-6 rounded bg-white p-0.5 border border-palette-sand/40" />
+              <img
+                src="/logo.svg"
+                alt=""
+                className="h-6 w-6 rounded border border-palette-sand/40 bg-white p-0.5"
+              />
               <div>
-                <span className="font-rowan font-bold text-xs text-palette-espresso">PATHASHILPA</span>
-                <span className="block text-[9px] text-palette-wood -mt-0.5">चरण 4: समीक्षा (Review)</span>
+                <span className="font-rowan text-xs font-bold text-palette-espresso">
+                  PATHASHILPA
+                </span>
+                <span className="-mt-0.5 flex items-center gap-1 text-[9px] text-palette-wood">
+                  <Icon className="h-2.5 w-2.5" />
+                  {t(steps[index].labelEn, steps[index].labelHi)}
+                </span>
               </div>
             </div>
-            <span className="text-[10px] font-mono font-semibold text-palette-clay bg-palette-butter/60 px-2 py-0.5 rounded-full border border-palette-sand/50">
-              {t('Step 4/4', 'चरण 4/4')}
+            <span className="rounded-full border border-palette-sand/50 bg-palette-butter/60 px-2 py-0.5 font-mono text-[10px] font-semibold text-palette-clay">
+              {index + 1}/4
             </span>
           </div>
 
-          {/* Scrollable Screen Body */}
-          <div className="flex-1 overflow-y-auto p-3.5 space-y-3 scrollbar-none text-xs">
-            {/* Cut-out Product Image Card */}
-            <div className="relative rounded-craft bg-gradient-to-b from-white to-paperAlt p-3 border border-palette-sand/30 shadow-soft overflow-hidden group">
-              {/* Studio Clean Background Badge */}
-              <div className="absolute top-2 left-2 z-10 flex items-center gap-1 bg-palette-espresso/85 text-paper px-2 py-0.5 rounded-full text-[9px] font-mono backdrop-blur-sm">
-                <Sparkles className="w-2.5 h-2.5 text-palette-butter" />
-                <span>AI Background Removed</span>
-              </div>
-
-              {/* Saree Cutout Display */}
-              <div className="h-44 w-full flex items-center justify-center relative my-1">
-                {/* SVG Artistic Saree Representation */}
-                <svg viewBox="0 0 240 180" className="w-full h-full object-contain filter drop-shadow-md">
-                  <defs>
-                    <linearGradient id="sareeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#8B3A2F" />
-                      <stop offset="50%" stopColor="#cc915c" />
-                      <stop offset="100%" stopColor="#513a24" />
-                    </linearGradient>
-                    <pattern id="zariPattern" width="16" height="16" patternUnits="userSpaceOnUse">
-                      <path d="M 0,8 L 8,0 L 16,8 L 8,16 Z" fill="none" stroke="#fffbb6" strokeWidth="1" />
-                    </pattern>
-                  </defs>
-                  {/* Folded Silk Saree Body */}
-                  <path d="M 30,30 Q 120,15 210,35 Q 220,130 190,160 Q 100,165 40,150 Q 20,90 30,30 Z" fill="url(#sareeGrad)" />
-                  {/* Zari Gold Border Pallu */}
-                  <path d="M 30,30 Q 120,15 210,35 L 200,65 Q 120,45 35,55 Z" fill="url(#zariPattern)" stroke="#d4a262" strokeWidth="1.5" />
-                  <path d="M 40,150 Q 100,165 190,160 L 180,135 Q 100,140 45,128 Z" fill="#d4a262" opacity="0.9" />
-                  <circle cx="120" cy="95" r="28" fill="#fffbb6" opacity="0.15" />
-                  {/* Weave texture lines */}
-                  <line x1="60" y1="70" x2="170" y2="70" stroke="#fffbb6" strokeWidth="0.75" strokeDasharray="3,3" opacity="0.6" />
-                  <line x1="65" y1="90" x2="165" y2="90" stroke="#fffbb6" strokeWidth="0.75" strokeDasharray="3,3" opacity="0.6" />
-                  <line x1="70" y1="110" x2="160" y2="110" stroke="#fffbb6" strokeWidth="0.75" strokeDasharray="3,3" opacity="0.6" />
-                </svg>
-
-                {/* GI Tag Overlay */}
-                <div className="absolute bottom-1 right-1 bg-palette-butter text-palette-espresso font-bold text-[9px] px-2 py-0.5 rounded-full border border-palette-sand flex items-center gap-1 shadow-sm">
-                  <ShieldCheck className="w-2.5 h-2.5 text-palette-clay" />
-                  <span>GI Verified: Chanderi</span>
+          {/* Sliding screen track */}
+          <div className="relative flex-1 overflow-hidden">
+            <div
+              className="flex h-full transition-transform duration-700 ease-out motion-reduce:transition-none"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              {screens.map((screen, i) => (
+                <div
+                  key={i}
+                  aria-hidden={i !== index}
+                  className="h-full w-full shrink-0 overflow-y-auto p-3.5 text-xs"
+                >
+                  {screen}
                 </div>
-              </div>
-            </div>
-
-            {/* AI Generated Hindi & English Title */}
-            <div className="bg-white rounded-craft p-3 border border-borderSoft space-y-1">
-              <span className="text-[10px] font-mono uppercase text-palette-wood tracking-wider font-semibold">
-                AI Title · शीर्षक
-              </span>
-              <h4 className="font-lora font-bold text-sm text-palette-espresso leading-snug">
-                हाथ से बुनी चंदेरी सिल्क साड़ी (ज़री बॉर्डर)
-              </h4>
-              <p className="text-[11px] text-palette-espresso/70 italic">
-                Handcrafted Pure Silk Chanderi Saree with Traditional Gold Zari Pallu
-              </p>
-              <div className="flex flex-wrap gap-1 pt-1">
-                <span className="bg-paperAlt px-1.5 py-0.5 rounded text-[9px] text-palette-wood font-medium">#Handloom</span>
-                <span className="bg-paperAlt px-1.5 py-0.5 rounded text-[9px] text-palette-wood font-medium">#ChanderiSilk</span>
-                <span className="bg-paperAlt px-1.5 py-0.5 rounded text-[9px] text-palette-wood font-medium">#AuthenticGI</span>
-              </div>
-            </div>
-
-            {/* AI Fair Price Breakdown Card */}
-            <div className="bg-gradient-to-br from-palette-butter/40 via-white to-palette-sand/20 rounded-craft p-3 border border-palette-sand/50 shadow-soft space-y-2">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <Tag className="w-3.5 h-3.5 text-palette-clay" />
-                  <span className="font-bold text-xs text-palette-espresso">AI उचित मूल्य (Fair Price)</span>
-                </div>
-                <span className="font-rowan font-extrabold text-base text-palette-clay">
-                  ₹2,850
-                </span>
-              </div>
-
-              {/* Price Calculation Transparency */}
-              <div className="bg-white/80 rounded-lg p-2 text-[10px] space-y-1 border border-palette-sand/30 font-mono">
-                <div className="flex justify-between text-palette-espresso/80">
-                  <span>कच्चा माल (Material Cost):</span>
-                  <span className="font-bold">₹1,400</span>
-                </div>
-                <div className="flex justify-between text-palette-espresso/80">
-                  <span>बुनाई समय (Labor: 8 hrs @ ₹150):</span>
-                  <span className="font-bold">₹1,200</span>
-                </div>
-                <div className="flex justify-between text-palette-clay border-t border-palette-sand/30 pt-1 font-bold">
-                  <span>लागत आधार + 25% कारीगर लाभ:</span>
-                  <span>₹2,850</span>
-                </div>
-              </div>
-
-              {/* Voice Explanation Audio Player */}
-              <button
-                onClick={() => interactive && setIsPlayingAudio(!isPlayingAudio)}
-                className="w-full flex items-center justify-center gap-2 bg-palette-espresso text-paper py-1.5 px-3 rounded-lg text-[10px] font-semibold hover:bg-palette-espresso/90 transition-colors"
-              >
-                <Volume2 className={`w-3.5 h-3.5 text-palette-butter ${isPlayingAudio ? 'animate-bounce' : ''}`} />
-                <span>{isPlayingAudio ? 'मूल्य का कारण सुन रहे हैं...' : 'कीमत का कारण सुनें (Voice Explanation)'}</span>
-              </button>
-            </div>
-
-            {/* Artisan Profile Snapshot */}
-            <div className="bg-white rounded-craft p-2.5 border border-borderSoft flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-palette-sand/40 border border-palette-clay/40 flex items-center justify-center font-bold text-palette-espresso font-rowan text-xs">
-                KD
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-[11px] text-palette-espresso">कमला देवी (Kamala Devi)</div>
-                <div className="text-[10px] text-palette-wood">चंदेरी क्लस्टर, मध्य प्रदेश · मास्टर बुनकर</div>
-              </div>
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              ))}
             </div>
           </div>
 
-          {/* Bottom Action Footer */}
-          <div className="p-3 bg-white border-t border-borderSoft space-y-1.5">
+          {/* Action footer */}
+          <div className="space-y-1.5 border-t border-borderSoft bg-white p-3">
             <button
               onClick={() => {
-                if (interactive) setPublished(!published);
+                if (!interactive) return;
+                if (index < 3) setIndex(index + 1);
+                else setPublished((v) => !v);
               }}
-              className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-clay transition-all ${
-                published 
-                  ? 'bg-emerald-700 text-white' 
-                  : 'bg-palette-clay hover:bg-palette-clay/90 text-white active:scale-95'
-              }`}
+              className={cn(
+                'flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold shadow-clay transition-all',
+                published && index === 3
+                  ? 'bg-emerald-700 text-white'
+                  : 'bg-palette-clay text-white hover:bg-palette-clay/90 active:scale-95'
+              )}
             >
-              {published ? (
+              {index < 3 ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4 text-palette-butter" />
-                  <span>प्रकाशित हो गया! (Live on ONDC & GeM)</span>
+                  <Icon className="h-4 w-4 text-palette-butter" />
+                  {t('Continue', 'आगे बढ़ें')}
+                </>
+              ) : published ? (
+                <>
+                  <CheckCircle2 className="h-4 w-4 text-palette-butter" />
+                  प्रकाशित! (Live on ONDC &amp; GeM)
                 </>
               ) : (
                 <>
-                  <Share2 className="w-4 h-4 text-palette-butter" />
-                  <span>दुकान पर प्रकाशित करें (Publish Listing)</span>
+                  <Share2 className="h-4 w-4 text-palette-butter" />
+                  दुकान पर प्रकाशित करें
                 </>
               )}
             </button>
-            
-            <p className="text-[9px] text-center text-palette-wood font-mono">
-              {isOffline 
-                ? '⚡ ऑफलाइन सेव — नेटवर्क आते ही अपने आप सिंक होगा' 
-                : '✓ ONDC एवं सरकारी GeM पोर्टल पर तुरंत लिस्ट होगा'}
+            <p className="text-center font-mono text-[9px] text-palette-espresso/70">
+              {isOffline ? (
+                <>
+                  <RefreshCw className="mr-1 inline h-2.5 w-2.5" />
+                  {t('Saved offline — syncs when signal returns', 'ऑफलाइन सेव — नेटवर्क आते ही सिंक')}
+                </>
+              ) : (
+                t('Publishes to your storefront, GeM and ONDC', 'आपकी दुकान, GeM और ONDC पर प्रकाशित')
+              )}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Floating Differentiator Badge */}
-      <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm border border-palette-sand p-2.5 rounded-2xl shadow-lift flex items-center gap-2 text-xs">
-        <div className="w-7 h-7 rounded-full bg-palette-butter flex items-center justify-center text-palette-clay font-bold font-mono">
-          90s
-        </div>
-        <div>
-          <span className="font-bold text-palette-espresso block text-[11px]">90 Seconds Total</span>
-          <span className="text-[10px] text-palette-wood">Photo + Voice = Live Listing</span>
-        </div>
+      {/* Step selector, captioned with the 90-second promise */}
+      <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+        <span className="mr-1 flex items-center gap-1.5 rounded-full border border-palette-sand bg-palette-butter/70 px-2.5 py-1.5 font-mono text-[10px] font-bold text-palette-espresso">
+          <span className="text-palette-clay">90s</span>
+          {t('total', 'कुल')}
+        </span>
+        {steps.map((s, i) => (
+          <button
+            key={s.labelEn}
+            onClick={() => setIndex(i)}
+            aria-label={t(s.labelEn, s.labelHi)}
+            aria-current={i === index}
+            className={cn(
+              'group flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 transition-all',
+              i === index
+                ? 'border-palette-clay bg-palette-clay text-white shadow-clay'
+                : 'border-palette-sand/70 bg-white/80 text-palette-espresso/70 hover:border-palette-clay/60'
+            )}
+          >
+            <s.icon className="h-3 w-3" />
+            <span
+              className={cn(
+                'overflow-hidden whitespace-nowrap font-mono text-[10px] font-semibold transition-all',
+                i === index ? 'max-w-[70px] opacity-100' : 'max-w-0 opacity-0'
+              )}
+            >
+              {t(s.labelEn, s.labelHi)}
+            </span>
+          </button>
+        ))}
       </div>
+
     </div>
   );
 };

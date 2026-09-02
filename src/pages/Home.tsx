@@ -6,6 +6,7 @@ import { PricingCalculator } from '../components/PricingCalculator';
 import { RfqModal } from '../components/RfqModal';
 import { StaggerTestimonials } from '../components/StaggerTestimonials';
 import { MediaBackdrop } from '../components/MediaBackdrop';
+import { SdgSection } from '../components/SdgSection';
 import { Reveal } from '../components/Reveal';
 import { FEATURED_ARTISANS } from '../data/mockData';
 import { 
@@ -62,7 +63,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               {/* Pill Badge */}
               <div className="inline-flex items-center gap-2 bg-palette-butter/80 text-palette-espresso px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold border border-palette-sand/60 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-palette-clay" />
-                <span>{t('Smart India Hackathon 2026 · Problem Solver', 'स्मार्ट इंडिया हैकाथॉन 2026 · नवाचार')}</span>
+                <span>{t('Offline-first · Voice-only · Zero commission', 'ऑफलाइन · केवल आवाज़ · शून्य कमीशन')}</span>
               </div>
 
               {/* H1 Title */}
@@ -616,6 +617,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         </div>
         </Reveal>
       </section>
+
+      {/* UN SUSTAINABLE DEVELOPMENT GOALS */}
+      <SdgSection />
 
       {/* 14.8 FOR ARTISANS / FOR BUYERS SPLIT BAND */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

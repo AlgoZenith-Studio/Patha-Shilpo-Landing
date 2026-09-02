@@ -37,13 +37,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
               className="w-9 h-9 shrink-0 rounded-lg object-contain transition-transform group-hover:scale-105"
             />
             <span className="flex flex-col justify-center">
-              <span className="flex items-center gap-2">
-                <span className="font-rowan font-bold text-lg xl:text-xl leading-none tracking-tight text-palette-espresso whitespace-nowrap">
-                  PATHASHILPA
-                </span>
-                <span className="hidden xl:inline-block shrink-0 whitespace-nowrap text-[10px] uppercase font-mono tracking-widest leading-none px-1.5 py-1 rounded bg-palette-butter text-palette-espresso font-semibold border border-palette-sand/60">
-                  SIH '26
-                </span>
+              <span className="font-rowan font-bold text-lg xl:text-xl leading-none tracking-tight text-palette-espresso whitespace-nowrap">
+                PATHASHILPA
               </span>
               <span className="hidden sm:block font-pally text-[11px] leading-none mt-1.5 text-palette-wood whitespace-nowrap">
                 {t('Your craft. Your price. Your name.', 'आपकी कला। आपका दाम। आपका नाम।')}
