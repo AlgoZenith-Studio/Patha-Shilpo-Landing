@@ -78,9 +78,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               {/* Subheading */}
               <p className="font-sans text-base sm:text-lg text-palette-espresso/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 {t(
-                  'Pathashilpa turns a photograph and a spoken sentence into a live, fairly priced product listing — in about ninety seconds, even with no internet.',
-                  'पाथाशिल्पा एक तस्वीर और एक बोले गए वाक्य को 90 सेकंड में एक लाइव, उचित मूल्य वाली उत्पाद लिस्टिंग में बदल देता है — बिना किसी इंटरनेट के।',
-                  'পাথশিল্প একটি ছবি ও একটি বলা বাক্যকে প্রায় নব্বই সেকেন্ডে একটি লাইভ, ন্যায্য মূল্যের পণ্য তালিকায় রূপান্তরিত করে — ইন্টারনেট ছাড়াই।'
+                  'Pathashilpa turns a photograph and a spoken sentence into a live, fairly priced product listing, in about ninety seconds, even with no internet.',
+                  'पाथाशिल्पा एक तस्वीर और एक बोले गए वाक्य को 90 सेकंड में एक लाइव, उचित मूल्य वाली उत्पाद लिस्टिंग में बदल देता है, बिना किसी इंटरनेट के।',
+                  'পাথশিল্প একটি ছবি ও একটি বলা বাক্যকে প্রায় নব্বই সেকেন্ডে একটি লাইভ, ন্যায্য মূল্যের পণ্য তালিকায় রূপান্তরিত করে, ইন্টারনেট ছাড়াই।'
                 )}
               </p>
 
@@ -306,8 +306,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         {/* Footnote on Offline Silent Upgrade */}
         <div className="bg-paperAlt/90 backdrop-blur-sm p-4 rounded-xl border border-palette-sand/50 text-center text-xs text-palette-wood font-mono">
           ⚡ <strong>{t('Zero Internet Guarantee:', 'ऑफलाइन गारंटी:')}</strong> {t(
-            'All three steps work with zero network bars. The listing is saved as a live draft and improves silently when you reconnect — and the price never changes.',
-            'तीनों चरण बिना इंटरनेट के पूरे होते हैं। नेटवर्क आते ही लिस्टिंग साइलेंटली अपग्रेड होती है — और तय मूल्य कभी नहीं बदलता।'
+            'All three steps work with zero network bars. The listing is saved as a live draft and improves silently when you reconnect, and the price never changes.',
+            'तीनों चरण बिना इंटरनेट के पूरे होते हैं। नेटवर्क आते ही लिस्टिंग साइलेंटली अपग्रेड होती है, और तय मूल्य कभी नहीं बदलता।'
           )}
         </div>
         </div>
@@ -646,7 +646,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <ul className="space-y-2.5 text-xs text-palette-espresso/80">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-palette-clay flex-shrink-0" />
-                  <span>{t('Zero commission taken — you keep 100% of your earnings.', 'कोई कमीशन नहीं — आपकी 100% कमाई आपकी।')}</span>
+                  <span>{t('Zero commission taken: you keep 100% of your earnings.', 'कोई कमीशन नहीं: आपकी 100% कमाई आपकी।')}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-palette-clay flex-shrink-0" />

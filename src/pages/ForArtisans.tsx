@@ -77,7 +77,7 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
             {t('Your Craft. Your Price. In 90 Seconds.', 'आपकी कला। आपका दाम। केवल 90 सेकंड में।')}
           </h1>
           <p className="font-pally text-xl text-palette-clay">
-            "{t('No typing, no paperwork, and zero commission — ever.', 'न लिखना, न कागज़ात, न कोई कमीशन — कभी नहीं।')}"
+            "{t('No typing, no paperwork, and zero commission, ever.', 'न लिखना, न कागज़ात, न कोई कमीशन, कभी नहीं।')}"
           </p>
           <p className="text-xs sm:text-sm text-palette-espresso/80 leading-relaxed">
             {t(

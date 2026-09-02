@@ -63,9 +63,9 @@ export const Footer: React.FC = () => {
           </p>
           <p className="text-sm text-paper/75 leading-relaxed max-w-sm">
             {t(
-              'The smart cataloging layer that converts a single photograph and spoken sentence into a published, verified product listing — working offline-first for 35.2 lakh rural Indian artisans.',
-              'स्मार्ट कैटलॉगिंग लेयर जो एक तस्वीर और बोले गए वाक्य को प्रकाशित, सत्यापित उत्पाद लिस्टिंग में बदल देती है — 35.2 लाख ग्रामीण भारतीय कारीगरों के लिए ऑफलाइन-प्रथम कार्य करती है।',
-              'স্মার্ট ক্যাটালগিং স্তর, যা একটি ছবি ও একটি বলা বাক্যকে প্রকাশিত, যাচাইকৃত পণ্য তালিকায় রূপান্তরিত করে — ৩৫.২ লক্ষ গ্রামীণ ভারতীয় কারিগরের জন্য অফলাইন-প্রথম।'
+              'The smart cataloging layer that converts a single photograph and spoken sentence into a published, verified product listing, working offline-first for 35.2 lakh rural Indian artisans.',
+              'स्मार्ट कैटलॉगिंग लेयर जो एक तस्वीर और बोले गए वाक्य को प्रकाशित, सत्यापित उत्पाद लिस्टिंग में बदल देती है, 35.2 लाख ग्रामीण भारतीय कारीगरों के लिए ऑफलाइन-प्रथम कार्य करती है।',
+              'স্মার্ট ক্যাটালগিং স্তর, যা একটি ছবি ও একটি বলা বাক্যকে প্রকাশিত, যাচাইকৃত পণ্য তালিকায় রূপান্তরিত করে, ৩৫.২ লক্ষ গ্রামীণ ভারতীয় কারিগরের জন্য অফলাইন-প্রথম।'
             )}
           </p>
           <div className="flex items-center gap-2 pt-2 text-xs text-paper/60">
