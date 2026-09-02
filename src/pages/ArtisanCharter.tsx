@@ -67,7 +67,7 @@ export const ArtisanCharter: React.FC = () => {
         <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
           {t('The Pathashilpa Artisan Charter', 'पाथाशिल्पा कारीगर अधिकार पत्र')}
         </h1>
-        <p className="font-kalam text-xl text-palette-clay">
+        <p className="font-pally text-xl text-palette-clay">
           "{t('Six Uncompromising Commitments to India’s Rural Artisans', 'भारत के ग्रामीण कारीगरों के प्रति हमारे 6 अटूट वादे')}"
         </p>
       </div>

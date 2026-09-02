@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                   SIH '26
                 </span>
               </span>
-              <span className="hidden sm:block font-kalam text-[11px] leading-none mt-1.5 text-palette-wood whitespace-nowrap">
+              <span className="hidden sm:block font-pally text-[11px] leading-none mt-1.5 text-palette-wood whitespace-nowrap">
                 {t('Your craft. Your price. Your name.', 'आपकी कला। आपका दाम। आपका नाम।')}
               </span>
             </span>

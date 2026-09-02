@@ -221,7 +221,7 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
                 >
                   <Mic className="w-8 h-8" />
                 </button>
-                <div className="font-kalam text-base text-palette-espresso">
+                <div className="font-pally text-base text-palette-espresso">
                   {isRecording 
                     ? '"बोलिए... हम सुन रहे हैं..." (Listening to spoken Hindi voice note...)' 
                     : 'माइक दबाएं और बोलें (Tap to simulate speaking in Hindi)'}

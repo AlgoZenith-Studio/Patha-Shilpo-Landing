@@ -22,7 +22,9 @@ export default {
       fontFamily: {
         rowan: ['Rowan', 'serif'],
         lora: ['Lora', 'serif'],
-        kalam: ['Kalam', 'cursive', 'sans-serif'],
+        // Pally carries no Devanagari, so Hindi falls through to a Devanagari
+        // face per-glyph rather than to an arbitrary system default.
+        pally: ['Pally', '"Noto Sans Devanagari"', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['"IBM Plex Mono"', 'monospace'],
       },

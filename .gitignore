@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# Source cinemagraph masters (~58 MB). The compressed, web-ready derivatives
+# live in public/media/ and are committed. Keep these originals backed up
+# outside the repo — build-media regenerates public/media from them.
+Cinemagraphs/

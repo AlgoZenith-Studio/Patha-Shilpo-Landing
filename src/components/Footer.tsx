@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               PATHASHILPA
             </span>
           </div>
-          <p className="font-kalam text-lg text-palette-butter">
+          <p className="font-pally text-lg text-palette-butter">
             "{t('Your craft. Your price. Your name.', 'आपकी कला। आपका दाम। आपका नाम।')}"
           </p>
           <p className="text-sm text-paper/75 leading-relaxed max-w-sm">

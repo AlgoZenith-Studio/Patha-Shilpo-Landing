@@ -5,6 +5,8 @@ import { PhoneMockup } from '../components/PhoneMockup';
 import { PricingCalculator } from '../components/PricingCalculator';
 import { RfqModal } from '../components/RfqModal';
 import { StaggerTestimonials } from '../components/StaggerTestimonials';
+import { MediaBackdrop } from '../components/MediaBackdrop';
+import { Reveal } from '../components/Reveal';
 import { FEATURED_ARTISANS } from '../data/mockData';
 import { 
   Sparkles, 
@@ -37,8 +39,23 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
   return (
     <div className="space-y-20 md:space-y-28 overflow-hidden">
       {/* 14.1 HERO SECTION */}
-      <section className="relative pt-8 md:pt-16 pb-12 bg-grain">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden pt-8 md:pt-16 pb-12">
+        <MediaBackdrop
+          src="hero-inkbloom"
+          kind="video"
+          eager
+          flip
+          parallax={0.07}
+          mediaClassName="opacity-[0.72]"
+          scrim="bg-gradient-to-r from-paper/92 via-paper/84 to-paper/35"
+        />
+        {/* Blend the section's lower edge back into the page ground */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-paper"
+        />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Copy */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
@@ -85,7 +102,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               </div>
 
               {/* Trust Line */}
-              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-palette-wood font-mono">
+              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-palette-espresso/80 font-mono">
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-700" />
                   <span>Built on Bhashini ULCA</span>
@@ -111,6 +128,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
       {/* 14.2 STAT STRIP (Four Exact PRD Tiles) */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
         <div className="bg-white rounded-craft-lg border border-palette-sand/60 p-6 md:p-8 shadow-soft">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-borderSoft">
             {/* Tile 1 */}
@@ -166,12 +184,18 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </div>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* 14.3 THE INSIGHT BAND (Full-Width Dark Espresso Band) */}
-      <section className="bg-palette-espresso text-paper py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#d4a262_1px,transparent_1px)] [background-size:32px_32px] opacity-10" />
-        
+      <section className="bg-palette-espresso text-paper py-20 md:py-28 relative overflow-hidden">
+        <MediaBackdrop
+          src="insight-indigo"
+          kind="video"
+          parallax={0.14}
+          scrim="bg-gradient-to-b from-palette-espresso/92 via-palette-espresso/78 to-palette-espresso/95"
+        />
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 relative z-10">
           <span className="font-mono text-xs uppercase tracking-widest text-palette-sand font-bold">
             {t('The Foundational Insight', 'मौलिक दृष्टिकोण')}
@@ -182,14 +206,23 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               '95.5% स्मार्टफोन के मुकाबले केवल 0.2% ऑनलाइन बिक्री। फोन पहले से उनके हाथ में है। कमी सिर्फ ऐसे सॉफ्टवेयर की है जिसे वे आसानी से चला सकें।'
             )}"
           </blockquote>
-          <p className="font-kalam text-lg text-palette-butter">
+          <p className="font-pally text-lg text-palette-butter">
             — Pathashilpa Problem Statement Analysis (Smart India Hackathon 2026)
           </p>
         </div>
       </section>
 
       {/* 14.4 HOW IT WORKS (3-Column Flow) */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="relative overflow-hidden py-16 md:py-20">
+        <MediaBackdrop
+          src="process-kalam"
+          parallax={0.1}
+          mediaClassName="opacity-70"
+          scrim="bg-gradient-to-b from-paper via-paper/80 to-paper"
+        />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
             {t('The 3-Action Workflow', '3 सरल चरण')}
@@ -204,7 +237,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             )}
           </p>
         </div>
+        </Reveal>
 
+        <Reveal delay={120}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1 */}
           <div className="bg-white rounded-craft p-6 border border-palette-sand/60 shadow-soft space-y-4 hover:-translate-y-1 transition-transform">
@@ -263,18 +298,21 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </p>
           </div>
         </div>
+        </Reveal>
 
         {/* Footnote on Offline Silent Upgrade */}
-        <div className="bg-paperAlt p-4 rounded-xl border border-palette-sand/50 text-center text-xs text-palette-wood font-mono">
+        <div className="bg-paperAlt/90 backdrop-blur-sm p-4 rounded-xl border border-palette-sand/50 text-center text-xs text-palette-wood font-mono">
           ⚡ <strong>{t('Zero Internet Guarantee:', 'ऑफलाइन गारंटी:')}</strong> {t(
             'All three steps work with zero network bars. The listing is saved as a live draft and improves silently when you reconnect — and the price never changes.',
             'तीनों चरण बिना इंटरनेट के पूरे होते हैं। नेटवर्क आते ही लिस्टिंग साइलेंटली अपग्रेड होती है — और तय मूल्य कभी नहीं बदलता।'
           )}
         </div>
+        </div>
       </section>
 
       {/* 14.5 WHAT MAKES IT DIFFERENT (5 Distinct Cards) */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
             {t('Core Differentiators', '5 मुख्य अंतर')}
@@ -283,7 +321,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             {t('Not Another Marketplace. The Layer That Creates the Listing.', 'कोई अन्य बाज़ार नहीं, बल्कि लिस्टिंग बनाने वाली तकनीक।')}
           </h2>
         </div>
+        </Reveal>
 
+        <Reveal delay={120}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Card 1 */}
           <div className="bg-white rounded-craft p-6 border border-palette-sand/60 shadow-soft space-y-3">
@@ -365,6 +405,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </p>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* 14.6 FEATURED ARTISANS (3 Cards with Kalam Handwritten Touch) */}
@@ -388,6 +429,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
           </Link>
         </div>
 
+        <Reveal delay={120}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {FEATURED_ARTISANS.map((artisan) => (
             <div
@@ -422,7 +464,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
                 {/* Artisan Story in Kalam Font */}
                 <div className="bg-paperAlt p-3.5 rounded-xl border border-borderSoft">
-                  <p className="font-kalam text-sm text-palette-espresso leading-relaxed">
+                  <p className="font-pally text-sm text-palette-espresso leading-relaxed">
                     "{language === 'hi' ? artisan.storyHi : artisan.story}"
                   </p>
                 </div>
@@ -454,11 +496,13 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </div>
           ))}
         </div>
+        </Reveal>
       </section>
 
       {/* VOICES FROM THE PILOT — stacked testimonial carousel */}
       <section className="space-y-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
               {t('Voices From the Cluster', 'क्लस्टर की आवाज़ें')}
@@ -473,6 +517,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               )}
             </p>
           </div>
+          </Reveal>
         </div>
 
         <StaggerTestimonials />
@@ -493,6 +538,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
       {/* 14.7 CONDENSED COMPARISON MATRIX */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
             {t('Capability Matrix', 'सटीक तुलना')}
@@ -501,7 +547,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             {t('How Pathashilpa Compares to Legacy Platforms', 'पारंपरिक प्लेटफॉर्म्स से तुलना')}
           </h2>
         </div>
+        </Reveal>
 
+        <Reveal delay={120}>
         <div className="overflow-x-auto bg-white rounded-craft-lg border border-palette-sand/60 shadow-soft">
           <table className="w-full text-xs text-left border-collapse min-w-[600px]">
             <thead>
@@ -566,14 +614,23 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </tbody>
           </table>
         </div>
+        </Reveal>
       </section>
 
       {/* 14.8 FOR ARTISANS / FOR BUYERS SPLIT BAND */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Artisan Panel */}
-          <div className="bg-gradient-to-br from-white via-paper to-palette-sand/20 rounded-craft-lg p-8 border border-palette-sand/70 shadow-soft space-y-6 flex flex-col justify-between">
-            <div className="space-y-4">
+          <div className="relative overflow-hidden bg-gradient-to-br from-white via-paper to-palette-sand/20 rounded-craft-lg p-8 border border-palette-sand/70 shadow-soft space-y-6 flex flex-col justify-between">
+            <MediaBackdrop
+              src="artisan-loom"
+              kind="video"
+              parallax={0.06}
+              mediaClassName="opacity-[0.28]"
+              scrim="bg-gradient-to-br from-paper/85 via-paper/75 to-paper/60"
+            />
+            <div className="relative space-y-4">
               <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
                 {t('For Rural Artisans & Weavers', 'ग्रामीण कारीगरों व बुनकरों के लिए')}
               </span>
@@ -598,7 +655,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
             <Link
               to="/for-artisans"
-              className="inline-flex items-center justify-center gap-2 bg-palette-clay hover:bg-palette-clay/90 text-white py-3 px-6 rounded-full text-xs font-bold shadow-clay"
+              className="relative inline-flex items-center justify-center gap-2 bg-palette-clay hover:bg-palette-clay/90 text-white py-3 px-6 rounded-full text-xs font-bold shadow-clay"
             >
               <span>{t('Artisan Guide & App Details', 'कारीगर मार्गदर्शिका व ऐप')}</span>
               <ArrowRight className="w-4 h-4" />
@@ -606,8 +663,15 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
           </div>
 
           {/* Buyer Panel */}
-          <div className="bg-gradient-to-br from-palette-espresso to-neutral-900 text-paper rounded-craft-lg p-8 border border-palette-wood/40 shadow-soft space-y-6 flex flex-col justify-between">
-            <div className="space-y-4">
+          <div className="relative overflow-hidden bg-gradient-to-br from-palette-espresso to-neutral-900 text-paper rounded-craft-lg p-8 border border-palette-wood/40 shadow-soft space-y-6 flex flex-col justify-between">
+            <MediaBackdrop
+              src="buyer-bolts"
+              kind="video"
+              parallax={0.06}
+              mediaClassName="opacity-60"
+              scrim="bg-gradient-to-br from-palette-espresso/85 via-palette-espresso/80 to-neutral-900/90"
+            />
+            <div className="relative space-y-4">
               <span className="text-xs font-mono uppercase text-palette-sand font-bold tracking-wider">
                 {t('For Retail & Institutional Buyers', 'खरीदारों व सरकारी एजेंसियों के लिए')}
               </span>
@@ -632,46 +696,55 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
             <Link
               to="/for-buyers"
-              className="inline-flex items-center justify-center gap-2 bg-palette-sand hover:bg-palette-sand/90 text-palette-espresso py-3 px-6 rounded-full text-xs font-bold shadow-sm"
+              className="relative inline-flex items-center justify-center gap-2 bg-palette-sand hover:bg-palette-sand/90 text-palette-espresso py-3 px-6 rounded-full text-xs font-bold shadow-sm"
             >
               <span>{t('Buyer RFQ & Provenance Portal', 'खरीदार पोर्टल एवं कोटेशन')}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* 14.9 CLOSING CTA */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="bg-palette-butter/40 border-2 border-palette-sand rounded-craft-lg p-8 md:p-12 text-center space-y-6 shadow-soft">
-          <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-            {t('Smart India Hackathon 2026 Innovation', 'स्मार्ट इंडिया हैकाथॉन 2026')}
-          </span>
-          <blockquote className="font-rowan text-2xl sm:text-3xl md:text-4xl font-bold text-palette-espresso max-w-2xl mx-auto leading-snug">
-            "{t(
-              'Every rival starts at the server. We start in the artisan’s hand.',
-              'हर दूसरा मंच सर्वर से शुरू होता है। हम कारीगर के हाथ से शुरू करते हैं।'
-            )}"
-          </blockquote>
-          <p className="text-xs text-palette-wood max-w-md mx-auto">
-            {t(
-              'Join us in bringing 35.2 lakh rural artisans into the formal digital economy without making them type a single word.',
-              '35.2 लाख ग्रामीण कारीगरों को बिना एक भी शब्द टाइप कराए डिजिटल अर्थव्यवस्था से जोड़ने के हमारे मिशन में शामिल हों।'
-            )}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <button
-              onClick={onOpenDemo}
-              className="bg-palette-clay hover:bg-palette-clay/90 text-white font-bold text-xs px-8 py-3.5 rounded-full shadow-clay"
-            >
-              {t('Explore Crafts & Try Demo', 'शिल्प देखें एवं डेमो चलाएं')}
-            </button>
-            <Link
-              to="/contact"
-              className="bg-white hover:bg-paperAlt text-palette-espresso font-semibold text-xs px-8 py-3.5 rounded-full border border-palette-sand"
-            >
-              {t('Partner With Us', 'हमारे साथ भागीदार बनें')}
-            </Link>
+        <div className="relative overflow-hidden bg-palette-butter/40 border-2 border-palette-sand rounded-craft-lg p-8 md:p-12 text-center shadow-soft">
+          <MediaBackdrop
+            src="cta-craft"
+            parallax={0.08}
+            mediaClassName="opacity-50"
+            scrim="bg-gradient-to-br from-palette-butter/75 via-paper/80 to-palette-sand/45"
+          />
+          <div className="relative space-y-6">
+            <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+              {t('Smart India Hackathon 2026 Innovation', 'स्मार्ट इंडिया हैकाथॉन 2026')}
+            </span>
+            <blockquote className="font-rowan text-2xl sm:text-3xl md:text-4xl font-bold text-palette-espresso max-w-2xl mx-auto leading-snug">
+              "{t(
+                'Every rival starts at the server. We start in the artisan’s hand.',
+                'हर दूसरा मंच सर्वर से शुरू होता है। हम कारीगर के हाथ से शुरू करते हैं।'
+              )}"
+            </blockquote>
+            <p className="text-xs text-palette-wood max-w-md mx-auto">
+              {t(
+                'Join us in bringing 35.2 lakh rural artisans into the formal digital economy without making them type a single word.',
+                '35.2 लाख ग्रामीण कारीगरों को बिना एक भी शब्द टाइप कराए डिजिटल अर्थव्यवस्था से जोड़ने के हमारे मिशन में शामिल हों।'
+              )}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <button
+                onClick={onOpenDemo}
+                className="bg-palette-clay hover:bg-palette-clay/90 text-white font-bold text-xs px-8 py-3.5 rounded-full shadow-clay"
+              >
+                {t('Explore Crafts & Try Demo', 'शिल्प देखें एवं डेमो चलाएं')}
+              </button>
+              <Link
+                to="/contact"
+                className="bg-white hover:bg-paperAlt text-palette-espresso font-semibold text-xs px-8 py-3.5 rounded-full border border-palette-sand"
+              >
+                {t('Partner With Us', 'हमारे साथ भागीदार बनें')}
+              </Link>
+            </div>
           </div>
         </div>
       </section>

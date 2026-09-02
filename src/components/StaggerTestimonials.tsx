@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { MediaBackdrop } from './MediaBackdrop';
 import { useLanguage } from '../context/LanguageContext';
 import { TESTIMONIALS } from '../data/mockData';
 import { Testimonial } from '../types';
@@ -176,6 +177,13 @@ export const StaggerTestimonials: React.FC = () => {
       aria-label={t('Pilot feedback from artisans and buyers', 'कारीगरों और खरीदारों की प्रतिक्रिया')}
       style={{ height: 540 }}
     >
+      <MediaBackdrop
+        src="testimonials-threads"
+        parallax={0.16}
+        mediaClassName="opacity-60"
+        scrim="bg-gradient-to-b from-paper/85 via-paperAlt/70 to-paper/90"
+      />
+
       {list.map((testimonial, index) => {
         const position =
           list.length % 2

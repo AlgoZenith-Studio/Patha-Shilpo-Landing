@@ -46,7 +46,7 @@ export const About: React.FC = () => {
             <p className="text-xs font-semibold text-palette-espresso">
               Rural Smartphone Ownership
             </p>
-            <p className="text-[11px] font-kalam text-palette-clay">
+            <p className="text-[11px] font-pally text-palette-clay">
               "The device is there. What was missing was the software."
             </p>
           </div>
