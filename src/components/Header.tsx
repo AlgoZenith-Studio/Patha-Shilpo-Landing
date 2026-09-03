@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                   onClick={() => setLanguage(l.code)}
                   aria-pressed={language === l.code}
                   title={l.full}
-                  className={`px-2.5 py-1 rounded-full leading-none transition-colors ${
+                  className={`px-2.5 py-1 rounded-full leading-none transition-colors cursor-pointer select-none ${
                     language === l.code
                       ? 'bg-palette-espresso text-paper font-semibold'
                       : 'text-palette-espresso/70 hover:text-palette-espresso'

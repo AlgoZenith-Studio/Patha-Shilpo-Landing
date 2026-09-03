@@ -106,6 +106,11 @@ body {
   background-color: #FDFBF7;
 }
 
+button, [role="button"] {
+  cursor: pointer;
+  user-select: none;
+}
+
 /* Texture overlay for paper craft aesthetics */
 .bg-grain {
   background-image: radial-gradient(rgba(81, 58, 36, 0.04) 1px, transparent 1px);

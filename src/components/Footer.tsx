@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
                   key={l.code}
                   onClick={() => setLanguage(l.code)}
                   aria-pressed={language === l.code}
-                  className={`px-2 py-0.5 rounded-full transition-all text-xs ${
+                  className={`px-2 py-0.5 rounded-full transition-all text-xs cursor-pointer select-none ${
                     language === l.code
                       ? 'bg-palette-clay text-white font-semibold'
                       : 'text-paper/70 hover:text-white'
@@ -180,21 +180,6 @@ export const Footer: React.FC = () => {
             <HeartHandshake className="w-3.5 h-3.5 text-palette-clay" />
             <span>Dedicated to the indigenous weaving & handicraft clusters of India.</span>
           </p>
-        </div>
-        {/*
-          Required by the Lipighor free-font licence, clause 6: webfont use
-          needs e-mail permission plus this backlink in the landing page footer.
-        */}
-        <div className="max-w-6xl mx-auto px-4 pt-3 text-[11px] text-paper/45">
-          <span>Bengali webfont — </span>
-          <a
-            href="https://lipighor.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-palette-butter transition-colors"
-          >
-            lipighor.com
-          </a>
         </div>
       </div>
     </footer>
