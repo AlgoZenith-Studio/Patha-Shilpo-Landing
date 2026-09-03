@@ -28,61 +28,58 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
   return (
     <header className="sticky top-0 z-40 bg-paper/90 backdrop-blur-md border-b border-borderSoft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-[72px] flex items-center justify-between gap-4">
+        <div className="h-[80px] flex items-center justify-between gap-6">
           {/* Brand */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
+          <Link to="/" className="flex items-center gap-3 shrink-0 group">
             <img
               src="/logo.svg"
               alt="Pathashilpa"
-              className="w-9 h-9 shrink-0 rounded-lg object-contain transition-transform group-hover:scale-105"
+              className="w-10 h-10 shrink-0 rounded-xl object-contain transition-transform group-hover:scale-105"
             />
             <span className="flex flex-col justify-center">
-              <span className="font-rowan font-bold text-lg xl:text-xl leading-none tracking-tight text-palette-espresso whitespace-nowrap">
+              <span className="font-rowan font-bold text-xl xl:text-2xl leading-none tracking-tight text-palette-espresso whitespace-nowrap">
                 PATHASHILPA
               </span>
-              <span className="hidden sm:block font-pally text-[11px] leading-none mt-1.5 text-palette-wood whitespace-nowrap">
+              <span className="hidden sm:block font-pally text-xs leading-none mt-1.5 text-palette-wood whitespace-nowrap">
                 {t('Your craft. Your price. Your name.', 'आपकी कला। आपका दाम। आपका नाम।', 'আপনার শিল্প। আপনার দাম। আপনার নাম।')}
               </span>
             </span>
           </Link>
 
           {/* Desktop navigation */}
-          <nav className="hidden lg:flex items-center h-full">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2.5">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 aria-current={isActive(link.to) ? 'page' : undefined}
-                className={`relative h-full flex items-center px-2.5 text-[13px] xl:text-sm font-medium whitespace-nowrap transition-colors ${
-                  link.wide ? 'hidden xl:flex' : ''
+                className={`relative px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                  link.wide ? 'hidden xl:inline-flex' : 'inline-flex'
                 } ${
                   isActive(link.to)
-                    ? 'text-palette-clay font-semibold'
-                    : 'text-palette-espresso/75 hover:text-palette-clay'
+                    ? 'bg-palette-clay/10 text-palette-clay font-bold shadow-xs'
+                    : 'text-palette-espresso/80 hover:text-palette-espresso hover:bg-palette-sand/20'
                 }`}
               >
                 {t(link.labelEn, link.labelHi, link.labelBn)}
-                {isActive(link.to) && (
-                  <span className="absolute inset-x-2 bottom-0 h-[3px] rounded-t-full bg-palette-clay" />
-                )}
               </Link>
             ))}
           </nav>
 
           {/* Desktop actions */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             {/* Language switcher */}
-            <div className="flex items-center gap-0.5 bg-paperAlt rounded-full p-0.5 border border-palette-sand/60 text-xs font-medium">
+            <div className="flex items-center gap-1 bg-paperAlt/90 rounded-full p-1 border border-palette-sand/70 shadow-xs">
               {LANGUAGES.map((l) => (
                 <button
                   key={l.code}
                   onClick={() => setLanguage(l.code)}
                   aria-pressed={language === l.code}
                   title={l.full}
-                  className={`px-2.5 py-1 rounded-full leading-none transition-colors cursor-pointer select-none ${
+                  className={`px-3 py-1.5 rounded-full leading-none text-xs font-semibold tracking-wide transition-all cursor-pointer select-none ${
                     language === l.code
-                      ? 'bg-palette-espresso text-paper font-semibold'
-                      : 'text-palette-espresso/70 hover:text-palette-espresso'
+                      ? 'bg-palette-espresso text-paper font-semibold shadow-xs'
+                      : 'text-palette-espresso/70 hover:text-palette-espresso hover:bg-black/5'
                   }`}
                 >
                   {l.short}
@@ -93,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
             {/* Primary CTA */}
             <button
               onClick={onOpenDemo}
-              className="inline-flex items-center gap-2 whitespace-nowrap bg-palette-clay hover:bg-palette-clay/90 text-white pl-3.5 pr-4 py-2.5 rounded-full text-[13px] font-semibold leading-none shadow-clay transition-transform hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-2.5 whitespace-nowrap bg-palette-clay hover:bg-palette-clay/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold leading-none shadow-clay transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none"
             >
               <Sparkles className="w-4 h-4 text-palette-butter" />
               <span>{t('AI Demo', 'AI डेमो', 'AI ডেমো')}</span>
