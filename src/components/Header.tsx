@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
           </Link>
 
           {/* Desktop navigation */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2.5">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2.5 font-rowan">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
           </nav>
 
           {/* Desktop actions */}
-          <div className="hidden lg:flex items-center gap-4 shrink-0">
+          <div className="hidden lg:flex items-center gap-4 shrink-0 font-rowan">
             {/* Language switcher */}
             <div className="flex items-center gap-1 bg-paperAlt/90 rounded-full p-1 border border-palette-sand/70 shadow-xs">
               {LANGUAGES.map((l) => (
@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
             {/* Primary CTA */}
             <button
               onClick={onOpenDemo}
-              className="inline-flex items-center gap-2.5 whitespace-nowrap bg-palette-clay hover:bg-palette-clay/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold leading-none shadow-clay transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none"
+              className="inline-flex items-center gap-2.5 whitespace-nowrap bg-palette-clay hover:bg-palette-clay/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold leading-none shadow-clay transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none font-rowan"
             >
               <Sparkles className="w-4 h-4 text-palette-butter" />
               <span>{t('AI Demo', 'AI डेमो', 'AI ডেমো')}</span>

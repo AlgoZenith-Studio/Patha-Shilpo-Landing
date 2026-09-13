@@ -412,7 +412,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
 
       {/* Step selector, captioned with the 90-second promise */}
       <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-        <span className="mr-1 flex items-center gap-1.5 rounded-full border border-palette-sand bg-palette-butter/70 px-2.5 py-1.5 font-mono text-[10px] font-bold text-palette-espresso">
+        <span className="mr-1 flex items-center gap-1.5 rounded-full border border-palette-sand bg-palette-butter/70 px-2.5 py-1.5 font-rowan text-[10px] font-bold text-palette-espresso">
           <span className="text-palette-clay">90s</span>
           {t('total', 'कुल', 'মোট')}
         </span>
@@ -432,7 +432,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
             <s.icon className="h-3 w-3" />
             <span
               className={cn(
-                'overflow-hidden whitespace-nowrap font-mono text-[10px] font-semibold transition-all',
+                'overflow-hidden whitespace-nowrap font-rowan text-[10px] font-semibold transition-all',
                 i === index ? 'max-w-[70px] opacity-100' : 'max-w-0 opacity-0'
               )}
             >
