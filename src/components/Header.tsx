@@ -53,12 +53,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                 key={link.to}
                 to={link.to}
                 aria-current={isActive(link.to) ? 'page' : undefined}
-                className={`relative px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                className={`relative px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ease-out ${
                   link.wide ? 'hidden xl:inline-flex' : 'inline-flex'
                 } ${
                   isActive(link.to)
-                    ? 'bg-palette-clay/10 text-palette-clay font-bold shadow-xs'
-                    : 'text-palette-espresso/80 hover:text-palette-espresso hover:bg-palette-sand/20'
+                    ? 'bg-palette-clay/10 text-palette-clay font-bold shadow-xs scale-[1.02]'
+                    : 'text-palette-espresso/80 hover:text-palette-clay hover:bg-palette-clay/10 hover:-translate-y-0.5 hover:scale-[1.05] hover:shadow-xs active:scale-[0.97]'
                 }`}
               >
                 {t(link.labelEn, link.labelHi, link.labelBn)}
@@ -76,10 +76,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                   onClick={() => setLanguage(l.code)}
                   aria-pressed={language === l.code}
                   title={l.full}
-                  className={`px-3 py-1.5 rounded-full leading-none text-xs font-semibold tracking-wide transition-all cursor-pointer select-none ${
+                  className={`px-3 py-1.5 rounded-full leading-none text-xs font-semibold tracking-wide transition-all duration-200 ease-out cursor-pointer select-none ${
                     language === l.code
-                      ? 'bg-palette-espresso text-paper font-semibold shadow-xs'
-                      : 'text-palette-espresso/70 hover:text-palette-espresso hover:bg-black/5'
+                      ? 'bg-palette-espresso text-paper font-semibold shadow-xs scale-[1.02]'
+                      : 'text-palette-espresso/70 hover:text-palette-espresso hover:bg-palette-clay/15 hover:scale-[1.06] active:scale-[0.95]'
                   }`}
                 >
                   {l.short}
@@ -90,9 +90,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
             {/* Primary CTA */}
             <button
               onClick={onOpenDemo}
-              className="inline-flex items-center gap-2.5 whitespace-nowrap bg-palette-clay hover:bg-palette-clay/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold leading-none shadow-clay transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none font-rowan"
+              className="group inline-flex items-center gap-2.5 whitespace-nowrap bg-palette-clay hover:bg-palette-clay/95 text-white px-5.5 py-2.5 rounded-full text-sm font-semibold leading-none shadow-clay transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.05] hover:shadow-lg hover:shadow-palette-clay/25 active:scale-[0.97] cursor-pointer select-none font-rowan"
             >
-              <Sparkles className="w-4 h-4 text-palette-butter" />
+              <Sparkles className="w-4 h-4 text-palette-butter transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
               <span>{t('AI Demo', 'AI डेमो', 'AI ডেমো')}</span>
             </button>
           </div>
