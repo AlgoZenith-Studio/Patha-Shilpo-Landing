@@ -61,9 +61,13 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             {/* Left Copy */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               {/* Pill Badge */}
-              <div className="inline-flex items-center gap-2 bg-palette-butter/80 text-palette-espresso px-3.5 py-1.5 rounded-full text-xs font-rowan font-semibold border border-palette-sand/60 shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-palette-clay" />
-                <span>{t('Offline-first · Voice-only · Zero commission', 'ऑफलाइन · केवल आवाज़ · शून्य कमीशन', 'অফলাইন · শুধু কণ্ঠস্বর · শূন্য কমিশন')}</span>
+              <div className="inline-flex items-center gap-2.5 sm:gap-3 bg-palette-butter/80 text-palette-espresso px-4 py-1.5 rounded-full text-xs font-rowan font-semibold border border-palette-sand/60 shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-palette-clay shrink-0" />
+                <span>{t('Offline-first', 'ऑफलाइन', 'অফলাইন')}</span>
+                <span className="text-palette-clay/60 text-[10px]">•</span>
+                <span>{t('Voice-only', 'केवल आवाज़', 'শুধু কণ্ঠস্বর')}</span>
+                <span className="text-palette-clay/60 text-[10px]">•</span>
+                <span>{t('Zero commission', 'शून्य कमीशन', 'শূণ্য কমিশন')}</span>
               </div>
 
               {/* H1 Title */}
