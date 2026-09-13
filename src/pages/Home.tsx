@@ -80,7 +80,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               </h1>
 
               {/* Subheading */}
-              <p className="font-sans text-base sm:text-lg text-palette-espresso/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="font-rowan font-medium text-base sm:text-lg text-palette-espresso/95 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 {t(
                   'Pathashilpa turns a photograph and a spoken sentence into a live, fairly priced product listing, in about ninety seconds, even with no internet.',
                   'पाथाशिल्पा एक तस्वीर और एक बोले गए वाक्य को 90 सेकंड में एक लाइव, उचित मूल्य वाली उत्पाद लिस्टिंग में बदल देता है, बिना किसी इंटरनेट के।',
