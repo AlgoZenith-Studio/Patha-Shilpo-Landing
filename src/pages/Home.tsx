@@ -40,7 +40,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
   return (
     <div className="space-y-20 md:space-y-28 overflow-hidden">
       {/* 14.1 HERO SECTION */}
-      <section className="relative overflow-hidden pt-8 md:pt-16 pb-12">
+      <section className="relative overflow-hidden pt-2 sm:pt-3 md:pt-4 pb-6 sm:pb-8 md:pb-10">
         <MediaBackdrop
           src="hero-inkbloom"
           kind="video"
@@ -57,9 +57,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div className="lg:col-span-7 space-y-5 md:space-y-6 text-center lg:text-left lg:-mt-4">
               {/* Pill Badge */}
               <div className="inline-flex items-center gap-2.5 sm:gap-3 bg-palette-butter/80 text-palette-espresso px-4 py-1.5 rounded-full text-xs font-rowan font-semibold border border-palette-sand/60 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-palette-clay shrink-0" />

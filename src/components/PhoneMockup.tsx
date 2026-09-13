@@ -120,7 +120,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
           <Camera className="h-2.5 w-2.5 text-palette-butter" />
           {t('Live viewfinder', 'कैमरा चालू', 'ক্যামেরা চালু')}
         </span>
-        <div className="relative my-1 flex h-44 w-full items-center justify-center">
+        <div className="relative my-1 flex h-36 w-full items-center justify-center">
           {/* framing guides */}
           <span className="absolute inset-4 rounded-lg border border-dashed border-palette-clay/40" />
           <SareeArtwork className="h-full w-full drop-shadow-md" />
@@ -295,7 +295,7 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
           <span className="h-1.5 w-1.5 rounded-full bg-blue-900/60" />
         </div>
 
-        <div className="relative flex h-[620px] flex-col overflow-hidden rounded-[32px] border border-borderSoft bg-paper font-sans text-palette-espresso">
+        <div className="relative flex h-[500px] flex-col overflow-hidden rounded-[32px] border border-borderSoft bg-paper font-sans text-palette-espresso">
           {/* Status bar */}
           <div className="z-20 flex items-center justify-between bg-palette-espresso px-5 pt-3 pb-2 font-mono text-[11px] text-paper/90">
             <span>09:41</span>
