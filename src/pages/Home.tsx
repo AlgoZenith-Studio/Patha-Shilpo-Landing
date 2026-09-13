@@ -308,8 +308,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         </Reveal>
 
         {/* Footnote on Offline Silent Upgrade */}
-        <div className="bg-paperAlt/90 backdrop-blur-sm p-4 rounded-xl border border-palette-sand/50 text-center text-xs text-palette-wood font-mono">
-          ⚡ <strong>{t('Zero Internet Guarantee:', 'ऑफलाइन गारंटी:')}</strong> {t(
+        <div className="bg-paperAlt/90 backdrop-blur-sm p-4 rounded-xl border border-palette-sand/50 text-center text-sm text-palette-wood font-rowan italic tracking-wide">
+          <strong>{t('Zero Internet Guarantee:', 'ऑफलाइन गारंटी:')}</strong> {t(
             'All three steps work with zero network bars. The listing is saved as a live draft and improves silently when you reconnect, and the price never changes.',
             'तीनों चरण बिना इंटरनेट के पूरे होते हैं। नेटवर्क आते ही लिस्टिंग साइलेंटली अपग्रेड होती है, और तय मूल्य कभी नहीं बदलता।'
           )}
