@@ -237,7 +237,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
           <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
             {t('How an Artisan Creates a Listing in 90 Seconds', 'कारीगर 90 सेकंड में लिस्टिंग कैसे बनाता है', '৯০ সেকেন্ডে কারিগর কীভাবে তালিকা তৈরি করেন')}
           </h2>
-          <p className="text-sm text-palette-wood">
+          <p className="font-rowan text-sm text-palette-wood">
             {t(
               'No registration forms, no English typing, and no waiting for urban middlemen.',
               'न कोई जटिल फॉर्म, न अंग्रेज़ी टाइपिंग, न बिचौलियों का इंतज़ार।'
@@ -254,12 +254,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <Camera className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <span className="text-[11px] font-mono text-palette-wood uppercase font-bold">Step 1 · 20 Seconds</span>
+              <span className="text-[13px] font-rowan italic tracking-wide text-palette-wood font-bold">Step 1 · 20 Seconds</span>
               <h3 className="font-lora font-bold text-xl text-palette-espresso">
                 {t('Photograph it', 'तस्वीर लें', 'ছবি তুলুন')}
               </h3>
             </div>
-            <p className="text-xs text-palette-espresso/80 leading-relaxed">
+            <p className="font-rowan font-medium text-base text-palette-espresso/95 leading-relaxed">
               {t(
                 'Point the camera at the loom. The on-device AI automatically inspects blur, fixes exposure, and removes the messy background for an instant studio cutout.',
                 'करघे पर ही कैमरा घुमाएं। फोन पर मौजूद AI अपने आप धुंधलापन जांचता है और स्टूडियो जैसा साफ बैकग्राउंड तैयार करता है।'
@@ -273,12 +273,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <Mic className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <span className="text-[11px] font-mono text-palette-wood uppercase font-bold">Step 2 · 30 Seconds</span>
+              <span className="text-[13px] font-rowan italic tracking-wide text-palette-wood font-bold">Step 2 · 30 Seconds</span>
               <h3 className="font-lora font-bold text-xl text-palette-espresso">
                 {t('Speak about it', 'अपनी भाषा में बोलें', 'নিজের ভাষায় বলুন')}
               </h3>
             </div>
-            <p className="text-xs text-palette-espresso/80 leading-relaxed">
+            <p className="font-rowan font-medium text-base text-palette-espresso/95 leading-relaxed">
               {t(
                 'Describe the piece in Hindi or your regional dialect. Bhashini AI extracts craft details, yarn type, and generates bilingual English & Hindi descriptions automatically.',
                 'अपनी बोली या भाषा में बोलें। भाषिणी AI स्वतः शिल्प, धागे के प्रकार को समझकर अंग्रेज़ी और हिन्दी में पूरा विवरण तैयार कर देता है।'
@@ -292,12 +292,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <Store className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <span className="text-[11px] font-mono text-palette-wood uppercase font-bold">Step 3 · 40 Seconds</span>
+              <span className="text-[13px] font-rowan italic tracking-wide text-palette-wood font-bold">Step 3 · 40 Seconds</span>
               <h3 className="font-lora font-bold text-xl text-palette-espresso">
                 {t('It goes live', 'लाइव प्रकाशित', 'লাইভ প্রকাশিত')}
               </h3>
             </div>
-            <p className="text-xs text-palette-espresso/80 leading-relaxed">
+            <p className="font-rowan font-medium text-base text-palette-espresso/95 leading-relaxed">
               {t(
                 'Calculates a transparent fair price with spoken reasoning. One tap publishes the listing directly to your storefront, GeM portal, and ONDC.',
                 'उचित मूल्य तय करता है और बोलकर कारण समझाता है। एक क्लिक में आपकी दुकान, GeM पोर्टल और ONDC पर प्रकाशित हो जाता है।'
