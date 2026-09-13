@@ -133,7 +133,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
       </section>
 
       {/* 14.2 STAT STRIP (Four Exact PRD Tiles) */}
-      <section className="-mt-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="-mt-8 max-w-[82rem] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
         <div className="bg-white rounded-craft-lg border border-palette-sand/60 p-6 md:p-8 shadow-soft">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-borderSoft">
