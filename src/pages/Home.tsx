@@ -109,16 +109,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
               {/* Trust Line */}
               <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-3.5 text-xs font-rowan font-semibold">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50/90 border border-emerald-200/80 text-emerald-950 shadow-xs transition-transform hover:scale-[1.02]">
-                  <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50/95 border border-emerald-400/80 text-emerald-950 shadow-xs transition-all hover:bg-emerald-100/60 hover:scale-[1.02]">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Built on Bhashini ULCA</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 border border-blue-200/80 text-blue-950 shadow-xs transition-transform hover:scale-[1.02]">
-                  <ShieldCheck className="w-4 h-4 text-blue-700 shrink-0" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/95 border border-blue-400/80 text-blue-950 shadow-xs transition-all hover:bg-blue-100/60 hover:scale-[1.02]">
+                  <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>Publishes to GeM Portal</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50/90 border border-amber-200/80 text-amber-950 shadow-xs transition-transform hover:scale-[1.02]">
-                  <ShieldCheck className="w-4 h-4 text-amber-700 shrink-0" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50/95 border border-amber-400/80 text-amber-950 shadow-xs transition-all hover:bg-amber-100/60 hover:scale-[1.02]">
+                  <ShieldCheck className="w-4 h-4 text-amber-600 shrink-0" />
                   <span>ONDC Open Network</span>
                 </div>
               </div>
