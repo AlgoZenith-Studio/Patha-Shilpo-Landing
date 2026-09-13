@@ -133,16 +133,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
       </section>
 
       {/* 14.2 STAT STRIP (Four Exact PRD Tiles) */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="-mt-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
         <div className="bg-white rounded-craft-lg border border-palette-sand/60 p-6 md:p-8 shadow-soft">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-borderSoft">
             {/* Tile 1 */}
-            <div className="pt-4 sm:pt-0 sm:px-4 first:pl-0 space-y-1 text-center sm:text-left">
+            <div className="pt-4 sm:pt-0 sm:px-4 first:pl-0 space-y-2 text-center sm:text-left">
               <div className="font-rowan font-extrabold text-3xl md:text-4xl text-palette-clay">
                 0.2%
               </div>
-              <p className="text-xs font-semibold text-palette-espresso">
+              <p className="font-rowan text-xs font-semibold text-palette-espresso">
                 {t('of handloom sales happen online', 'हथकरघा बिक्री का केवल ऑनलाइन हिस्सा', 'তাঁত পণ্যের অনলাইন বিক্রির অংশ')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
@@ -151,11 +151,11 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </div>
 
             {/* Tile 2 */}
-            <div className="pt-4 sm:pt-0 sm:px-4 space-y-1 text-center sm:text-left">
+            <div className="pt-4 sm:pt-0 sm:px-4 space-y-2 text-center sm:text-left">
               <div className="font-rowan font-extrabold text-3xl md:text-4xl text-palette-espresso">
                 95.5%
               </div>
-              <p className="text-xs font-semibold text-palette-espresso">
+              <p className="font-rowan text-xs font-semibold text-palette-espresso">
                 {t('rural mobile owners have a smartphone', 'ग्रामीण मोबाइल धारकों के पास स्मार्टफोन', 'গ্রামীণ মোবাইল ব্যবহারকারীর কাছে স্মার্টফোন')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
@@ -164,11 +164,11 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </div>
 
             {/* Tile 3 */}
-            <div className="pt-4 sm:pt-0 sm:px-4 space-y-1 text-center sm:text-left">
+            <div className="pt-4 sm:pt-0 sm:px-4 space-y-2 text-center sm:text-left">
               <div className="font-rowan font-extrabold text-3xl md:text-4xl text-palette-clay">
                 67%
               </div>
-              <p className="text-xs font-semibold text-palette-espresso">
+              <p className="font-rowan text-xs font-semibold text-palette-espresso">
                 {t('handloom households earn under ₹5,000/mo', 'हथकरघा परिवारों की आय ₹5,000/माह से कम', 'তাঁতি পরিবারের মাসিক আয় ₹৫,০০০-এর কম')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
@@ -177,11 +177,11 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             </div>
 
             {/* Tile 4 */}
-            <div className="pt-4 sm:pt-0 sm:px-4 space-y-1 text-center sm:text-left">
+            <div className="pt-4 sm:pt-0 sm:px-4 space-y-2 text-center sm:text-left">
               <div className="font-rowan font-extrabold text-3xl md:text-4xl text-palette-espresso">
                 35.2 Lakh
               </div>
-              <p className="text-xs font-semibold text-palette-espresso">
+              <p className="font-rowan text-xs font-semibold text-palette-espresso">
                 {t('weavers & allied handicraft workers', 'बुनकर एवं संबंधित हस्तशिल्प कर्मी', 'তাঁতি ও সংশ্লিষ্ট হস্তশিল্প কর্মী')}
               </p>
               <span className="text-[10px] text-palette-wood block font-mono">
