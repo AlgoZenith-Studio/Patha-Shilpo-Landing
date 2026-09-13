@@ -61,7 +61,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             {/* Left Copy */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               {/* Pill Badge */}
-              <div className="inline-flex items-center gap-2 bg-palette-butter/80 text-palette-espresso px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold border border-palette-sand/60 shadow-xs">
+              <div className="inline-flex items-center gap-2 bg-palette-butter/80 text-palette-espresso px-3.5 py-1.5 rounded-full text-xs font-rowan font-semibold border border-palette-sand/60 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-palette-clay" />
                 <span>{t('Offline-first · Voice-only · Zero commission', 'ऑफलाइन · केवल आवाज़ · शून्य कमीशन', 'অফলাইন · শুধু কণ্ঠস্বর · শূন্য কমিশন')}</span>
               </div>
