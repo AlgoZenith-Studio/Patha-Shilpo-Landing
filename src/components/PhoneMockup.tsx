@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   LogIn,
+  Users,
   Home,
   MessageSquareText,
   User,
@@ -32,6 +33,17 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
       captionBn: 'কারিগর ফোন লগইন',
       icon: LogIn,
       image: '/app-screens/login.png',
+    },
+    {
+      id: 'roles',
+      labelEn: 'Roles',
+      labelHi: 'भूमिकाएं',
+      labelBn: 'ভূমিকা',
+      captionEn: 'Role Selection & Intent',
+      captionHi: 'भूमिका चयन और उद्देश्य',
+      captionBn: 'ভূমিকা নির্বাচন ও উদ্দেশ্য',
+      icon: Users,
+      image: '/app-screens/roles.png',
     },
     {
       id: 'home',
