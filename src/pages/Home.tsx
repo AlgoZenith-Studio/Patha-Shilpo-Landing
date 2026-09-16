@@ -92,15 +92,15 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <button
                   onClick={onOpenDemo}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-palette-clay hover:bg-palette-clay/90 text-white px-7 py-3.5 rounded-full text-sm font-bold shadow-clay hover:-translate-y-0.5 transition-all"
+                  className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-palette-clay hover:bg-palette-clay/90 hover:brightness-105 text-palette-espresso px-7 py-3.5 rounded-full font-rowan text-xs sm:text-sm font-bold uppercase tracking-wider shadow-clay hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 active:scale-[0.98]"
                 >
-                  <Sparkles className="w-4 h-4 text-palette-butter" />
+                  <Sparkles className="w-4 h-4 text-palette-butter group-hover:scale-110 transition-transform" />
                   <span>{t('Try 90-Second AI Demo', '90-सेकंड AI डेमो आज़माएं', '৯০ সেকেন্ডের AI ডেমো দেখুন')}</span>
                 </button>
 
                 <Link
                   to="/for-artisans"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso px-6 py-3.5 rounded-full text-sm font-semibold border border-palette-sand/80 shadow-xs transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso px-6 py-3.5 rounded-full font-rowan text-xs sm:text-sm font-bold uppercase tracking-wider border border-palette-sand/80 shadow-xs hover:border-palette-sand transition-all duration-200"
                 >
                   <span>{t('For Artisans', 'कारीगरों के लिए', 'কারিগরদের জন্য')}</span>
                   <ArrowRight className="w-4 h-4 text-palette-clay" />
@@ -444,26 +444,26 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               className="bg-white rounded-craft-lg border border-palette-sand/60 overflow-hidden shadow-soft flex flex-col justify-between hover:shadow-lift transition-all"
             >
               <div className="p-6 space-y-4">
-                {/* Cluster Badge */}
-                <div className="flex items-center justify-between">
-                  <span className="bg-palette-butter text-palette-espresso font-mono text-[10px] px-2.5 py-1 rounded-full font-semibold border border-palette-sand/60">
-                    GI: {language === 'hi' ? artisan.clusterHi : artisan.cluster}
+                {/* Cluster Badge & Experience */}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1 bg-palette-butter/80 text-palette-espresso font-rowan text-xs px-3 py-1 rounded-full font-semibold border border-palette-sand/70 truncate max-w-[72%] shadow-xs">
+                    <span className="font-bold text-palette-clay">GI:</span> {language === 'hi' ? artisan.clusterHi : artisan.cluster}
                   </span>
-                  <span className="text-[10px] text-palette-wood font-mono">
+                  <span className="font-rowan text-xs font-semibold text-palette-clay/90 bg-palette-sand/30 px-2.5 py-1 rounded-full whitespace-nowrap shrink-0 border border-palette-sand/50">
                     {artisan.experienceYears} {t('Yrs Exp', 'वर्ष अनुभव')}
                   </span>
                 </div>
 
                 {/* Artisan Profile */}
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-palette-sand/30 border border-palette-clay/40 flex items-center justify-center font-rowan font-bold text-palette-espresso text-base">
+                  <div className="w-12 h-12 rounded-full bg-palette-sand/30 border border-palette-clay/40 flex items-center justify-center font-rowan font-bold text-palette-espresso text-base shrink-0">
                     {artisan.name.charAt(0)}
                   </div>
                   <div>
-                    <h3 className="font-lora font-bold text-lg text-palette-espresso">
+                    <h3 className="font-lora font-bold text-lg text-palette-espresso leading-snug">
                       {language === 'hi' ? artisan.nameHi : artisan.name}
                     </h3>
-                    <p className="text-xs text-palette-wood">
+                    <p className="font-rowan text-xs text-palette-wood font-medium">
                       {language === 'hi' ? artisan.craftHi : artisan.craft}
                     </p>
                   </div>
@@ -477,27 +477,29 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                 </div>
 
                 {/* Sample Live Product */}
-                <div className="border border-palette-sand/40 rounded-xl p-3 bg-paper flex items-center justify-between text-xs font-mono">
-                  <div>
-                    <span className="text-[9px] text-palette-wood uppercase block">Sample Listing</span>
-                    <span className="font-bold text-palette-espresso text-[11px] line-clamp-1">
+                <div className="border border-palette-sand/50 rounded-xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
+                  <div className="min-w-0 flex-1 space-y-0.5">
+                    <span className="font-rowan text-[10px] font-bold uppercase tracking-wider text-palette-wood/80 block">
+                      {t('Sample Listing', 'नमूना लिस्टिंग')}
+                    </span>
+                    <span className="font-rowan font-semibold text-palette-espresso text-xs block truncate">
                       {language === 'hi' ? artisan.sampleProduct.titleHi : artisan.sampleProduct.title}
                     </span>
                   </div>
-                  <div className="font-rowan font-bold text-sm text-palette-clay">
+                  <div className="font-rowan font-bold text-sm text-palette-clay bg-palette-butter/40 px-2.5 py-1 rounded-lg border border-palette-sand/40 shrink-0">
                     ₹{artisan.sampleProduct.price.toLocaleString('en-IN')}
                   </div>
                 </div>
               </div>
 
               {/* Action Button */}
-              <div className="p-4 bg-paperAlt border-t border-borderSoft flex gap-2">
+              <div className="p-3.5 bg-paperAlt/90 border-t border-palette-sand/50">
                 <button
                   onClick={() => setSelectedArtisanForRfq({ name: artisan.name, craft: artisan.craft })}
-                  className="w-full py-2 px-3 rounded-lg bg-palette-clay hover:bg-palette-clay/90 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-xs"
+                  className="group w-full py-2.5 px-4 rounded-full bg-palette-clay hover:bg-palette-clay/90 hover:brightness-105 text-palette-espresso font-rowan font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xs hover:shadow-md transition-all duration-200 active:scale-[0.98]"
                 >
-                  <ShoppingBag className="w-3.5 h-3.5 text-palette-butter" />
-                  <span>{t('Direct RFQ / Connect', 'कोटेशन मांगें / संपर्क करें')}</span>
+                  <ShoppingBag className="w-4 h-4 text-palette-butter shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                  <span className="truncate">{t('Direct RFQ / Connect', 'कोटेशन मांगें / संपर्क करें', 'কোটেশন অনুরোধ / যোগাযোগ')}</span>
                 </button>
               </div>
             </div>
@@ -745,15 +747,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <button
                 onClick={onOpenDemo}
-                className="bg-palette-clay hover:bg-palette-clay/90 text-white font-bold text-xs px-8 py-3.5 rounded-full shadow-clay"
+                className="group inline-flex items-center justify-center gap-2 bg-palette-clay hover:bg-palette-clay/90 hover:brightness-105 text-palette-espresso font-rowan font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-full shadow-clay hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 active:scale-[0.98]"
               >
-                {t('Explore Crafts & Try Demo', 'शिल्प देखें एवं डेमो चलाएं')}
+                <Sparkles className="w-4 h-4 text-palette-butter group-hover:scale-110 transition-transform" />
+                <span>{t('Explore Crafts & Try Demo', 'शिल्प देखें एवं डेमो चलाएं', 'শিল্প দেখুন এবং ডেমো দিন')}</span>
               </button>
               <Link
                 to="/contact"
-                className="bg-white hover:bg-paperAlt text-palette-espresso font-semibold text-xs px-8 py-3.5 rounded-full border border-palette-sand"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso font-rowan font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-full border border-palette-sand shadow-xs hover:border-palette-sand/80 transition-all duration-200"
               >
-                {t('Partner With Us', 'हमारे साथ भागीदार बनें')}
+                <span>{t('Partner With Us', 'हमारे साथ भागीदार बनें', 'আমাদের সাথে অংশীদার হন')}</span>
               </Link>
             </div>
           </div>

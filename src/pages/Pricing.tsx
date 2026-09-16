@@ -137,19 +137,19 @@ export const Pricing: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <button className="w-full py-2.5 rounded-full border border-palette-sand text-palette-espresso font-semibold text-xs hover:bg-paperAlt">
+            <button className="w-full py-2.5 rounded-xl border border-palette-sand/80 text-palette-espresso font-rowan font-bold text-xs uppercase tracking-wider hover:bg-paperAlt hover:border-palette-sand transition-all duration-200 active:scale-[0.98]">
               Explore Storefront
             </button>
           </div>
 
           {/* B2B / Boutique Tier (Highlighted) */}
           <div className="bg-white rounded-craft p-6 border-2 border-palette-clay shadow-lift space-y-6 flex flex-col justify-between relative">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-palette-clay text-white text-[9px] font-mono uppercase px-3 py-1 rounded-full font-bold tracking-wider">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-palette-clay text-white text-[9px] font-rowan uppercase px-3 py-1 rounded-full font-bold tracking-wider">
               Popular for Boutiques
             </div>
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-xs font-mono uppercase text-palette-clay font-bold">B2B Exporters & Brands</span>
+                <span className="text-xs font-rowan uppercase text-palette-clay font-bold tracking-wider">B2B Exporters & Brands</span>
                 <h3 className="font-lora font-bold text-xl text-palette-espresso">Cluster Direct B2B</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-clay pt-2">
                   ₹2,499 <span className="text-xs font-sans text-palette-wood font-normal">/ month</span>
@@ -174,7 +174,7 @@ export const Pricing: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <button className="w-full py-2.5 rounded-full bg-palette-clay text-white font-bold text-xs hover:bg-palette-clay/90 shadow-clay">
+            <button className="w-full py-2.5 rounded-xl bg-palette-clay hover:bg-palette-espresso text-white font-rowan font-bold text-xs uppercase tracking-wider shadow-clay hover:shadow-md transition-all duration-200 active:scale-[0.98]">
               Start 14-Day Free Trial
             </button>
           </div>
@@ -183,7 +183,7 @@ export const Pricing: React.FC = () => {
           <div className="bg-white rounded-craft p-6 border border-palette-sand/60 shadow-soft space-y-6 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-xs font-mono uppercase text-palette-wood font-bold">Government & GeM</span>
+                <span className="text-xs font-rowan uppercase text-palette-wood font-bold tracking-wider">Government & GeM</span>
                 <h3 className="font-lora font-bold text-xl text-palette-espresso">Institutional Rail</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-espresso pt-2">Custom</div>
               </div>
@@ -202,7 +202,7 @@ export const Pricing: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <button className="w-full py-2.5 rounded-full border border-palette-sand text-palette-espresso font-semibold text-xs hover:bg-paperAlt">
+            <button className="w-full py-2.5 rounded-xl border border-palette-sand/80 text-palette-espresso font-rowan font-bold text-xs uppercase tracking-wider hover:bg-paperAlt hover:border-palette-sand transition-all duration-200 active:scale-[0.98]">
               Request Institutional Desk
             </button>
           </div>
