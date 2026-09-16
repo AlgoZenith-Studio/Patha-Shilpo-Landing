@@ -76,7 +76,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <div className="flex items-center gap-3 mb-4">
         <div
           className={cn(
-            'w-11 h-11 shrink-0 rounded-full flex items-center justify-center font-rowan font-bold text-base',
+            'w-11 h-11 shrink-0 rounded-full flex items-center justify-center font-rowan font-bold text-base shadow-xs',
             isCenter
               ? 'bg-palette-butter text-palette-espresso'
               : 'bg-palette-sand/30 text-palette-espresso border border-palette-clay/40'
@@ -86,10 +86,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         </div>
         <span
           className={cn(
-            'font-mono text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded-full',
+            'font-rowan text-xs uppercase tracking-wider font-bold px-2.5 py-1 rounded-full border',
             isCenter
-              ? 'bg-white/10 text-palette-butter'
-              : 'bg-paperAlt text-palette-wood'
+              ? 'bg-white/10 text-palette-butter border-palette-sand/30'
+              : 'bg-paperAlt text-palette-wood border-palette-sand/40'
           )}
         >
           {isArtisan ? t('Artisan', 'कारीगर', 'কারিগর') : t('Buyer', 'खरीदार', 'ক্রেতা')}
@@ -115,7 +115,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <div className="absolute bottom-7 left-7 right-7 sm:bottom-8 sm:left-8 sm:right-8">
         <div
           className={cn(
-            'font-lora font-bold text-sm',
+            'font-rowan font-bold text-base sm:text-lg tracking-wide',
             isCenter ? 'text-palette-butter' : 'text-palette-espresso'
           )}
         >
@@ -123,8 +123,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         </div>
         <div
           className={cn(
-            'font-mono text-[10px] mt-0.5 leading-tight',
-            isCenter ? 'text-paper/70' : 'text-palette-wood'
+            'font-rowan font-semibold text-xs sm:text-sm mt-1 leading-normal tracking-wide',
+            isCenter ? 'text-palette-sand/90' : 'text-palette-wood'
           )}
         >
           {title}

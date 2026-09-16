@@ -519,7 +519,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
               {t('What Artisans and Buyers Say', 'कारीगर और खरीदार क्या कहते हैं', 'কারিগর ও ক্রেতারা কী বলেন')}
             </h2>
-            <p className="text-sm text-palette-wood">
+            <p className="font-rowan text-sm text-palette-wood font-medium">
               {t(
                 'Tap any card to bring it forward, or use the arrows to move through the stack.',
                 'किसी भी कार्ड पर टैप करें या तीरों से आगे-पीछे जाएं।'
