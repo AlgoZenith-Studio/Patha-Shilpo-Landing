@@ -203,7 +203,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 relative z-10">
-          <span className="font-mono text-xs uppercase tracking-widest text-palette-sand font-bold">
+          <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-sand">
             {t('The Foundational Insight', 'मौलिक दृष्टिकोण', 'মূল উপলব্ধি')}
           </span>
           <blockquote className="font-rowan text-2xl sm:text-3xl md:text-4xl font-normal leading-relaxed text-paper">
@@ -231,7 +231,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+          <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
             {t('The 3-Action Workflow', '3 सरल चरण', '৩টি সহজ ধাপ')}
           </span>
           <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
@@ -321,7 +321,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+          <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
             {t('Core Differentiators', '5 मुख्य अंतर', 'মূল পার্থক্য')}
           </span>
           <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
@@ -419,7 +419,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+            <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
               {t('Verified Indigenous Clusters', 'सत्यापित स्वदेशी क्लस्टर', 'যাচাইকৃত দেশীয় ক্লাস্টার')}
             </span>
             <h2 className="font-rowan font-bold text-3xl text-palette-espresso">
@@ -511,7 +511,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+            <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
               {t('Voices From the Cluster', 'क्लस्टर की आवाज़ें', 'ক্লাস্টারের কণ্ঠস্বর')}
             </span>
             <h2 className="font-rowan font-bold text-3xl sm:text-4xl text-palette-espresso">
@@ -547,8 +547,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <Reveal>
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
-            {t('Capability Matrix', 'सटीक तुलना', 'সক্ষমতার তুলনা')}
+          <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
+            {t('Capability Matrix', 'सटीक तुलना', 'सक्षमতার তুলনা')}
           </span>
           <h2 className="font-rowan font-bold text-3xl text-palette-espresso">
             {t('How Pathashilpa Compares to Legacy Platforms', 'पारंपरिक प्लेटफॉर्म्स से तुलना', 'প্রচলিত প্ল্যাটফর্মের সঙ্গে তুলনা')}
@@ -641,7 +641,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               scrim="bg-gradient-to-br from-paper/85 via-paper/75 to-paper/60"
             />
             <div className="relative space-y-4">
-              <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+              <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
                 {t('For Rural Artisans & Weavers', 'ग्रामीण कारीगरों व बुनकरों के लिए', 'গ্রামীণ কারিগর ও তাঁতিদের জন্য')}
               </span>
               <h3 className="font-rowan font-bold text-2xl text-palette-espresso">
@@ -682,7 +682,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               scrim="bg-gradient-to-br from-palette-espresso/85 via-palette-espresso/80 to-neutral-900/90"
             />
             <div className="relative space-y-4">
-              <span className="text-xs font-mono uppercase text-palette-sand font-bold tracking-wider">
+              <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-sand">
                 {t('For Retail & Institutional Buyers', 'खरीदारों व सरकारी एजेंसियों के लिए', 'খুচরা ও প্রাতিষ্ঠানিক ক্রেতাদের জন্য')}
               </span>
               <h3 className="font-rowan font-bold text-2xl text-paper">
@@ -726,7 +726,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             scrim="bg-gradient-to-br from-palette-butter/75 via-paper/80 to-palette-sand/45"
           />
           <div className="relative space-y-6">
-            <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+            <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
               {t('Smart India Hackathon 2026 Innovation', 'स्मार्ट इंडिया हैकाथॉन 2026')}
             </span>
             <blockquote className="font-rowan text-2xl sm:text-3xl md:text-4xl font-bold text-palette-espresso max-w-2xl mx-auto leading-snug">

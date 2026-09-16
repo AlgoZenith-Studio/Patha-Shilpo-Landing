@@ -41,7 +41,7 @@ export const Pricing: React.FC = () => {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-widest">
+        <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
           {t('Transparent Economics', 'पारदर्शी मूल्य नीति')}
         </span>
         <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
@@ -105,7 +105,7 @@ export const Pricing: React.FC = () => {
       {/* SECTION 3: BUYER TIERS TABLE */}
       <section className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+          <span className="font-rowan text-sm sm:text-base font-bold uppercase tracking-widest text-palette-clay">
             {t('Buyer Ecosystem', 'खरीदार योजनाएं')}
           </span>
           <h2 className="font-rowan font-bold text-3xl text-palette-espresso">
