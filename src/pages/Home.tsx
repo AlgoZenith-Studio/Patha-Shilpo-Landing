@@ -533,8 +533,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
         {/* Sample-content label, per the same standard applied to press coverage */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="flex items-center justify-center gap-2 text-[11px] font-mono text-palette-wood text-center">
-            <AlertTriangle className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
+          <p className="flex items-center justify-center gap-2 font-rowan font-medium text-sm sm:text-base italic text-palette-wood text-center">
+            <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
             <span>
               {t(
                 'Illustrative pilot feedback shown for Smart India Hackathon 2026 demonstration purposes.',
