@@ -340,7 +340,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <h3 className="font-lora font-bold text-lg text-palette-espresso">
               {t('1. Offline-First AI', '1. ऑफलाइन-प्रथम AI')}
             </h3>
-            <p className="text-xs text-palette-wood leading-relaxed">
+            <p className="font-rowan font-semibold text-sm sm:text-base text-palette-espresso leading-relaxed">
               {t(
                 'Complete listing creation works fully without internet. Self-resuming queue uploads under 400 KB payloads on 2G/patchy signal.',
                 'पूरी लिस्टिंग बिना इंटरनेट के बनती है। नेटवर्क आते ही 400 KB से कम का डेटा अपने आप सिंक हो जाता है।'
@@ -356,7 +356,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <h3 className="font-lora font-bold text-lg text-palette-espresso">
               {t('2. Voice-Only Workflow', '2. केवल आवाज़ से संचालन')}
             </h3>
-            <p className="text-xs text-palette-wood leading-relaxed">
+            <p className="font-rowan font-semibold text-sm sm:text-base text-palette-espresso leading-relaxed">
               {t(
                 'Zero typing at any step. Speaks natural Hindi and dialect; Bhashini STT translates and formats titles, tags, and catalog attributes.',
                 'किसी भी चरण में टाइपिंग की आवश्यकता नहीं। अपनी प्राकृतिक बोली में बोलें; AI सभी विवरण खुद तैयार करता है।'
@@ -372,7 +372,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <h3 className="font-lora font-bold text-lg text-palette-espresso">
               {t('3. Explained Pricing', '3. कारण सहित उचित मूल्य')}
             </h3>
-            <p className="text-xs text-palette-wood leading-relaxed">
+            <p className="font-rowan font-semibold text-sm sm:text-base text-palette-espresso leading-relaxed">
               {t(
                 'Shows why, not just the number. An audible breakdown of material cost + labor hours prevents artisans from ever selling below cost.',
                 'केवल एक संख्या नहीं, बल्कि पूरा कारण। कच्चा माल + मजदूरी का हिसाब बोलकर सुनाता है ताकि कभी घाटा न हो।'
@@ -388,7 +388,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <h3 className="font-lora font-bold text-lg text-palette-espresso">
               {t('4. Story as Listing Data', '4. कारीगर की पहचान उत्पाद के साथ')}
             </h3>
-            <p className="text-xs text-palette-wood leading-relaxed">
+            <p className="font-rowan font-semibold text-sm sm:text-base text-palette-espresso leading-relaxed">
               {t(
                 'Maker identity, cluster location, and authentic GI verification tag travel permanently with every product listing.',
                 'कारीगर का चेहरा, क्लस्टर का नाम और जीआई टैग हर उत्पाद के साथ हमेशा जुड़ा रहता है।'
@@ -404,7 +404,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <h3 className="font-lora font-bold text-lg text-palette-espresso">
               {t('5. One Record, All Public Channels', '5. एक रिकॉर्ड, सभी सार्वजनिक नेटवर्क')}
             </h3>
-            <p className="text-xs text-palette-wood leading-relaxed">
+            <p className="font-rowan font-semibold text-sm sm:text-base text-palette-espresso leading-relaxed">
               {t(
                 'Publish once to syndicate across the public artisan storefront, GeM government procurement rails, and the ONDC decentralized network simultaneously.',
                 'एक बार लिस्टिंग बनाएं और वह आपकी अपनी दुकान, सरकारी GeM पोर्टल और ONDC नेटवर्क पर एक साथ लाइव हो जाती है।'
