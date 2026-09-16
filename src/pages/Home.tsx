@@ -469,9 +469,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                   </div>
                 </div>
 
-                {/* Artisan Story in Kalam Font */}
+                {/* Artisan Story in Rowan Font - Subtle Professional Vibrancy */}
                 <div className="bg-paperAlt p-3.5 rounded-xl border border-borderSoft">
-                  <p className="font-pally text-sm text-palette-espresso leading-relaxed">
+                  <p className="font-rowan font-medium text-base text-palette-wood leading-relaxed">
                     "{language === 'hi' ? artisan.storyHi : artisan.story}"
                   </p>
                 </div>
