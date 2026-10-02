@@ -559,66 +559,90 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         </Reveal>
 
         <Reveal delay={120}>
-        <div className="overflow-x-auto bg-white rounded-craft-lg border border-palette-sand/60 shadow-soft">
-          <table className="w-full text-xs text-left border-collapse min-w-[600px]">
+        <div className="overflow-x-auto bg-white rounded-craft-lg border border-palette-sand/70 shadow-soft">
+          <table className="w-full text-xs sm:text-sm text-left border-collapse min-w-[640px] font-rowan">
             <thead>
-              <tr className="border-b border-borderSoft bg-paperAlt font-mono">
-                <th className="p-4 font-bold text-palette-espresso">Capability / Feature</th>
-                <th className="p-4 font-bold text-palette-clay bg-palette-butter/50 border-x border-palette-sand/60">
+              <tr className="border-b border-palette-sand/60 bg-paperAlt/90 font-rowan">
+                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-espresso">
+                  {t('Capability / Feature', 'क्षमता / सुविधा', 'ক্ষমতা / বৈশিষ্ট্য')}
+                </th>
+                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-clay bg-palette-butter/60 border-x border-palette-sand/70">
                   ★ Pathashilpa
                 </th>
-                <th className="p-4 text-palette-wood">Amazon Karigar / Flipkart</th>
-                <th className="p-4 text-palette-wood">Traditional Middleman</th>
+                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood/90">
+                  Amazon Karigar / Flipkart
+                </th>
+                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood/90">
+                  Traditional Middleman
+                </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-borderSoft text-palette-espresso">
-              <tr>
-                <td className="p-4 font-medium">100% Offline Listing Creation</td>
-                <td className="p-4 bg-palette-butter/30 border-x border-palette-sand/40 font-bold text-emerald-800 flex items-center gap-1">
-                  <Check className="w-4 h-4 text-emerald-600" /> Yes (On-Device AI)
+            <tbody className="divide-y divide-palette-sand/40 text-palette-espresso font-rowan">
+              <tr className="hover:bg-paperAlt/40 transition-colors">
+                <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">100% Offline Listing Creation</td>
+                <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
+                  <div className="flex items-center gap-1.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>Yes (On-Device AI)</span>
+                  </div>
                 </td>
-                <td className="p-4 text-palette-wood">No (Requires high-speed web)</td>
-                <td className="p-4 text-palette-wood">Paper ledger</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Requires high-speed web)</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Paper ledger</td>
               </tr>
-              <tr>
-                <td className="p-4 font-medium">Voice-Only (No English Typing)</td>
-                <td className="p-4 bg-palette-butter/30 border-x border-palette-sand/40 font-bold text-emerald-800 flex items-center gap-1">
-                  <Check className="w-4 h-4 text-emerald-600" /> Yes (Bhashini STT)
+              <tr className="hover:bg-paperAlt/40 transition-colors">
+                <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Voice-Only (No English Typing)</td>
+                <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
+                  <div className="flex items-center gap-1.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>Yes (Bhashini STT)</span>
+                  </div>
                 </td>
-                <td className="p-4 text-palette-wood">No (Complex forms)</td>
-                <td className="p-4 text-palette-wood">Verbal haggling</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Complex forms)</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Verbal haggling</td>
               </tr>
-              <tr>
-                <td className="p-4 font-medium">Explained Cost Floor Guarantee</td>
-                <td className="p-4 bg-palette-butter/30 border-x border-palette-sand/40 font-bold text-emerald-800 flex items-center gap-1">
-                  <Check className="w-4 h-4 text-emerald-600" /> Yes (Spoken Rationale)
+              <tr className="hover:bg-paperAlt/40 transition-colors">
+                <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Explained Cost Floor Guarantee</td>
+                <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
+                  <div className="flex items-center gap-1.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>Yes (Spoken Rationale)</span>
+                  </div>
                 </td>
-                <td className="p-4 text-palette-wood">No (Algorithm discount cuts)</td>
-                <td className="p-4 text-palette-wood">Prices depressed at will</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Algorithm discount cuts)</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Prices depressed at will</td>
               </tr>
-              <tr>
-                <td className="p-4 font-medium">Artisan Commission Fee</td>
-                <td className="p-4 bg-palette-butter/30 border-x border-palette-sand/40 font-bold text-emerald-800 flex items-center gap-1">
-                  <Check className="w-4 h-4 text-emerald-600" /> ₹0 (Free Forever)
+              <tr className="hover:bg-paperAlt/40 transition-colors">
+                <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Artisan Commission Fee</td>
+                <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
+                  <div className="flex items-center gap-1.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>₹0 (Free Forever)</span>
+                  </div>
                 </td>
-                <td className="p-4 text-palette-wood">15% - 28% Platform fee</td>
-                <td className="p-4 text-palette-wood">40% - 60% Margin markup</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">15% - 28% Platform fee</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">40% - 60% Margin markup</td>
               </tr>
-              <tr>
-                <td className="p-4 font-medium">GI Provenance Attached to Product</td>
-                <td className="p-4 bg-palette-butter/30 border-x border-palette-sand/40 font-bold text-emerald-800 flex items-center gap-1">
-                  <Check className="w-4 h-4 text-emerald-600" /> Yes (Maker Identity Stays)
+              <tr className="hover:bg-paperAlt/40 transition-colors">
+                <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">GI Provenance Attached to Product</td>
+                <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
+                  <div className="flex items-center gap-1.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>Yes (Maker Identity Stays)</span>
+                  </div>
                 </td>
-                <td className="p-4 text-palette-wood">No (Anonymous SKU)</td>
-                <td className="p-4 text-palette-wood">Trader claims origin</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Anonymous SKU)</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Trader claims origin</td>
               </tr>
-              <tr>
-                <td className="p-4 font-medium">Public Channel Syndication (GeM + ONDC)</td>
-                <td className="p-4 bg-palette-butter/30 border-x border-palette-sand/40 font-bold text-emerald-800 flex items-center gap-1">
-                  <Check className="w-4 h-4 text-emerald-600" /> Yes (One Record, All Rails)
+              <tr className="hover:bg-paperAlt/40 transition-colors">
+                <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Public Channel Syndication (GeM + ONDC)</td>
+                <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
+                  <div className="flex items-center gap-1.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>Yes (One Record, All Rails)</span>
+                  </div>
                 </td>
-                <td className="p-4 text-palette-wood">No (Walled Garden Lock-in)</td>
-                <td className="p-4 text-palette-wood">Physical melas only</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Walled Garden Lock-in)</td>
+                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Physical melas only</td>
               </tr>
             </tbody>
           </table>
