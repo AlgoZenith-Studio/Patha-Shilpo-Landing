@@ -563,16 +563,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
           <table className="w-full text-xs sm:text-sm text-left border-collapse min-w-[640px] font-rowan">
             <thead>
               <tr className="border-b border-palette-sand/70 bg-paperAlt font-rowan">
-                <th className="p-4 sm:p-5 font-rowan font-extrabold text-xs sm:text-sm uppercase tracking-wider text-palette-espresso">
-                  {t('Capability / Feature', 'क्षमता / सुविधा', 'ক্ষমতা / বৈশিষ্ট্য')}
+                <th className="w-[34%] p-4 sm:p-5 font-rowan font-extrabold text-xs sm:text-sm uppercase tracking-wider text-palette-espresso">
+                  {t('Capability / Feature', 'क्षमता / सुविधा', 'ক্ষমता / বৈশিষ্ট্য')}
                 </th>
-                <th className="p-4 sm:p-5 font-rowan font-extrabold text-xs sm:text-sm uppercase tracking-wider text-palette-clay bg-palette-butter/60 border-x border-palette-sand/70">
+                <th className="w-[24%] p-4 sm:p-5 font-rowan font-extrabold text-xs sm:text-sm uppercase tracking-wider text-palette-clay bg-palette-butter/60 border-x border-palette-sand/70">
                   ★ Pathashilpa
                 </th>
-                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood">
+                <th className="w-[20%] px-3 sm:px-4 py-4 sm:py-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood border-r border-palette-sand/60">
                   Amazon Karigar / Flipkart
                 </th>
-                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood">
+                <th className="w-[22%] p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood">
                   Traditional Middleman
                 </th>
               </tr>
@@ -586,7 +586,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (On-Device AI)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Requires high-speed web)</td>
+                <td className="px-3 sm:px-4 py-4 sm:py-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood border-r border-palette-sand/50">No (Requires high-speed web)</td>
                 <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Paper ledger</td>
               </tr>
               <tr className="hover:bg-paperAlt/50 transition-colors">
@@ -597,7 +597,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (Bhashini STT)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Complex forms)</td>
+                <td className="px-3 sm:px-4 py-4 sm:py-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood border-r border-palette-sand/50">No (Complex forms)</td>
                 <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Verbal haggling</td>
               </tr>
               <tr className="hover:bg-paperAlt/50 transition-colors">
@@ -608,7 +608,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (Spoken Rationale)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Algorithm discount cuts)</td>
+                <td className="px-3 sm:px-4 py-4 sm:py-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood border-r border-palette-sand/50">No (Algorithm discount cuts)</td>
                 <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Prices depressed at will</td>
               </tr>
               <tr className="hover:bg-paperAlt/50 transition-colors">
@@ -619,7 +619,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>₹0 (Free Forever)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">15% - 28% Platform fee</td>
+                <td className="px-3 sm:px-4 py-4 sm:py-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood border-r border-palette-sand/50">15% - 28% Platform fee</td>
                 <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">40% - 60% Margin markup</td>
               </tr>
               <tr className="hover:bg-paperAlt/50 transition-colors">
@@ -630,7 +630,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (Maker Identity Stays)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Anonymous SKU)</td>
+                <td className="px-3 sm:px-4 py-4 sm:py-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood border-r border-palette-sand/50">No (Anonymous SKU)</td>
                 <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Trader claims origin</td>
               </tr>
               <tr className="hover:bg-paperAlt/50 transition-colors">
@@ -641,7 +641,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (One Record, All Rails)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Walled Garden Lock-in)</td>
+                <td className="px-3 sm:px-4 py-4 sm:py-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood border-r border-palette-sand/50">No (Walled Garden Lock-in)</td>
                 <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Physical melas only</td>
               </tr>
             </tbody>
