@@ -562,23 +562,23 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
         <div className="overflow-x-auto bg-white rounded-craft-lg border border-palette-sand/70 shadow-soft">
           <table className="w-full text-xs sm:text-sm text-left border-collapse min-w-[640px] font-rowan">
             <thead>
-              <tr className="border-b border-palette-sand/60 bg-paperAlt/90 font-rowan">
-                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-espresso">
+              <tr className="border-b border-palette-sand/70 bg-paperAlt font-rowan">
+                <th className="p-4 sm:p-5 font-rowan font-extrabold text-xs sm:text-sm uppercase tracking-wider text-palette-espresso">
                   {t('Capability / Feature', 'क्षमता / सुविधा', 'ক্ষমতা / বৈশিষ্ট্য')}
                 </th>
-                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-clay bg-palette-butter/60 border-x border-palette-sand/70">
+                <th className="p-4 sm:p-5 font-rowan font-extrabold text-xs sm:text-sm uppercase tracking-wider text-palette-clay bg-palette-butter/60 border-x border-palette-sand/70">
                   ★ Pathashilpa
                 </th>
-                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood/90">
+                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood">
                   Amazon Karigar / Flipkart
                 </th>
-                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood/90">
+                <th className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider text-palette-wood">
                   Traditional Middleman
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-palette-sand/40 text-palette-espresso font-rowan">
-              <tr className="hover:bg-paperAlt/40 transition-colors">
+            <tbody className="divide-y divide-palette-sand/50 font-rowan">
+              <tr className="hover:bg-paperAlt/50 transition-colors">
                 <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">100% Offline Listing Creation</td>
                 <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
                   <div className="flex items-center gap-1.5">
@@ -586,10 +586,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (On-Device AI)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Requires high-speed web)</td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Paper ledger</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Requires high-speed web)</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Paper ledger</td>
               </tr>
-              <tr className="hover:bg-paperAlt/40 transition-colors">
+              <tr className="hover:bg-paperAlt/50 transition-colors">
                 <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Voice-Only (No English Typing)</td>
                 <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
                   <div className="flex items-center gap-1.5">
@@ -597,10 +597,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (Bhashini STT)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Complex forms)</td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Verbal haggling</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Complex forms)</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Verbal haggling</td>
               </tr>
-              <tr className="hover:bg-paperAlt/40 transition-colors">
+              <tr className="hover:bg-paperAlt/50 transition-colors">
                 <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Explained Cost Floor Guarantee</td>
                 <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
                   <div className="flex items-center gap-1.5">
@@ -608,10 +608,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (Spoken Rationale)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Algorithm discount cuts)</td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Prices depressed at will</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Algorithm discount cuts)</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Prices depressed at will</td>
               </tr>
-              <tr className="hover:bg-paperAlt/40 transition-colors">
+              <tr className="hover:bg-paperAlt/50 transition-colors">
                 <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Artisan Commission Fee</td>
                 <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
                   <div className="flex items-center gap-1.5">
@@ -619,10 +619,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>₹0 (Free Forever)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">15% - 28% Platform fee</td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">40% - 60% Margin markup</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">15% - 28% Platform fee</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">40% - 60% Margin markup</td>
               </tr>
-              <tr className="hover:bg-paperAlt/40 transition-colors">
+              <tr className="hover:bg-paperAlt/50 transition-colors">
                 <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">GI Provenance Attached to Product</td>
                 <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
                   <div className="flex items-center gap-1.5">
@@ -630,10 +630,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (Maker Identity Stays)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Anonymous SKU)</td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Trader claims origin</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Anonymous SKU)</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Trader claims origin</td>
               </tr>
-              <tr className="hover:bg-paperAlt/40 transition-colors">
+              <tr className="hover:bg-paperAlt/50 transition-colors">
                 <td className="p-4 sm:p-5 font-rowan font-bold text-xs sm:text-sm text-palette-espresso">Public Channel Syndication (GeM + ONDC)</td>
                 <td className="p-4 sm:p-5 bg-palette-butter/30 border-x border-palette-sand/50 font-rowan font-bold text-xs sm:text-sm text-emerald-800">
                   <div className="flex items-center gap-1.5">
@@ -641,8 +641,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     <span>Yes (One Record, All Rails)</span>
                   </div>
                 </td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">No (Walled Garden Lock-in)</td>
-                <td className="p-4 sm:p-5 font-rowan text-xs sm:text-sm text-palette-wood">Physical melas only</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">No (Walled Garden Lock-in)</td>
+                <td className="p-4 sm:p-5 font-rowan font-medium text-xs sm:text-sm text-palette-wood">Physical melas only</td>
               </tr>
             </tbody>
           </table>
