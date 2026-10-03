@@ -673,7 +673,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <h3 className="font-rowan font-bold text-2xl text-palette-espresso">
                 {t('Sell Without Typing. Sell at Your Fair Price.', 'बिना टाइपिंग के बेचें। अपने तय दाम पर बेचें।', 'টাইপ না করেই বিক্রি করুন। নিজের ন্যায্য দামে বিক্রি করুন।')}
               </h3>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-palette-espresso/80 font-rowan font-medium">
+              <ul className="space-y-2.5 text-xs sm:text-sm text-palette-wood font-rowan font-medium">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-palette-clay flex-shrink-0" />
                   <span>{t('Zero commission taken: you keep 100% of your earnings.', 'कोई कमीशन नहीं: आपकी 100% कमाई आपकी।')}</span>
