@@ -76,10 +76,10 @@ export const ForBuyers: React.FC = () => {
               <div className="w-10 h-10 rounded-xl bg-palette-butter flex items-center justify-center text-palette-clay font-bold">
                 <Icon className="w-5 h-5" />
               </div>
-              <h3 className="font-lora font-bold text-lg text-palette-espresso">
+              <h3 className="font-rowan font-bold text-lg text-palette-espresso">
                 {t(p.titleEn, p.titleHi)}
               </h3>
-              <p className="text-xs text-palette-wood leading-relaxed">
+              <p className="font-rowan font-medium text-xs sm:text-sm text-palette-wood leading-relaxed">
                 {t(p.descEn, p.descHi)}
               </p>
             </div>

@@ -120,10 +120,10 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {artisanBenefits.map((b, idx) => (
             <div key={idx} className="bg-white rounded-craft p-6 border border-palette-sand/60 shadow-soft space-y-3">
-              <h3 className="font-lora font-bold text-lg text-palette-espresso">
+              <h3 className="font-rowan font-bold text-lg text-palette-espresso">
                 {t(b.titleEn, b.titleHi)}
               </h3>
-              <p className="text-xs text-palette-wood leading-relaxed">
+              <p className="font-rowan font-medium text-xs sm:text-sm text-palette-wood leading-relaxed">
                 {t(b.descEn, b.descHi)}
               </p>
             </div>

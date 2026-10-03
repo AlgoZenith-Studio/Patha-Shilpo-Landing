@@ -57,10 +57,10 @@ export const RfqModal: React.FC<RfqModalProps> = ({
               <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 mx-auto flex items-center justify-center shadow-soft">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="font-lora font-bold text-xl text-palette-espresso">
+              <h4 className="font-rowan font-bold text-xl text-palette-espresso">
                 {t('Inquiry Sent Directly to Cluster!', 'पूछताछ सीधे क्लस्टर तक पहुंच गई!')}
               </h4>
-              <p className="text-xs text-palette-wood max-w-sm mx-auto leading-relaxed">
+              <p className="font-rowan font-medium text-xs sm:text-sm text-palette-wood max-w-sm mx-auto leading-relaxed">
                 {t(
                   'The cluster coordinator will review your request. Since artisans operate made-to-order, you will receive guaranteed GI provenance and batch timelines within 24 hours.',
                   'क्लस्टर समन्वयक आपके अनुरोध की समीक्षा करेगा। चूँकि कारीगर मांग पर उत्पादन करते हैं, आपको 24 घंटे के भीतर सत्यापित जीआई प्रमाणन और समय-सीमा प्राप्त होगी।'
@@ -71,13 +71,13 @@ export const RfqModal: React.FC<RfqModalProps> = ({
                   setSubmitted(false);
                   onClose();
                 }}
-                className="bg-palette-clay hover:bg-palette-clay/90 text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-clay"
+                className="bg-palette-clay hover:bg-palette-clay/90 text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-clay font-rowan"
               >
                 {t('Close Window', 'विंडो बंद करें')}
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+            <form onSubmit={handleSubmit} className="space-y-4 text-xs font-rowan">
               {/* Buyer Type Selector */}
               <div className="space-y-1.5">
                 <label className="font-mono uppercase font-bold text-palette-wood text-[10px]">

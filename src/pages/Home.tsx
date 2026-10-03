@@ -673,7 +673,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <h3 className="font-rowan font-bold text-2xl text-palette-espresso">
                 {t('Sell Without Typing. Sell at Your Fair Price.', 'बिना टाइपिंग के बेचें। अपने तय दाम पर बेचें।', 'টাইপ না করেই বিক্রি করুন। নিজের ন্যায্য দামে বিক্রি করুন।')}
               </h3>
-              <ul className="space-y-2.5 text-xs text-palette-espresso/80">
+              <ul className="space-y-2.5 text-xs sm:text-sm text-palette-espresso/80 font-rowan font-medium">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-palette-clay flex-shrink-0" />
                   <span>{t('Zero commission taken: you keep 100% of your earnings.', 'कोई कमीशन नहीं: आपकी 100% कमाई आपकी।')}</span>
@@ -691,7 +691,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
             <Link
               to="/for-artisans"
-              className="relative inline-flex items-center justify-center gap-2 bg-palette-clay hover:bg-palette-clay/90 text-white py-3 px-6 rounded-full text-xs font-bold shadow-clay"
+              className="relative inline-flex items-center justify-center gap-2 bg-palette-clay hover:bg-palette-clay/90 text-white py-3 px-6 rounded-full text-xs sm:text-sm font-rowan font-bold shadow-clay"
             >
               <span>{t('Artisan Guide & App Details', 'कारीगर मार्गदर्शिका व ऐप')}</span>
               <ArrowRight className="w-4 h-4" />
@@ -714,7 +714,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <h3 className="font-rowan font-bold text-2xl text-paper">
                 {t('100% Verified GI Provenance. Direct Maker Contact.', 'शत-प्रतिशत प्रमाणित जीआई हस्तशिल्प। सीधा कारीगर संपर्क।', '১০০% যাচাইকৃত GI উৎস। সরাসরি কারিগরের সঙ্গে যোগাযোগ।')}
               </h3>
-              <ul className="space-y-2.5 text-xs text-paper/80">
+              <ul className="space-y-2.5 text-xs sm:text-sm text-paper/80 font-rowan font-medium">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-palette-sand flex-shrink-0" />
                   <span>{t('Direct made-to-order procurement with verified cluster identity.', 'सीधा कारीगर से ऑर्डर पर निर्माण, शून्य मिलावट।')}</span>
@@ -732,7 +732,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
             <Link
               to="/for-buyers"
-              className="relative inline-flex items-center justify-center gap-2 bg-palette-sand hover:bg-palette-sand/90 text-palette-espresso py-3 px-6 rounded-full text-xs font-bold shadow-sm"
+              className="relative inline-flex items-center justify-center gap-2 bg-palette-sand hover:bg-palette-sand/90 text-palette-espresso py-3 px-6 rounded-full text-xs sm:text-sm font-rowan font-bold shadow-sm"
             >
               <span>{t('Buyer RFQ & Provenance Portal', 'खरीदार पोर्टल एवं कोटेशन')}</span>
               <ArrowRight className="w-4 h-4" />
