@@ -107,12 +107,12 @@ export const SdgSection: React.FC = () => {
                     >
                       {goal.number}
                     </span>
-                    <h3 className="font-lora font-bold text-base leading-tight text-palette-espresso">
+                    <h3 className="font-rowan font-bold text-base sm:text-lg leading-tight text-palette-espresso">
                       {pick({ en: goal.titleEn, hi: goal.titleHi, bn: goal.titleBn })}
                     </h3>
                   </div>
 
-                  <p className="text-xs leading-relaxed text-palette-espresso/75">
+                  <p className="font-rowan font-medium text-xs sm:text-sm leading-relaxed text-palette-wood">
                     {pick({ en: goal.mechanismEn, hi: goal.mechanismHi, bn: goal.mechanismBn })}
                   </p>
                 </div>
