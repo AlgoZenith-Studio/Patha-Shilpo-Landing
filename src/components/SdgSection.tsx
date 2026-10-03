@@ -36,8 +36,8 @@ export const SdgSection: React.FC = () => {
     <section className="relative overflow-hidden border-y border-palette-sand/40 bg-paperAlt/50 py-16 md:py-24">
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Heading */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="inline-flex items-center gap-2 text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="inline-flex items-center gap-2 text-xs font-rowan uppercase text-palette-clay font-extrabold tracking-wider">
             <Globe2 className="w-4 h-4" />
             {t('United Nations Global Goals', 'संयुक्त राष्ट्र वैश्विक लक्ष्य', 'জাতিসংঘের বৈশ্বিক লক্ষ্য')}
           </span>
@@ -48,7 +48,7 @@ export const SdgSection: React.FC = () => {
               'ছয়টি লক্ষ্য, পণ্যের ভিত্তিতেই'
             )}
           </h2>
-          <p className="text-sm text-palette-espresso/75">
+          <p className="font-rowan font-semibold text-sm sm:text-base text-palette-clay">
             {t(
               'Not a statement of intent — each goal below names the specific mechanism that advances it.',
               'केवल इरादा नहीं — हर लक्ष्य के साथ वह ठोस तरीका दिया गया है जिससे वह पूरा होता है।',
@@ -121,7 +121,7 @@ export const SdgSection: React.FC = () => {
           })}
         </div>
 
-        <p className="text-center text-[11px] font-mono text-palette-espresso/60">
+        <p className="text-center text-xs sm:text-sm font-rowan font-semibold text-palette-clay">
           {t(
             'Goal names and colours are those of the UN Sustainable Development Goals. Pathashilpa is not affiliated with or endorsed by the United Nations.',
             'लक्ष्यों के नाम एवं रंग संयुक्त राष्ट्र सतत विकास लक्ष्यों के हैं। पाथाशिल्पा का संयुक्त राष्ट्र से कोई संबंध या अनुमोदन नहीं है।',
