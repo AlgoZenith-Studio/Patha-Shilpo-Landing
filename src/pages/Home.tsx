@@ -762,7 +762,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                 'প্রতিটি প্রতিদ্বন্দ্বী শুরু করে সার্ভার থেকে। আমরা শুরু করি কারিগরের হাত থেকে।'
               )}"
             </blockquote>
-            <p className="text-xs text-palette-wood max-w-md mx-auto">
+            <p className="font-rowan font-medium text-xs sm:text-sm text-palette-wood max-w-md mx-auto">
               {t(
                 'Join us in bringing 35.2 lakh rural artisans into the formal digital economy without making them type a single word.',
                 '35.2 लाख ग्रामीण कारीगरों को बिना एक भी शब्द टाइप कराए डिजिटल अर्थव्यवस्था से जोड़ने के हमारे मिशन में शामिल हों।'
