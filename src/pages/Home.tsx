@@ -771,16 +771,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <button
                 onClick={onOpenDemo}
-                className="group inline-flex items-center justify-center gap-2 bg-palette-clay hover:bg-palette-clay/90 hover:brightness-105 text-palette-espresso font-rowan font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-full shadow-clay hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-2 bg-palette-clay hover:bg-palette-clay/90 hover:brightness-105 text-palette-espresso font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-3.5 rounded-full shadow-clay hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 active:scale-[0.98]"
               >
                 <Sparkles className="w-4 h-4 text-palette-butter group-hover:scale-110 transition-transform" />
-                <span>{t('Explore Crafts & Try Demo', 'शिल्प देखें एवं डेमो चलाएं', 'শিল্প দেখুন এবং ডেমো দিন')}</span>
+                <span className="font-rowan font-bold">{t('Explore Crafts & Try Demo', 'शिल्प देखें एवं डेमो चलाएं', 'শিল্প দেখুন এবং ডেমো দিন')}</span>
               </button>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso font-rowan font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-full border border-palette-sand shadow-xs hover:border-palette-sand/80 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso font-rowan font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-3.5 rounded-full border border-palette-sand shadow-xs hover:border-palette-sand/80 transition-all duration-200"
               >
-                <span>{t('Partner With Us', 'हमारे साथ भागीदार बनें', 'আমাদের সাথে অংশীদার হন')}</span>
+                <span className="font-rowan font-bold">{t('Partner With Us', 'हमारे साथ भागीदार बनें', 'আমাদের সাথে অংশীদার হন')}</span>
               </Link>
             </div>
           </div>
