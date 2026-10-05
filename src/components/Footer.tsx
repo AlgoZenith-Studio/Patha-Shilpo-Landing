@@ -23,16 +23,16 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-paper/60">{t('Language:', 'भाषा:', 'ভাষা:')}</span>
+            <span className="font-rowan font-medium text-xs sm:text-sm text-paper/75">{t('Language:', 'भाषा:', 'ভাষা:')}</span>
             <div className="flex items-center gap-1.5 bg-white/10 rounded-full p-1 border border-white/20 shadow-inner">
               {LANGUAGES.map((l) => (
                 <button
                   key={l.code}
                   onClick={() => setLanguage(l.code)}
                   aria-pressed={language === l.code}
-                  className={`px-3.5 py-1.5 rounded-full transition-all text-xs font-medium cursor-pointer select-none ${
+                  className={`px-3.5 py-1.5 rounded-full transition-all text-xs sm:text-sm font-rowan font-medium cursor-pointer select-none ${
                     language === l.code
-                      ? 'bg-palette-clay text-white font-semibold shadow-xs'
+                      ? 'bg-palette-clay text-white font-bold shadow-xs'
                       : 'text-paper/75 hover:text-white hover:bg-white/10'
                   }`}
                 >
