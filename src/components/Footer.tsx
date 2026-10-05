@@ -30,10 +30,10 @@ export const Footer: React.FC = () => {
                   key={l.code}
                   onClick={() => setLanguage(l.code)}
                   aria-pressed={language === l.code}
-                  className={`px-3.5 py-1.5 rounded-full transition-all text-xs sm:text-sm font-rowan font-medium cursor-pointer select-none ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-rowan font-medium cursor-pointer select-none transition-none ${
                     language === l.code
                       ? 'bg-palette-clay text-white font-bold shadow-xs'
-                      : 'text-paper/75 hover:text-white hover:bg-white/10'
+                      : 'text-paper/75 hover:bg-palette-clay hover:text-white hover:shadow-xs'
                   }`}
                 >
                   {l.full}

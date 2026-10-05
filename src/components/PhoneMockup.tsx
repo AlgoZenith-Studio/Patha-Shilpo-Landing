@@ -183,13 +183,13 @@ export const PhoneMockup: React.FC<{ interactive?: boolean }> = ({ interactive =
               aria-label={t(s.labelEn, s.labelHi, s.labelBn)}
               aria-current={isSelected}
               className={cn(
-                'group flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-rowan text-xs font-semibold transition-all duration-200 cursor-pointer select-none',
+                'group flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-rowan text-xs font-semibold transition-none cursor-pointer select-none',
                 isSelected
-                  ? 'border-palette-clay bg-palette-clay text-white shadow-clay scale-[1.05]'
-                  : 'border-palette-sand/70 bg-white/90 text-palette-espresso/80 hover:border-palette-clay/80 hover:bg-palette-butter/40 hover:scale-[1.02]'
+                  ? 'border-palette-clay bg-palette-clay text-white shadow-clay'
+                  : 'border-palette-sand/70 bg-white/90 text-palette-espresso/80 hover:border-palette-clay hover:bg-palette-clay hover:text-white'
               )}
             >
-              <Icon className={cn('h-3.5 w-3.5', isSelected ? 'text-palette-butter' : 'text-palette-clay')} />
+              <Icon className={cn('h-3.5 w-3.5 transition-none', isSelected ? 'text-palette-butter' : 'text-palette-clay group-hover:text-palette-butter')} />
               <span>{t(s.labelEn, s.labelHi, s.labelBn)}</span>
             </button>
           );

@@ -76,10 +76,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
                   onClick={() => setLanguage(l.code)}
                   aria-pressed={language === l.code}
                   title={l.full}
-                  className={`h-8 px-3.5 inline-flex items-center justify-center rounded-full leading-none text-xs font-semibold tracking-wide transition-all duration-200 ease-out cursor-pointer select-none ${
+                  className={`h-8 px-3.5 inline-flex items-center justify-center rounded-full leading-none text-xs font-semibold tracking-wide cursor-pointer select-none transition-none ${
                     language === l.code
-                      ? 'bg-palette-espresso text-paper font-semibold shadow-xs scale-[1.02]'
-                      : 'text-palette-espresso/70 hover:text-palette-espresso hover:bg-palette-clay/15 hover:scale-[1.06] active:scale-[0.95]'
+                      ? 'bg-palette-espresso text-paper font-semibold shadow-xs'
+                      : 'text-palette-espresso/70 hover:bg-palette-espresso hover:text-paper hover:shadow-xs'
                   }`}
                 >
                   {l.short}
