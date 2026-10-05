@@ -12,8 +12,8 @@ export const Footer: React.FC = () => {
       <div className="border-b border-white/10 bg-black/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2">
-            <Award className="w-3.5 h-3.5 text-palette-sand" />
-            <span className="text-paper/75">
+            <Award className="w-4 h-4 text-palette-sand shrink-0" />
+            <span className="font-rowan font-medium text-xs sm:text-sm tracking-wide text-paper/85">
               {t(
                 'AI-driven market linkage for India’s rural artisan clusters',
                 'भारत के ग्रामीण कारीगर क्लस्टरों के लिए AI आधारित बाज़ार पहुँच',
