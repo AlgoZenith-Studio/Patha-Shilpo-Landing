@@ -58,10 +58,10 @@ export const Footer: React.FC = () => {
               PATHASHILPA
             </span>
           </div>
-          <p className="font-pally text-lg text-palette-butter">
+          <p className="font-rowan font-semibold italic text-lg text-palette-butter">
             "{t('Your craft. Your price. Your name.', 'आपकी कला। आपका दाम। आपका नाम।', 'আপনার শিল্প। আপনার দাম। আপনার নাম।')}"
           </p>
-          <p className="text-sm text-paper/75 leading-relaxed max-w-sm">
+          <p className="font-rowan text-sm text-paper/75 leading-relaxed max-w-sm">
             {t(
               'The smart cataloging layer that converts a single photograph and spoken sentence into a published, verified product listing, working offline-first for 35.2 lakh rural Indian artisans.',
               'स्मार्ट कैटलॉगिंग लेयर जो एक तस्वीर और बोले गए वाक्य को प्रकाशित, सत्यापित उत्पाद लिस्टिंग में बदल देती है, 35.2 लाख ग्रामीण भारतीय कारीगरों के लिए ऑफलाइन-प्रथम कार्य करती है।',
@@ -76,10 +76,10 @@ export const Footer: React.FC = () => {
 
         {/* Column 1: Product */}
         <div className="space-y-3">
-          <h3 className="font-lora font-semibold text-palette-sand text-sm uppercase tracking-wider">
+          <h3 className="font-rowan font-bold text-palette-sand text-sm uppercase tracking-wider">
             {t('Product', 'उत्पाद', 'পণ্য')}
           </h3>
-          <ul className="space-y-2 text-sm text-paper/80">
+          <ul className="space-y-2 text-sm text-paper/80 font-rowan font-medium">
             <li>
               <Link to="/how-it-works" className="hover:text-palette-butter transition-colors">
                 {t('How It Works', 'यह कैसे काम करता है', 'কীভাবে কাজ করে')}
@@ -105,10 +105,10 @@ export const Footer: React.FC = () => {
 
         {/* Column 2: For Artisans */}
         <div className="space-y-3">
-          <h3 className="font-lora font-semibold text-palette-sand text-sm uppercase tracking-wider">
+          <h3 className="font-rowan font-bold text-palette-sand text-sm uppercase tracking-wider">
             {t('For Artisans', 'कारीगरों के लिए', 'কারিগরদের জন্য')}
           </h3>
-          <ul className="space-y-2 text-sm text-paper/80">
+          <ul className="space-y-2 text-sm text-paper/80 font-rowan font-medium">
             <li>
               <Link to="/for-artisans" className="hover:text-palette-butter transition-colors">
                 {t('Artisan Benefits', 'कारीगरों के लाभ', 'কারিগরদের সুবিধা')}
@@ -134,10 +134,10 @@ export const Footer: React.FC = () => {
 
         {/* Column 3: Legal & Company */}
         <div className="space-y-3">
-          <h3 className="font-lora font-semibold text-palette-sand text-sm uppercase tracking-wider">
+          <h3 className="font-rowan font-bold text-palette-sand text-sm uppercase tracking-wider">
             {t('Company & Legal', 'संस्था एवं नीतियां', 'সংস্থা ও আইনি')}
           </h3>
-          <ul className="space-y-2 text-sm text-paper/80">
+          <ul className="space-y-2 text-sm text-paper/80 font-rowan font-medium">
             <li>
               <Link to="/about" className="hover:text-palette-butter transition-colors">
                 {t('About & 0.2% Story', 'हमारे बारे में और 0.2% कहानी')}
@@ -173,7 +173,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-palette-wood/20 py-6 text-center text-xs text-paper/60">
+      <div className="border-t border-palette-wood/20 py-6 text-center text-xs text-paper/60 font-rowan font-medium">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p>© 2026 Pathashilpa. All rights reserved.</p>
           <p className="flex items-center gap-1">
