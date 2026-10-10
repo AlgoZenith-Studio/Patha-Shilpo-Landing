@@ -210,33 +210,39 @@ export const Pricing: React.FC = () => {
       </section>
 
       {/* SECTION 4: PRICING FAQ */}
-      <section className="bg-white rounded-craft-lg border border-palette-sand/60 p-6 md:p-8 shadow-soft space-y-6">
-        <div className="flex items-center gap-2 text-palette-clay font-mono text-xs font-bold uppercase tracking-wider">
-          <HelpCircle className="w-4 h-4" />
+      <section className="bg-white rounded-craft-lg border border-palette-sand/60 p-5 md:p-7 shadow-soft space-y-5">
+        <div className="flex items-center gap-2 text-palette-clay font-rowan text-xs font-bold uppercase tracking-wider">
+          <HelpCircle className="w-4 h-4 text-palette-clay" />
           <span>{t('Pricing FAQs', 'मूल्य संबंधित प्रश्न')}</span>
         </div>
-        <h3 className="font-rowan font-bold text-2xl text-palette-espresso">
+        <h3 className="font-rowan font-bold text-xl md:text-2xl text-palette-espresso">
           {t('Frequently Asked Questions on Pricing', 'अक्सर पूछे जाने वाले प्रश्न')}
         </h3>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {pricingFaqs.map((faq, idx) => (
-            <div key={idx} className="border border-borderSoft rounded-xl overflow-hidden">
+            <div key={idx} className="border border-palette-sand/50 rounded-xl overflow-hidden">
               <button
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                className="w-full p-4 text-left flex items-center justify-between gap-4 bg-paper hover:bg-paperAlt transition-colors"
+                className="w-full px-4 py-3 sm:px-5 sm:py-3.5 text-left flex items-center justify-between gap-3 bg-paper hover:bg-paperAlt transition-colors group cursor-pointer"
               >
-                <span className="font-rowan font-bold text-sm text-palette-espresso">
+                <span className="font-rowan font-bold text-sm sm:text-base text-palette-espresso flex-1 pr-2">
                   {t(faq.qEn, faq.qHi)}
                 </span>
-                {openFaq === idx ? (
-                  <ChevronUp className="w-4 h-4 text-palette-clay flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-palette-wood flex-shrink-0" />
-                )}
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all ${
+                  openFaq === idx 
+                    ? 'bg-palette-clay text-white border-palette-clay shadow-sm' 
+                    : 'bg-palette-butter/80 text-palette-espresso border-palette-sand/70 shadow-xs group-hover:scale-105'
+                }`}>
+                  {openFaq === idx ? (
+                    <ChevronUp className="w-4 h-4 stroke-[2]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 stroke-[2]" />
+                  )}
+                </div>
               </button>
               {openFaq === idx && (
-                <div className="p-4 bg-white border-t border-borderSoft text-xs font-rowan font-bold text-palette-clay leading-relaxed">
+                <div className="px-4 py-3 sm:px-5 sm:py-4 bg-paperAlt/40 border-t border-palette-sand/40 text-xs sm:text-sm font-rowan font-bold text-palette-clay leading-relaxed">
                   {t(faq.aEn, faq.aHi)}
                 </div>
               )}

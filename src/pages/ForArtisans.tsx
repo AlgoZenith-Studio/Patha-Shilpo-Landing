@@ -166,42 +166,48 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
       </section>
 
       {/* BILINGUAL FAQ */}
-      <section id="faq" className="bg-white rounded-craft-lg border border-palette-sand/60 p-6 md:p-8 shadow-soft space-y-6 scroll-mt-24">
-        <div className="flex items-center gap-2 text-palette-clay font-mono text-xs font-bold uppercase tracking-wider">
-          <HelpCircle className="w-4 h-4" />
+      <section id="faq" className="bg-white rounded-craft-lg border border-palette-sand/60 p-5 md:p-7 shadow-soft space-y-5 scroll-mt-24">
+        <div className="flex items-center gap-2 text-palette-clay font-rowan text-xs font-bold uppercase tracking-wider">
+          <HelpCircle className="w-4 h-4 text-palette-clay" />
           <span>{t('Artisan Questions & Answers', 'कारीगर प्रश्नोत्तरी')}</span>
         </div>
-        <h3 className="font-rowan font-bold text-2xl text-palette-espresso">
+        <h3 className="font-rowan font-bold text-xl md:text-2xl text-palette-espresso">
           {t('Common Questions Asked by Weavers', 'बुनकरों के मन में उठने वाले सवाल')}
         </h3>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {ARTISAN_FAQS.map((faq, idx) => (
-            <div key={idx} className="border border-borderSoft rounded-xl overflow-hidden">
+            <div key={idx} className="border border-palette-sand/50 rounded-xl overflow-hidden transition-all duration-200">
               <button
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                className="w-full p-4 text-left flex items-center justify-between gap-4 bg-paper hover:bg-paperAlt transition-colors"
+                className="w-full px-4 py-3 sm:px-5 sm:py-3.5 text-left flex items-center justify-between gap-3 bg-paper hover:bg-paperAlt transition-colors group cursor-pointer"
               >
-                <div className="space-y-1">
-                  <span className="font-rowan font-bold text-sm text-palette-espresso block">
+                <div className="space-y-0.5 flex-1 pr-2">
+                  <span className="font-rowan font-bold text-sm sm:text-base text-palette-espresso block leading-snug">
                     {faq.qHi}
                   </span>
-                  <span className="text-xs font-rowan text-palette-wood block italic">
+                  <span className="font-rowan font-bold text-xs sm:text-sm text-palette-clay block leading-snug">
                     {faq.qEn}
                   </span>
                 </div>
-                {openFaq === idx ? (
-                  <ChevronUp className="w-4 h-4 text-palette-clay flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-palette-wood flex-shrink-0" />
-                )}
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all ${
+                  openFaq === idx 
+                    ? 'bg-palette-clay text-white border-palette-clay shadow-sm' 
+                    : 'bg-palette-butter/80 text-palette-espresso border-palette-sand/70 shadow-xs group-hover:scale-105'
+                }`}>
+                  {openFaq === idx ? (
+                    <ChevronUp className="w-4 h-4 stroke-[2]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 stroke-[2]" />
+                  )}
+                </div>
               </button>
               {openFaq === idx && (
-                <div className="p-4 bg-white border-t border-borderSoft text-xs space-y-2 leading-relaxed">
-                  <p className="font-rowan font-bold text-palette-espresso">
+                <div className="px-4 py-3 sm:px-5 sm:py-4 bg-paperAlt/40 border-t border-palette-sand/40 space-y-2 leading-relaxed font-rowan animate-fadeIn">
+                  <p className="font-rowan font-bold text-palette-espresso text-xs sm:text-sm">
                     {faq.aHi}
                   </p>
-                  <p className="font-rowan font-bold text-palette-clay italic border-t border-borderSoft/60 pt-2">
+                  <p className="font-rowan font-bold text-palette-clay text-xs sm:text-sm border-t border-palette-sand/30 pt-2">
                     {faq.aEn}
                   </p>
                 </div>
