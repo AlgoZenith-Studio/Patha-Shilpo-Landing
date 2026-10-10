@@ -17,7 +17,7 @@ export const OfflineSyncEngineVisualizer: React.FC = () => {
     <div className="bg-white rounded-craft-lg border border-palette-sand/60 p-6 md:p-8 shadow-soft space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-borderSoft pb-4">
         <div>
-          <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-wider">
+          <span className="font-rowan text-xs sm:text-sm font-bold uppercase tracking-widest text-palette-clay">
             {t('Core Architecture Differentiator', 'मुख्य तकनीकी विशेषता')}
           </span>
           <h3 className="font-lora font-bold text-xl md:text-2xl text-palette-espresso">
