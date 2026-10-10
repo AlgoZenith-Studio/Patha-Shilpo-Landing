@@ -70,7 +70,7 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
       {/* Hero */}
       <div className="bg-gradient-to-br from-palette-butter/50 via-white to-palette-sand/20 rounded-craft-lg border-2 border-palette-sand p-8 md:p-12 shadow-soft space-y-6">
         <div className="max-w-3xl space-y-4">
-          <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-widest">
+          <span className="text-xs font-rowan font-bold uppercase text-palette-clay tracking-widest">
             {t('For Rural Weavers & Artisans', 'कारीगरों एवं बुनकरों के लिए')}
           </span>
           <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
@@ -79,7 +79,7 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
           <p className="font-pally text-xl text-palette-clay">
             "{t('No typing, no paperwork, and zero commission, ever.', 'न लिखना, न कागज़ात, न कोई कमीशन, कभी नहीं।')}"
           </p>
-          <p className="text-xs sm:text-sm text-palette-espresso/80 leading-relaxed">
+          <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
             {t(
               'Pathashilpa is built specifically for Indian artisans who want to sell their own handloom and handicraft products without depending on village middlemen or learning complicated English computers.',
               'पाथाशिल्पा विशेष रूप से उन भारतीय कारीगरों के लिए बना है जो बिना किसी बिचौलिए के अपने फोन से सीधे अपनी कला बेचना चाहते हैं।'
