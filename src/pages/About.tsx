@@ -20,8 +20,8 @@ export const About: React.FC = () => {
       {/* THE 0.2% INSIGHT SECTION */}
       <section className="bg-white rounded-craft-lg border border-palette-sand/60 p-8 md:p-12 shadow-soft space-y-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-4 text-xs sm:text-sm text-palette-espresso/85 leading-relaxed">
-            <h2 className="font-lora font-bold text-2xl text-palette-espresso">
+          <div className="lg:col-span-7 space-y-4 text-xs sm:text-sm font-rowan font-bold text-palette-clay leading-relaxed">
+            <h2 className="font-rowan font-bold text-2xl text-palette-espresso">
               {t('A Contrast of Two Realities', 'दो वास्तविकताओं का विरोधाभास')}
             </h2>
             <p>
@@ -46,7 +46,7 @@ export const About: React.FC = () => {
             <p className="text-xs font-semibold text-palette-espresso">
               Rural Smartphone Ownership
             </p>
-            <p className="text-[11px] font-pally text-palette-clay">
+            <p className="text-[11px] font-rowan font-bold text-palette-clay">
               "The device is there. What was missing was the software."
             </p>
           </div>
@@ -65,23 +65,23 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-paper/80 leading-relaxed font-sans">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-rowan font-bold text-paper/90 leading-relaxed">
           <div className="space-y-2 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-lora font-bold text-base text-palette-sand">Problem Statement</h4>
+            <h4 className="font-rowan font-bold text-base text-palette-sand">Problem Statement</h4>
             <p>
               AI-Driven Market Linkage and Smart Cataloging Mobile Application for Marginalized Rural Artisans.
             </p>
           </div>
 
           <div className="space-y-2 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-lora font-bold text-base text-palette-sand">Open Public Rails</h4>
+            <h4 className="font-rowan font-bold text-base text-palette-sand">Open Public Rails</h4>
             <p>
               Built directly on Bhashini ULCA speech models, publishing natively into the ONDC open network and GeM portal.
             </p>
           </div>
 
           <div className="space-y-2 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-lora font-bold text-base text-palette-sand">Core Target Metric</h4>
+            <h4 className="font-rowan font-bold text-base text-palette-sand">Core Target Metric</h4>
             <p>
               Listing completion rate &gt; 80% with time-to-publish under 3 minutes on low-end ₹6,000 Android devices.
             </p>

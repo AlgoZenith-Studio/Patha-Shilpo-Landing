@@ -24,10 +24,10 @@ export const PricingCalculator: React.FC = () => {
             <Calculator className="w-4 h-4" />
             <span>{t('Open Pricing Formula Engine', 'खुला मूल्य निर्धारण फॉर्मूला इंजन')}</span>
           </div>
-          <h3 className="font-lora font-bold text-2xl text-palette-espresso">
+          <h3 className="font-rowan font-bold text-2xl text-palette-espresso">
             {t('Calculate Defensible, Fair Craft Pricing', 'पारदर्शी एवं उचित कारीगर मूल्य की गणना करें')}
           </h3>
-          <p className="text-xs text-palette-wood mt-1">
+          <p className="font-rowan font-bold text-palette-clay text-xs mt-1">
             {t(
               'Deterministic formulas guarantee the artisan never undersells, while buyers understand the true economic value.',
               'निश्चित फॉर्मूला यह सुनिश्चित करता है कि कारीगर कभी नुकसान में न बेचे, और खरीदार वास्तविक मूल्य समझे।'

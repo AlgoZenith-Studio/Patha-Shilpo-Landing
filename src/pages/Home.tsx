@@ -254,12 +254,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <Camera className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <span className="text-[13px] font-rowan italic tracking-wide text-palette-wood font-bold">Step 1 · 20 Seconds</span>
-              <h3 className="font-lora font-bold text-xl text-palette-espresso">
+              <span className="text-[13px] font-rowan italic tracking-wide text-palette-clay font-bold">Step 1 · 20 Seconds</span>
+              <h3 className="font-rowan font-bold text-xl text-palette-espresso">
                 {t('Photograph it', 'तस्वीर लें', 'ছবি তুলুন')}
               </h3>
             </div>
-            <p className="font-rowan font-medium text-base text-palette-espresso/95 leading-relaxed">
+            <p className="font-rowan font-bold text-sm sm:text-base text-palette-clay leading-relaxed">
               {t(
                 'Point the camera at the loom. The on-device AI automatically inspects blur, fixes exposure, and removes the messy background for an instant studio cutout.',
                 'करघे पर ही कैमरा घुमाएं। फोन पर मौजूद AI अपने आप धुंधलापन जांचता है और स्टूडियो जैसा साफ बैकग्राउंड तैयार करता है।'
@@ -273,12 +273,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <Mic className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <span className="text-[13px] font-rowan italic tracking-wide text-palette-wood font-bold">Step 2 · 30 Seconds</span>
-              <h3 className="font-lora font-bold text-xl text-palette-espresso">
+              <span className="text-[13px] font-rowan italic tracking-wide text-palette-clay font-bold">Step 2 · 30 Seconds</span>
+              <h3 className="font-rowan font-bold text-xl text-palette-espresso">
                 {t('Speak about it', 'अपनी भाषा में बोलें', 'নিজের ভাষায় বলুন')}
               </h3>
             </div>
-            <p className="font-rowan font-medium text-base text-palette-espresso/95 leading-relaxed">
+            <p className="font-rowan font-bold text-sm sm:text-base text-palette-clay leading-relaxed">
               {t(
                 'Describe the piece in Hindi or your regional dialect. Bhashini AI extracts craft details, yarn type, and generates bilingual English & Hindi descriptions automatically.',
                 'अपनी बोली या भाषा में बोलें। भाषिणी AI स्वतः शिल्प, धागे के प्रकार को समझकर अंग्रेज़ी और हिन्दी में पूरा विवरण तैयार कर देता है।'
@@ -292,12 +292,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
               <Store className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <span className="text-[13px] font-rowan italic tracking-wide text-palette-wood font-bold">Step 3 · 40 Seconds</span>
-              <h3 className="font-lora font-bold text-xl text-palette-espresso">
+              <span className="text-[13px] font-rowan italic tracking-wide text-palette-clay font-bold">Step 3 · 40 Seconds</span>
+              <h3 className="font-rowan font-bold text-xl text-palette-espresso">
                 {t('It goes live', 'लाइव प्रकाशित', 'লাইভ প্রকাশিত')}
               </h3>
             </div>
-            <p className="font-rowan font-medium text-base text-palette-espresso/95 leading-relaxed">
+            <p className="font-rowan font-bold text-sm sm:text-base text-palette-clay leading-relaxed">
               {t(
                 'Calculates a transparent fair price with spoken reasoning. One tap publishes the listing directly to your storefront, GeM portal, and ONDC.',
                 'उचित मूल्य तय करता है और बोलकर कारण समझाता है। एक क्लिक में आपकी दुकान, GeM पोर्टल और ONDC पर प्रकाशित हो जाता है।'
@@ -337,10 +337,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="w-8 h-8 rounded-lg bg-palette-butter text-palette-espresso flex items-center justify-center font-bold text-xs font-mono">
               01
             </div>
-            <h3 className="font-lora font-bold text-xl text-palette-espresso">
+            <h3 className="font-rowan font-bold text-xl text-palette-espresso">
               {t('1. Offline-First AI', '1. ऑफलाइन-प्रथम AI')}
             </h3>
-            <p className="font-rowan font-medium text-sm sm:text-base text-palette-espresso/85 leading-relaxed">
+            <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
               {t(
                 'Complete listing creation works fully without internet. Self-resuming queue uploads under 400 KB payloads on 2G/patchy signal.',
                 'पूरी लिस्टिंग बिना इंटरनेट के बनती है। नेटवर्क आते ही 400 KB से कम का डेटा अपने आप सिंक हो जाता है।'
@@ -353,10 +353,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="w-8 h-8 rounded-lg bg-palette-butter text-palette-espresso flex items-center justify-center font-bold text-xs font-mono">
               02
             </div>
-            <h3 className="font-lora font-bold text-xl text-palette-espresso">
+            <h3 className="font-rowan font-bold text-xl text-palette-espresso">
               {t('2. Voice-Only Workflow', '2. केवल आवाज़ से संचालन')}
             </h3>
-            <p className="font-rowan font-medium text-sm sm:text-base text-palette-espresso/85 leading-relaxed">
+            <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
               {t(
                 'Zero typing at any step. Speaks natural Hindi and dialect; Bhashini STT translates and formats titles, tags, and catalog attributes.',
                 'किसी भी चरण में टाइपिंग की आवश्यकता नहीं। अपनी प्राकृतिक बोली में बोलें; AI सभी विवरण खुद तैयार करता है।'
@@ -369,10 +369,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="w-8 h-8 rounded-lg bg-palette-butter text-palette-espresso flex items-center justify-center font-bold text-xs font-mono">
               03
             </div>
-            <h3 className="font-lora font-bold text-xl text-palette-espresso">
+            <h3 className="font-rowan font-bold text-xl text-palette-espresso">
               {t('3. Explained Pricing', '3. कारण सहित उचित मूल्य')}
             </h3>
-            <p className="font-rowan font-medium text-sm sm:text-base text-palette-espresso/85 leading-relaxed">
+            <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
               {t(
                 'Shows why, not just the number. An audible breakdown of material cost + labor hours prevents artisans from ever selling below cost.',
                 'केवल एक संख्या नहीं, बल्कि पूरा कारण। कच्चा माल + मजदूरी का हिसाब बोलकर सुनाता है ताकि कभी घाटा न हो।'
@@ -385,10 +385,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="w-8 h-8 rounded-lg bg-palette-butter text-palette-espresso flex items-center justify-center font-bold text-xs font-mono">
               04
             </div>
-            <h3 className="font-lora font-bold text-xl text-palette-espresso">
+            <h3 className="font-rowan font-bold text-xl text-palette-espresso">
               {t('4. Story as Listing Data', '4. कारीगर की पहचान उत्पाद के साथ')}
             </h3>
-            <p className="font-rowan font-medium text-sm sm:text-base text-palette-espresso/85 leading-relaxed">
+            <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
               {t(
                 'Maker identity, cluster location, and authentic GI verification tag travel permanently with every product listing.',
                 'कारीगर का चेहरा, क्लस्टर का नाम और जीआई टैग हर उत्पाद के साथ हमेशा जुड़ा रहता है।'
@@ -401,10 +401,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
             <div className="w-8 h-8 rounded-lg bg-palette-butter text-palette-espresso flex items-center justify-center font-bold text-xs font-mono">
               05
             </div>
-            <h3 className="font-lora font-bold text-xl text-palette-espresso">
+            <h3 className="font-rowan font-bold text-xl text-palette-espresso">
               {t('5. One Record, All Public Channels', '5. एक रिकॉर्ड, सभी सार्वजनिक नेटवर्क')}
             </h3>
-            <p className="font-rowan font-medium text-sm sm:text-base text-palette-espresso/85 leading-relaxed">
+            <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
               {t(
                 'Publish once to syndicate across the public artisan storefront, GeM government procurement rails, and the ONDC decentralized network simultaneously.',
                 'एक बार लिस्टिंग बनाएं और वह आपकी अपनी दुकान, सरकारी GeM पोर्टल और ONDC नेटवर्क पर एक साथ लाइव हो जाती है।'
@@ -460,7 +460,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
                     {artisan.name.charAt(0)}
                   </div>
                   <div>
-                    <h3 className="font-lora font-bold text-lg text-palette-espresso leading-snug">
+                    <h3 className="font-rowan font-bold text-lg text-palette-espresso leading-snug">
                       {language === 'hi' ? artisan.nameHi : artisan.name}
                     </h3>
                     <p className="font-rowan text-xs text-palette-wood font-medium">
@@ -471,7 +471,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDemo }) => {
 
                 {/* Artisan Story in Rowan Font - Subtle Professional Vibrancy */}
                 <div className="bg-paperAlt p-3.5 rounded-xl border border-borderSoft">
-                  <p className="font-rowan font-medium text-base text-palette-wood leading-relaxed">
+                  <p className="font-rowan font-bold text-sm sm:text-base text-palette-clay leading-relaxed">
                     "{language === 'hi' ? artisan.storyHi : artisan.story}"
                   </p>
                 </div>

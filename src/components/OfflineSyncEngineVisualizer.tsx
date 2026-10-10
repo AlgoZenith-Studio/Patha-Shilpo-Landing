@@ -20,7 +20,7 @@ export const OfflineSyncEngineVisualizer: React.FC = () => {
           <span className="font-rowan text-xs sm:text-sm font-bold uppercase tracking-widest text-palette-clay">
             {t('Core Architecture Differentiator', 'मुख्य तकनीकी विशेषता')}
           </span>
-          <h3 className="font-lora font-bold text-xl md:text-2xl text-palette-espresso">
+          <h3 className="font-rowan font-bold text-xl md:text-2xl text-palette-espresso">
             {t('Offline-First Architecture & Silent Sync', 'ऑफलाइन-प्रथम आर्किटेक्चर एवं साइलेंट सिंक')}
           </h3>
         </div>

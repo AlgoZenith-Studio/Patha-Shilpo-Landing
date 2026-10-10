@@ -98,9 +98,9 @@ export const ForBuyers: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs text-paper/80 leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs font-rowan font-bold text-paper/90 leading-relaxed">
           <div className="space-y-3 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-lora font-bold text-base text-palette-sand">
+            <h4 className="font-rowan font-bold text-base text-palette-sand">
               {t('For the Rural Artisan:', 'कारीगर के दृष्टिकोण से:')}
             </h4>
             <p>
@@ -112,7 +112,7 @@ export const ForBuyers: React.FC = () => {
           </div>
 
           <div className="space-y-3 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-lora font-bold text-base text-palette-sand">
+            <h4 className="font-rowan font-bold text-base text-palette-sand">
               {t('For the Buyer / Exporter:', 'खरीदार व निर्यातक के दृष्टिकोण से:')}
             </h4>
             <p>

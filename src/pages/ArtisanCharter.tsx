@@ -67,7 +67,7 @@ export const ArtisanCharter: React.FC = () => {
         <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
           {t('The Pathashilpa Artisan Charter', 'पाथाशिल्पा कारीगर अधिकार पत्र')}
         </h1>
-        <p className="font-pally text-xl text-palette-clay">
+        <p className="font-rowan font-bold text-xl text-palette-clay">
           "{t('Six Uncompromising Commitments to India’s Rural Artisans', 'भारत के ग्रामीण कारीगरों के प्रति हमारे 6 अटूट वादे')}"
         </p>
       </div>
@@ -86,12 +86,12 @@ export const ArtisanCharter: React.FC = () => {
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs text-palette-wood font-bold">ARTICLE {c.num}</span>
-                  <h3 className="font-lora font-bold text-xl text-palette-espresso">
+                  <span className="font-rowan text-xs text-palette-clay font-bold">ARTICLE {c.num}</span>
+                  <h3 className="font-rowan font-bold text-xl text-palette-espresso">
                     {t(c.titleEn, c.titleHi)}
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-palette-wood leading-relaxed">
+                <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
                   {t(c.descEn, c.descHi)}
                 </p>
               </div>

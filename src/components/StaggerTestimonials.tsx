@@ -105,8 +105,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
       <p
         className={cn(
-          'font-lora font-medium leading-snug text-[15px] sm:text-lg',
-          isCenter ? 'text-paper' : 'text-palette-espresso'
+          'font-rowan font-bold leading-snug text-[15px] sm:text-lg',
+          isCenter ? 'text-paper' : 'text-palette-clay'
         )}
       >
         “{quote}”

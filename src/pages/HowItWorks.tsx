@@ -121,7 +121,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
         <div className="flex items-center justify-between border-b border-borderSoft pb-4">
           <div>
             <span className="font-rowan text-xs sm:text-sm font-bold uppercase tracking-widest text-palette-clay">Artisan Journey</span>
-            <h2 className="font-lora font-bold text-2xl text-palette-espresso">
+            <h2 className="font-rowan font-bold text-2xl text-palette-espresso">
               {t('5 Steps From Raw Craft to Published Listing', 'कच्चे शिल्प से प्रकाशित लिस्टिंग तक')}
             </h2>
           </div>
@@ -145,17 +145,17 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
                   <div className="w-10 h-10 rounded-xl bg-palette-butter flex items-center justify-center text-palette-clay font-bold font-mono">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-mono font-bold bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-200">
+                  <span className="text-[10px] font-rowan font-bold bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-200">
                     ⚡ Works Offline
                   </span>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-[11px] font-mono text-palette-wood font-bold">Step {s.num}</span>
-                  <h3 className="font-lora font-bold text-lg text-palette-espresso">
+                  <span className="text-xs font-rowan text-palette-clay font-bold uppercase tracking-wider">Step {s.num}</span>
+                  <h3 className="font-rowan font-bold text-lg text-palette-espresso">
                     {t(s.titleEn, s.titleHi)}
                   </h3>
                 </div>
-                <p className="text-xs text-palette-espresso/80 leading-relaxed">
+                <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
                   {t(s.descEn, s.descHi)}
                 </p>
               </div>
@@ -173,7 +173,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
       <section className="space-y-10">
         <div className="border-b border-borderSoft pb-4">
           <span className="font-rowan text-xs sm:text-sm font-bold uppercase tracking-widest text-palette-clay">Buyer Journey</span>
-          <h2 className="font-lora font-bold text-2xl text-palette-espresso">
+          <h2 className="font-rowan font-bold text-2xl text-palette-espresso">
             {t('3 Steps for Retail & Institutional Buyers', 'खरीदारों के लिए 3 सरल चरण')}
           </h2>
         </div>
@@ -190,12 +190,12 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
                   <Icon className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-[11px] font-mono text-palette-wood font-bold">Step {s.num}</span>
-                  <h3 className="font-lora font-bold text-lg text-palette-espresso">
+                  <span className="text-xs font-rowan text-palette-clay font-bold uppercase tracking-wider">Step {s.num}</span>
+                  <h3 className="font-rowan font-bold text-lg text-palette-espresso">
                     {t(s.titleEn, s.titleHi)}
                   </h3>
                 </div>
-                <p className="text-xs text-palette-espresso/80 leading-relaxed">
+                <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
                   {t(s.descEn, s.descHi)}
                 </p>
               </div>

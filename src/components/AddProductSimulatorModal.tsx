@@ -136,10 +136,10 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
             <div className="space-y-4 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-lora font-bold text-lg text-palette-espresso">
+                  <h4 className="font-rowan font-bold text-lg text-palette-espresso">
                     {t('Step 1 · Shoot or Capture Product Photo', 'चरण 1 · उत्पाद की तस्वीर लें')}
                   </h4>
-                  <p className="text-xs text-palette-wood">
+                  <p className="font-rowan font-bold text-palette-clay text-xs">
                     {t(
                       'The on-device AI automatically inspects blur, fixes lighting, and cleanly removes the background.',
                       'डिवाइस पर चलने वाला AI धुंधलापन जांचता है, रोशनी ठीक करता है और बैकग्राउंड हटाता है।'
@@ -177,7 +177,7 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
                     </span>
                   </div>
                   <div className="h-40 bg-gradient-to-b from-palette-butter/30 to-white rounded-lg flex items-center justify-center relative border border-palette-sand/40">
-                    <div className="text-palette-clay font-bold text-sm font-lora">
+                    <div className="text-palette-clay font-bold text-sm font-rowan">
                       Pure Silk Chanderi Saree
                     </div>
                   </div>
@@ -194,10 +194,10 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
             <div className="space-y-4 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-lora font-bold text-lg text-palette-espresso">
+                  <h4 className="font-rowan font-bold text-lg text-palette-espresso">
                     {t('Step 2 · Speak About Your Craft', 'चरण 2 · अपनी कला के बारे में बोलें')}
                   </h4>
-                  <p className="text-xs text-palette-wood">
+                  <p className="font-rowan font-bold text-palette-clay text-xs">
                     {t(
                       'No typing needed. The artisan speaks in Hindi, Bundeli or regional dialect. Bhashini AI creates the catalog.',
                       'टाइपिंग की कोई ज़रूरत नहीं। कारीगर अपनी भाषा में बोलता है। भाषिणी AI विवरण तैयार करता है।'
@@ -249,10 +249,10 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
             <div className="space-y-4 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-lora font-bold text-lg text-palette-espresso">
+                  <h4 className="font-rowan font-bold text-lg text-palette-espresso">
                     {t('Step 3 · Material Costs & Work Hours', 'चरण 3 · लागत एवं मेहनत के घंटे')}
                   </h4>
-                  <p className="text-xs text-palette-wood">
+                  <p className="font-rowan font-bold text-palette-clay text-xs">
                     {t(
                       'Two simple numbers protect the artisan from ever underselling or running a loss.',
                       'दो सरल संख्याएँ कारीगर को कभी भी घाटे में बेचने से बचाती हैं।'
@@ -339,10 +339,10 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
             <div className="space-y-4 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-lora font-bold text-lg text-palette-espresso">
+                  <h4 className="font-rowan font-bold text-lg text-palette-espresso">
                     {t('Step 4 · AI Review & One-Click Publish', 'चरण 4 · AI समीक्षा एवं प्रकाशन')}
                   </h4>
-                  <p className="text-xs text-palette-wood">
+                  <p className="font-rowan font-bold text-palette-clay text-xs">
                     {t(
                       'Review the generated bilingual listing and fair price. Spoken reasoning gives total transparency.',
                       'तैयार द्विभाषी लिस्टिंग और उचित मूल्य की समीक्षा करें। बोलकर कारण समझाता है।'
@@ -361,7 +361,7 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
                     <span className="text-[10px] font-mono text-palette-wood uppercase font-bold">
                       शीर्षक · Bilingual Title
                     </span>
-                    <h5 className="font-lora font-bold text-base text-palette-espresso">
+                    <h5 className="font-rowan font-bold text-base text-palette-espresso">
                       हाथ से बुनी चंदेरी सिल्क साड़ी (ज़री बॉर्डर)
                     </h5>
                     <p className="text-xs text-palette-wood italic">

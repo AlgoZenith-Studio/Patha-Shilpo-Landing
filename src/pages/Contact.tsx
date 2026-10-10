@@ -57,10 +57,10 @@ export const Contact: React.FC = () => {
           {submitted ? (
             <div className="text-center py-12 space-y-4 animate-fadeIn">
               <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-              <h3 className="font-lora font-bold text-xl text-palette-espresso">
+              <h3 className="font-rowan font-bold text-xl text-palette-espresso">
                 {t('Message Sent Successfully!', 'संदेश सफलतापूर्वक भेज दिया गया!')}
               </h3>
-              <p className="text-xs text-palette-wood max-w-sm mx-auto">
+              <p className="font-rowan font-bold text-palette-clay max-w-sm mx-auto text-xs">
                 {t(
                   'Our cluster support team will get back to you within 24 business hours.',
                   'हमारी क्लस्टर सहायता टीम 24 घंटे के भीतर आपसे संपर्क करेगी।'
@@ -75,7 +75,7 @@ export const Contact: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4 text-xs">
-              <h3 className="font-lora font-bold text-lg text-palette-espresso border-b border-borderSoft pb-3">
+              <h3 className="font-rowan font-bold text-lg text-palette-espresso border-b border-borderSoft pb-3">
                 {t('Send an Inquiry / Message', 'संदेश या पूछताछ भेजें')}
               </h3>
 
@@ -147,7 +147,7 @@ export const Contact: React.FC = () => {
               <Building className="w-4 h-4" />
               <span>Pilot Cluster Network</span>
             </div>
-            <h3 className="font-lora font-bold text-lg text-paper">
+            <h3 className="font-rowan font-bold text-lg text-paper">
               {t('Regional Grassroots Desks', 'क्षेत्रीय क्लस्टर केंद्र')}
             </h3>
             <p className="text-xs text-paper/75 leading-relaxed">

@@ -123,7 +123,7 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
               <h3 className="font-rowan font-bold text-lg text-palette-espresso">
                 {t(b.titleEn, b.titleHi)}
               </h3>
-              <p className="font-rowan font-medium text-xs sm:text-sm text-palette-wood leading-relaxed">
+              <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
                 {t(b.descEn, b.descHi)}
               </p>
             </div>
@@ -183,10 +183,10 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
                 className="w-full p-4 text-left flex items-center justify-between gap-4 bg-paper hover:bg-paperAlt transition-colors"
               >
                 <div className="space-y-1">
-                  <span className="font-lora font-bold text-sm text-palette-espresso block">
+                  <span className="font-rowan font-bold text-sm text-palette-espresso block">
                     {faq.qHi}
                   </span>
-                  <span className="text-xs text-palette-wood block italic">
+                  <span className="text-xs font-rowan text-palette-wood block italic">
                     {faq.qEn}
                   </span>
                 </div>
@@ -198,10 +198,10 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
               </button>
               {openFaq === idx && (
                 <div className="p-4 bg-white border-t border-borderSoft text-xs space-y-2 leading-relaxed">
-                  <p className="text-palette-espresso font-medium">
+                  <p className="font-rowan font-bold text-palette-espresso">
                     {faq.aHi}
                   </p>
-                  <p className="text-palette-wood italic border-t border-borderSoft/60 pt-2">
+                  <p className="font-rowan font-bold text-palette-clay italic border-t border-borderSoft/60 pt-2">
                     {faq.aEn}
                   </p>
                 </div>

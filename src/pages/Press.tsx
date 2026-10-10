@@ -48,10 +48,10 @@ export const Press: React.FC = () => {
                 </span>
                 <span>{art.readTime}</span>
               </div>
-              <h3 className="font-lora font-bold text-lg text-palette-espresso leading-snug">
+              <h3 className="font-rowan font-bold text-lg text-palette-espresso leading-snug">
                 {art.title}
               </h3>
-              <p className="text-xs text-palette-wood leading-relaxed">
+              <p className="font-rowan font-bold text-xs text-palette-clay leading-relaxed">
                 {art.summary}
               </p>
             </div>

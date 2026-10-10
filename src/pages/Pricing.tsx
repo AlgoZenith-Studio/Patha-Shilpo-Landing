@@ -118,11 +118,11 @@ export const Pricing: React.FC = () => {
           <div className="bg-white rounded-craft p-6 border border-palette-sand/60 shadow-soft space-y-6 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-xs font-mono uppercase text-palette-wood font-bold">Individual / Retail</span>
-                <h3 className="font-lora font-bold text-xl text-palette-espresso">Direct Connoisseur</h3>
+                <span className="text-xs font-rowan uppercase text-palette-clay font-bold tracking-wider">Individual / Retail</span>
+                <h3 className="font-rowan font-bold text-xl text-palette-espresso">Direct Connoisseur</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-espresso pt-2">Free</div>
               </div>
-              <ul className="space-y-2 text-xs text-palette-espresso/80">
+              <ul className="space-y-2 text-xs font-rowan font-bold text-palette-clay">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span>Browse authentic cluster catalogs</span>
@@ -150,12 +150,12 @@ export const Pricing: React.FC = () => {
             <div className="space-y-4">
               <div className="space-y-1">
                 <span className="text-xs font-rowan uppercase text-palette-clay font-bold tracking-wider">B2B Exporters & Brands</span>
-                <h3 className="font-lora font-bold text-xl text-palette-espresso">Cluster Direct B2B</h3>
+                <h3 className="font-rowan font-bold text-xl text-palette-espresso">Cluster Direct B2B</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-clay pt-2">
                   ₹2,499 <span className="text-xs font-sans text-palette-wood font-normal">/ month</span>
                 </div>
               </div>
-              <ul className="space-y-2 text-xs text-palette-espresso/80">
+              <ul className="space-y-2 text-xs font-rowan font-bold text-palette-clay">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-palette-clay flex-shrink-0" />
                   <span>Direct Bulk RFQ negotiation tools</span>
@@ -183,11 +183,11 @@ export const Pricing: React.FC = () => {
           <div className="bg-white rounded-craft p-6 border border-palette-sand/60 shadow-soft space-y-6 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-xs font-rowan uppercase text-palette-wood font-bold tracking-wider">Government & GeM</span>
-                <h3 className="font-lora font-bold text-xl text-palette-espresso">Institutional Rail</h3>
+                <span className="text-xs font-rowan uppercase text-palette-clay font-bold tracking-wider">Government & GeM</span>
+                <h3 className="font-rowan font-bold text-xl text-palette-espresso">Institutional Rail</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-espresso pt-2">Custom</div>
               </div>
-              <ul className="space-y-2 text-xs text-palette-espresso/80">
+              <ul className="space-y-2 text-xs font-rowan font-bold text-palette-clay">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span>GeM API automated bulk catalog sync</span>
@@ -226,7 +226,7 @@ export const Pricing: React.FC = () => {
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                 className="w-full p-4 text-left flex items-center justify-between gap-4 bg-paper hover:bg-paperAlt transition-colors"
               >
-                <span className="font-lora font-bold text-sm text-palette-espresso">
+                <span className="font-rowan font-bold text-sm text-palette-espresso">
                   {t(faq.qEn, faq.qHi)}
                 </span>
                 {openFaq === idx ? (
@@ -236,7 +236,7 @@ export const Pricing: React.FC = () => {
                 )}
               </button>
               {openFaq === idx && (
-                <div className="p-4 bg-white border-t border-borderSoft text-xs text-palette-wood leading-relaxed">
+                <div className="p-4 bg-white border-t border-borderSoft text-xs font-rowan font-bold text-palette-clay leading-relaxed">
                   {t(faq.aEn, faq.aHi)}
                 </div>
               )}
