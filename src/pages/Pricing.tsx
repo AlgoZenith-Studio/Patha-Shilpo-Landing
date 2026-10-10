@@ -221,7 +221,7 @@ export const Pricing: React.FC = () => {
 
         <div className="space-y-2.5">
           {pricingFaqs.map((faq, idx) => (
-            <div key={idx} className="border border-palette-sand/50 rounded-xl overflow-hidden">
+            <div key={idx} className="border border-palette-sand/50 rounded-xl overflow-hidden transition-all duration-200">
               <button
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                 className="w-full px-4 py-3 sm:px-5 sm:py-3.5 text-left flex items-center justify-between gap-3 bg-paper hover:bg-paperAlt transition-colors group cursor-pointer"
@@ -229,23 +229,29 @@ export const Pricing: React.FC = () => {
                 <span className="font-rowan font-bold text-sm sm:text-base text-palette-espresso flex-1 pr-2">
                   {t(faq.qEn, faq.qHi)}
                 </span>
-                <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all ${
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-300 ${
                   openFaq === idx 
                     ? 'bg-palette-clay text-white border-palette-clay shadow-sm' 
                     : 'bg-palette-butter/80 text-palette-espresso border-palette-sand/70 shadow-xs group-hover:scale-105'
                 }`}>
-                  {openFaq === idx ? (
-                    <ChevronUp className="w-4 h-4 stroke-[2]" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4 stroke-[2]" />
-                  )}
+                  <ChevronDown className={`w-4 h-4 stroke-[2] transition-transform duration-300 ${
+                    openFaq === idx ? 'rotate-180' : 'rotate-0'
+                  }`} />
                 </div>
               </button>
-              {openFaq === idx && (
-                <div className="px-4 py-3 sm:px-5 sm:py-4 bg-paperAlt/40 border-t border-palette-sand/40 text-xs sm:text-sm font-rowan font-bold text-palette-clay leading-relaxed">
-                  {t(faq.aEn, faq.aHi)}
+              <div 
+                className={`grid transition-all duration-300 ease-in-out ${
+                  openFaq === idx 
+                    ? 'grid-rows-[1fr] opacity-100' 
+                    : 'grid-rows-[0fr] opacity-0'
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-4 py-3 sm:px-5 sm:py-4 bg-paperAlt/40 border-t border-palette-sand/40 text-xs sm:text-sm font-rowan font-bold text-palette-clay leading-relaxed">
+                    {t(faq.aEn, faq.aHi)}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
