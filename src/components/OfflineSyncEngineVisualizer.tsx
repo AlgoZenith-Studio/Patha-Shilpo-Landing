@@ -29,7 +29,7 @@ export const OfflineSyncEngineVisualizer: React.FC = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setNetworkState('offline')}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono flex items-center gap-1.5 transition-all ${
+            className={`px-3 py-1.5 rounded-full text-xs font-bold font-rowan flex items-center gap-1.5 transition-all ${
               networkState === 'offline'
                 ? 'bg-amber-600 text-white shadow-sm'
                 : 'bg-paperAlt text-palette-espresso/70 hover:bg-palette-sand/30'
@@ -41,7 +41,7 @@ export const OfflineSyncEngineVisualizer: React.FC = () => {
 
           <button
             onClick={triggerSync}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono flex items-center gap-1.5 transition-all ${
+            className={`px-3 py-1.5 rounded-full text-xs font-bold font-rowan flex items-center gap-1.5 transition-all ${
               networkState === 'online'
                 ? 'bg-emerald-700 text-white shadow-sm'
                 : 'bg-paperAlt text-palette-espresso/70 hover:bg-palette-sand/30'

@@ -90,7 +90,7 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
         <div className="flex flex-wrap items-center gap-4 pt-2">
           <button
             onClick={() => setDownloadModalOpen(true)}
-            className="inline-flex items-center gap-2.5 bg-palette-clay hover:bg-palette-clay/90 text-white font-bold text-xs px-7 py-3.5 rounded-full shadow-clay"
+            className="inline-flex items-center gap-2.5 bg-palette-clay hover:bg-palette-clay/90 text-white font-rowan font-bold text-xs px-7 py-3.5 rounded-full shadow-clay"
           >
             <Download className="w-4 h-4 text-palette-butter" />
             <span>{t('Download Android APK (Free)', 'एंड्रॉयड ऐप डाउनलोड करें (मुफ़्त)')}</span>
@@ -98,7 +98,7 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
 
           <button
             onClick={onOpenDemo}
-            className="inline-flex items-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso font-semibold text-xs px-6 py-3.5 rounded-full border border-palette-sand shadow-xs"
+            className="inline-flex items-center gap-2 bg-white hover:bg-paperAlt text-palette-espresso font-rowan font-bold text-xs px-6 py-3.5 rounded-full border border-palette-sand shadow-xs"
           >
             <Sparkles className="w-4 h-4 text-palette-clay" />
             <span>{t('Try 90s Simulator First', 'पहले 90s डेमो चलाकर देखें')}</span>

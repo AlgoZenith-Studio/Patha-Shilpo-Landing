@@ -77,7 +77,7 @@ export const AddProductSimulatorModal: React.FC<AddProductSimulatorModalProps> =
             {/* Mode switch */}
             <button
               onClick={() => setIsOffline(!isOffline)}
-              className={`flex items-center gap-1 text-xs px-2.5 py-1 rounded-full border transition-colors ${
+              className={`flex items-center gap-1 text-xs font-rowan font-bold px-2.5 py-1 rounded-full border transition-colors ${
                 isOffline 
                   ? 'bg-amber-500/20 text-amber-300 border-amber-400/40' 
                   : 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40'

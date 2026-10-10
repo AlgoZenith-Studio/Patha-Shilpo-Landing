@@ -127,7 +127,7 @@ export const ForBuyers: React.FC = () => {
         <div className="pt-4 flex justify-center">
           <button
             onClick={() => setRfqModalOpen(true)}
-            className="bg-palette-sand hover:bg-palette-sand/90 text-palette-espresso font-bold text-xs px-8 py-3.5 rounded-full shadow-sm flex items-center gap-2"
+            className="bg-palette-sand hover:bg-palette-sand/90 text-palette-espresso font-rowan font-bold text-xs px-8 py-3.5 rounded-full shadow-sm flex items-center gap-2"
           >
             <Send className="w-4 h-4 text-palette-espresso" />
             <span>{t('Submit a Bulk RFQ / Custom Inquiry', 'थोक मांग / कोटेशन भेजें')}</span>

@@ -127,7 +127,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
           </div>
           <button
             onClick={onOpenDemo}
-            className="bg-palette-clay hover:bg-palette-clay/90 text-white font-bold text-xs px-4 py-2 rounded-full shadow-clay"
+            className="bg-palette-clay hover:bg-palette-clay/90 text-white font-rowan font-bold text-xs px-4 py-2 rounded-full shadow-clay"
           >
             {t('Launch 90s Simulator', '90s सिम्युलेटर खोलें')}
           </button>
