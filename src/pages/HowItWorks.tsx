@@ -102,13 +102,13 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
       {/* Title Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-widest">
+        <span className="font-rowan text-xs uppercase text-palette-espresso/90 font-bold tracking-widest">
           {t('End-to-End User Journey', 'संपूर्ण कार्यप्रणाली')}
         </span>
         <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
           {t('How Pathashilpa Connects Loom to Living Room', 'करघे से खरीदार तक की यात्रा')}
         </h1>
-        <p className="text-sm sm:text-base text-palette-wood leading-relaxed">
+        <p className="font-rowan text-sm sm:text-base text-palette-espresso/90 leading-relaxed font-medium">
           {t(
             'Explore the 5-step voice-guided artisan journey, the 3-step buyer discovery process, and the offline-first sync engine that powers it all.',
             'जानिए 5-चरणीय कारीगर यात्रा, 3-चरणीय खरीदार प्रक्रिया और वह ऑफलाइन सिंक इंजन जो इस सब को संभव बनाता है।'
@@ -120,7 +120,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
       <section className="space-y-10">
         <div className="flex items-center justify-between border-b border-borderSoft pb-4">
           <div>
-            <span className="text-xs font-mono text-palette-clay uppercase font-bold">Artisan Journey</span>
+            <span className="font-rowan text-xs text-palette-espresso/90 uppercase font-bold tracking-wider">Artisan Journey</span>
             <h2 className="font-lora font-bold text-2xl text-palette-espresso">
               {t('5 Steps From Raw Craft to Published Listing', 'कच्चे शिल्प से प्रकाशित लिस्टिंग तक')}
             </h2>
@@ -172,7 +172,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenDemo }) => {
       {/* SECTION 3: 3-STEP BUYER JOURNEY */}
       <section className="space-y-10">
         <div className="border-b border-borderSoft pb-4">
-          <span className="text-xs font-mono text-palette-clay uppercase font-bold">Buyer Journey</span>
+          <span className="font-rowan text-xs text-palette-espresso/90 uppercase font-bold tracking-wider">Buyer Journey</span>
           <h2 className="font-lora font-bold text-2xl text-palette-espresso">
             {t('3 Steps for Retail & Institutional Buyers', 'खरीदारों के लिए 3 सरल चरण')}
           </h2>
