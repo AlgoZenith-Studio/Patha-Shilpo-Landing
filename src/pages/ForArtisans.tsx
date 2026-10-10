@@ -135,7 +135,7 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
       <section className="bg-palette-espresso text-paper rounded-craft-lg p-8 md:p-10 space-y-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-palette-wood/40 pb-6">
           <div>
-            <span className="text-xs font-mono uppercase text-palette-sand font-bold tracking-wider">
+            <span className="text-xs font-rowan uppercase text-palette-sand font-bold tracking-wider">
               {t('Hardware Requirements', 'उपकरण की ज़रूरत')}
             </span>
             <h2 className="font-rowan font-bold text-2xl md:text-3xl text-paper">
@@ -143,24 +143,24 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 bg-palette-butter text-palette-espresso px-4 py-2 rounded-xl text-xs font-bold font-mono">
+          <div className="flex items-center gap-2 bg-palette-butter text-palette-espresso px-4 py-2 rounded-xl text-xs font-bold font-rowan">
             <Check className="w-4 h-4 text-palette-clay" />
             <span>₹6,000 Class Smartphone Compatible</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
-          <div className="bg-white/10 p-4 rounded-xl space-y-1 border border-white/10">
-            <span className="text-palette-sand block font-bold">1. Device</span>
-            <p className="text-paper/80 font-sans">Any Android phone (Android 8+, 2 GB RAM). No computer needed.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-rowan">
+          <div className="bg-white/10 p-4 rounded-xl space-y-1.5 border border-white/10">
+            <span className="text-palette-sand block font-bold text-sm">1. Device</span>
+            <p className="text-paper/90 font-bold text-xs leading-relaxed">Any Android phone (Android 8+, 2 GB RAM). No computer needed.</p>
           </div>
-          <div className="bg-white/10 p-4 rounded-xl space-y-1 border border-white/10">
-            <span className="text-palette-sand block font-bold">2. Language</span>
-            <p className="text-paper/80 font-sans">Your natural speaking voice in Hindi or regional dialect.</p>
+          <div className="bg-white/10 p-4 rounded-xl space-y-1.5 border border-white/10">
+            <span className="text-palette-sand block font-bold text-sm">2. Language</span>
+            <p className="text-paper/90 font-bold text-xs leading-relaxed">Your natural speaking voice in Hindi or regional dialect.</p>
           </div>
-          <div className="bg-white/10 p-4 rounded-xl space-y-1 border border-white/10">
-            <span className="text-palette-sand block font-bold">3. Network</span>
-            <p className="text-paper/80 font-sans">Zero internet required at the loom. Uploads on 2G/patchy signal.</p>
+          <div className="bg-white/10 p-4 rounded-xl space-y-1.5 border border-white/10">
+            <span className="text-palette-sand block font-bold text-sm">3. Network</span>
+            <p className="text-paper/90 font-bold text-xs leading-relaxed">Zero internet required at the loom. Uploads on 2G/patchy signal.</p>
           </div>
         </div>
       </section>
