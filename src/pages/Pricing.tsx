@@ -47,7 +47,7 @@ export const Pricing: React.FC = () => {
         <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
           {t('Free for Artisans. Always Open. Always Fair.', 'कारीगरों के लिए हमेशा निःशुल्क। शत-प्रतिशत पारदर्शी।')}
         </h1>
-        <p className="text-sm sm:text-base text-palette-wood leading-relaxed">
+        <p className="font-rowan font-bold text-sm sm:text-base text-palette-clay leading-relaxed">
           {t(
             'We believe no artisan should ever pay to sell their own handmade heritage. Explore our open fair-price calculator and sustainable model.',
             'हमारा मानना है कि किसी भी कारीगर को अपनी कला बेचने के लिए भुगतान नहीं करना चाहिए। खुला फॉर्मूला कैलकुलेटर देखें।'
