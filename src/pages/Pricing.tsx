@@ -156,7 +156,7 @@ export const Pricing: React.FC = () => {
                 <h3 className="font-rowan font-bold text-xl text-palette-espresso">Direct Connoisseur</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-espresso pt-2">Free</div>
               </div>
-              <ul className="space-y-2 text-xs font-rowan font-bold text-palette-clay">
+              <ul className="space-y-2.5 text-sm font-rowan font-bold text-palette-clay">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span>Browse authentic cluster catalogs</span>
@@ -186,10 +186,10 @@ export const Pricing: React.FC = () => {
                 <span className="text-xs font-rowan uppercase text-palette-clay font-bold tracking-wider">B2B Exporters & Brands</span>
                 <h3 className="font-rowan font-bold text-xl text-palette-espresso">Cluster Direct B2B</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-clay pt-2">
-                  ₹2,499 <span className="text-xs font-sans text-palette-wood font-normal">/ month</span>
+                  ₹2,499 <span className="text-xs font-rowan text-palette-wood font-medium">/ month</span>
                 </div>
               </div>
-              <ul className="space-y-2 text-xs font-rowan font-bold text-palette-clay">
+              <ul className="space-y-2.5 text-sm font-rowan font-bold text-palette-clay">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-palette-clay flex-shrink-0" />
                   <span>Direct Bulk RFQ negotiation tools</span>
@@ -221,7 +221,7 @@ export const Pricing: React.FC = () => {
                 <h3 className="font-rowan font-bold text-xl text-palette-espresso">Institutional Rail</h3>
                 <div className="font-rowan font-extrabold text-3xl text-palette-espresso pt-2">Custom</div>
               </div>
-              <ul className="space-y-2 text-xs font-rowan font-bold text-palette-clay">
+              <ul className="space-y-2.5 text-sm font-rowan font-bold text-palette-clay">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span>GeM API automated bulk catalog sync</span>
