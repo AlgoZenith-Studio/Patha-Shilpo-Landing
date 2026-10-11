@@ -8,12 +8,42 @@ export const Pricing: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const freeArtisanFeatures = [
-    { titleEn: 'Unlimited AI Listings', titleHi: 'असीमित AI लिस्टिंग', descEn: 'Zero cost per photograph, voice note, or catalog generated.' },
-    { titleEn: 'AI Background Removal', titleHi: 'AI बैकग्राउंड रिमूवल', descEn: 'Instant studio cutouts without paying for professional photography.' },
-    { titleEn: 'Bilingual Translation', titleHi: 'द्विभाषी अनुवाद', descEn: 'Automatic Hindi to English cataloging via Bhashini ULCA.' },
-    { titleEn: 'Offline Sync Engine', titleHi: 'ऑफलाइन सिंक इंजन', descEn: 'Local device draft storage with automatic background synchronization.' },
-    { titleEn: 'Explained Pricing Floor', titleHi: 'लागत आधार गारंटी', descEn: 'Deterministic cost calculation protecting from loss-making sales.' },
-    { titleEn: 'Public Storefront & ONDC', titleHi: 'सार्वजनिक दुकान व ONDC', descEn: 'Direct syndication to ONDC rails and government GeM procurement.' },
+    {
+      titleEn: 'Unlimited AI Listings',
+      titleHi: 'असीमित AI लिस्टिंग',
+      descEn: 'Zero cost per photograph, voice note, or catalog generated.',
+      descHi: 'फ़ोटो, वॉइस नोट या कैटलॉग बनाने पर शून्य शुल्क।'
+    },
+    {
+      titleEn: 'AI Background Removal',
+      titleHi: 'AI बैकग्राउंड रिमूवल',
+      descEn: 'Instant studio cutouts without paying for professional photography.',
+      descHi: 'बिना किसी पेशेवर फ़ोटोग्राफ़ी के तुरंत स्टूडियो कटआउट।'
+    },
+    {
+      titleEn: 'Bilingual Translation',
+      titleHi: 'द्विभाषी अनुवाद',
+      descEn: 'Automatic Hindi to English cataloging via Bhashini ULCA.',
+      descHi: 'भाषिणी ULCA द्वारा हिंदी से अंग्रेज़ी में स्वचालित कैटलॉगिंग।'
+    },
+    {
+      titleEn: 'Offline Sync Engine',
+      titleHi: 'ऑफलाइन सिंक इंजन',
+      descEn: 'Local device draft storage with automatic background synchronization.',
+      descHi: 'स्वचालित बैकग्राउंड सिंक के साथ लोकल डिवाइस ड्राफ़्ट स्टोरेज।'
+    },
+    {
+      titleEn: 'Explained Pricing Floor',
+      titleHi: 'लागत आधार गारंटी',
+      descEn: 'Deterministic cost calculation protecting from loss-making sales.',
+      descHi: 'घाटे वाली बिक्री से बचाने के लिए पारदर्शी लागत आधार गणना।'
+    },
+    {
+      titleEn: 'Public Storefront & ONDC',
+      titleHi: 'सार्वजनिक दुकान व ONDC',
+      descEn: 'Direct syndication to ONDC rails and government GeM procurement.',
+      descHi: 'ONDC रेल्स और GeM सरकारी खरीद पोर्टल पर सीधा समन्वय।'
+    },
   ];
 
   const pricingFaqs = [
@@ -66,7 +96,7 @@ export const Pricing: React.FC = () => {
             <h2 className="font-rowan font-bold text-3xl text-palette-espresso">
               {t('₹0 For Artisans, Forever.', 'कारीगरों के लिए ₹0, हमेशा के लिए।')}
             </h2>
-            <p className="text-xs text-palette-wood mt-1">
+            <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay mt-1">
               {t(
                 'No registration charges, no listing fees, no commission deductions, and no hidden subscriptions.',
                 'न कोई पंजीयन शुल्क, न लिस्टिंग फीस, न कोई कमीशन कटौती।'
@@ -84,13 +114,13 @@ export const Pricing: React.FC = () => {
         {/* 6 Things That Cost Nothing */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {freeArtisanFeatures.map((f, i) => (
-            <div key={i} className="bg-white/90 p-4 rounded-xl border border-palette-sand/50 space-y-1.5 shadow-xs">
-              <div className="flex items-center gap-2 text-palette-clay font-bold text-sm">
+            <div key={i} className="bg-white rounded-craft p-5 border border-palette-sand/60 shadow-soft space-y-2.5">
+              <h3 className="flex items-center gap-2 font-rowan font-bold text-base sm:text-lg text-palette-espresso">
                 <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                 <span>{t(f.titleEn, f.titleHi)}</span>
-              </div>
-              <p className="text-xs text-palette-wood leading-relaxed pl-6">
-                {f.descEn}
+              </h3>
+              <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed pl-6">
+                {t(f.descEn, f.descHi)}
               </p>
             </div>
           ))}
