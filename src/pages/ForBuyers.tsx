@@ -53,13 +53,13 @@ export const ForBuyers: React.FC = () => {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
       {/* Title Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-widest">
+        <span className="text-xs font-rowan uppercase text-palette-clay font-bold tracking-widest">
           {t('Provenance & Institutional Procurement', 'प्रामाणिकता एवं संस्थागत खरीद')}
         </span>
         <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
           {t('100% Verified GI Handloom & Handicrafts', 'शत-प्रतिशत प्रामाणिक जीआई हथकरघा व हस्तशिल्प')}
         </h1>
-        <p className="text-sm sm:text-base text-palette-wood leading-relaxed">
+        <p className="font-rowan font-bold text-sm sm:text-base text-palette-clay leading-relaxed">
           {t(
             'Connect directly with master artisans across India. Discover verified provenance, request bulk RFQs, and procure authentic made-to-order craft with zero middleman markup.',
             'भारत भर के उस्ताद कारीगरों से सीधे जुड़ें। प्रामाणिक जीआई हस्तशिल्प खोजें, थोक कोटेशन मांगें और बिना किसी बिचौलिये के सीधे करघे से खरीद करें।'
@@ -79,7 +79,7 @@ export const ForBuyers: React.FC = () => {
               <h3 className="font-rowan font-bold text-lg text-palette-espresso">
                 {t(p.titleEn, p.titleHi)}
               </h3>
-              <p className="font-rowan font-medium text-xs sm:text-sm text-palette-wood leading-relaxed">
+              <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
                 {t(p.descEn, p.descHi)}
               </p>
             </div>
@@ -90,7 +90,7 @@ export const ForBuyers: React.FC = () => {
       {/* WHY MADE TO ORDER */}
       <section className="bg-palette-espresso text-paper rounded-craft-lg p-8 md:p-12 space-y-8">
         <div className="max-w-2xl space-y-3">
-          <span className="text-xs font-mono uppercase text-palette-sand font-bold tracking-wider">
+          <span className="text-xs font-rowan uppercase text-palette-sand font-bold tracking-wider">
             {t('The Supply Chain Shift', 'आपूर्ति श्रृंखला में क्रांति')}
           </span>
           <h2 className="font-rowan font-bold text-3xl text-paper">
