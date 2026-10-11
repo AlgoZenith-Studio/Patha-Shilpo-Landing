@@ -89,7 +89,7 @@ export const Pricing: React.FC = () => {
       <section className="bg-gradient-to-br from-palette-butter/50 via-white to-palette-sand/20 rounded-craft-lg border-2 border-palette-sand p-8 md:p-12 shadow-soft space-y-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-palette-sand/60 pb-8">
           <div>
-            <div className="inline-flex items-center gap-2 bg-palette-espresso text-palette-butter px-3 py-1 rounded-full text-xs font-mono font-bold mb-2">
+            <div className="inline-flex items-center gap-2 bg-palette-espresso text-palette-butter px-3 py-1 rounded-full text-xs font-rowan font-bold tracking-wider mb-2">
               <ShieldCheck className="w-4 h-4 text-palette-sand" />
               <span>THE ZERO-RUPEE PROMISE</span>
             </div>
@@ -104,10 +104,14 @@ export const Pricing: React.FC = () => {
             </p>
           </div>
 
-          <div className="text-center bg-white p-4 rounded-2xl border border-palette-sand shadow-sm">
-            <span className="text-[10px] font-mono uppercase text-palette-wood block">Artisan Cost</span>
+          <div className="text-center bg-white p-4 rounded-2xl border border-palette-sand shadow-sm space-y-1">
+            <span className="text-xs font-rowan font-bold uppercase tracking-wider text-palette-clay block">
+              {t('Artisan Cost', 'कारीगर लागत')}
+            </span>
             <div className="font-rowan font-extrabold text-4xl text-palette-clay">₹0</div>
-            <span className="text-[10px] text-emerald-800 font-bold font-mono">100% Payout to Loom</span>
+            <span className="text-xs text-emerald-800 font-bold font-rowan block">
+              {t('100% Payout to Loom', '100% करघे तक भुगतान')}
+            </span>
           </div>
         </div>
 
