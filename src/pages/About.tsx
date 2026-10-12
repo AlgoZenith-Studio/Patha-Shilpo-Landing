@@ -9,7 +9,7 @@ export const About: React.FC = () => {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
       {/* Title Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="text-xs font-mono uppercase text-palette-clay font-bold tracking-widest">
+        <span className="font-rowan text-xs sm:text-sm uppercase text-palette-clay font-bold tracking-widest">
           {t('Mission & Hackathon Origin', 'हमारा मिशन एवं उत्पत्ति')}
         </span>
         <h1 className="font-rowan font-extrabold text-4xl sm:text-5xl text-palette-espresso">
@@ -18,32 +18,32 @@ export const About: React.FC = () => {
       </div>
 
       {/* THE 0.2% INSIGHT SECTION */}
-      <section className="bg-white rounded-craft-lg border border-palette-sand/60 p-8 md:p-12 shadow-soft space-y-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-4 text-xs sm:text-sm font-rowan font-bold text-palette-clay leading-relaxed">
-            <h2 className="font-rowan font-bold text-2xl text-palette-espresso">
+      <section className="bg-white rounded-craft-lg border border-palette-sand/60 p-6 sm:p-8 md:p-10 shadow-soft">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-7 space-y-4 text-sm sm:text-base font-rowan font-bold text-palette-clay leading-relaxed">
+            <h2 className="font-rowan font-bold text-2xl sm:text-3xl text-palette-espresso">
               {t('A Contrast of Two Realities', 'दो वास्तविकताओं का विरोधाभास')}
             </h2>
             <p>
-              According to the 4th All India Handloom Census, **only 0.2% of Indian handloom sales occur online**. Meanwhile, official NSO telecom data shows that **95.5% of rural mobile owners already possess a smartphone**.
+              According to the 4th All India Handloom Census, <strong className="text-palette-espresso font-extrabold">only 0.2% of Indian handloom sales occur online</strong>. Meanwhile, official NSO telecom data shows that <strong className="text-palette-espresso font-extrabold">95.5% of rural mobile owners already possess a smartphone</strong>.
             </p>
             <p>
-              Why has e-commerce bypassed 35.2 lakh weavers and allied artisans? Because every major marketplace — from Amazon Karigar to Flipkart Samarth — begins *after* four prerequisite artefacts exist: **a studio photograph, English product copy, a defensible price, and complex online tax registration forms.**
+              Why has e-commerce bypassed 35.2 lakh weavers and allied artisans? Because every major marketplace — from Amazon Karigar to Flipkart Samarth — begins <em className="italic text-palette-espresso">after</em> four prerequisite artefacts exist: <strong className="text-palette-espresso font-extrabold">a studio photograph, English product copy, a defensible price, and complex online tax registration forms.</strong>
             </p>
             <p>
-              For Kamala, a 42-year-old silk weaver in Chanderi who uses WhatsApp voice notes but cannot type in English, that barrier is impassable. **Pathashilpa eliminates the need for typing entirely.**
+              For Kamala, a 42-year-old silk weaver in Chanderi who uses WhatsApp voice notes but cannot type in English, that barrier is impassable. <strong className="text-palette-espresso font-extrabold">Pathashilpa eliminates the need for typing entirely.</strong>
             </p>
           </div>
 
           <div className="lg:col-span-5 bg-paperAlt p-6 rounded-2xl border border-palette-sand/70 space-y-4 text-center">
-            <span className="font-mono text-[10px] uppercase text-palette-wood font-bold">The Hackathon Premise</span>
+            <span className="font-rowan font-bold text-xs uppercase text-palette-clay tracking-wider">The Hackathon Premise</span>
             <div className="font-rowan font-extrabold text-5xl text-palette-clay">0.2%</div>
-            <p className="text-xs font-semibold text-palette-espresso">
+            <p className="font-rowan font-bold text-xs text-palette-espresso">
               Current Handloom Share Online
             </p>
             <div className="w-full h-px bg-borderSoft my-2" />
             <div className="font-rowan font-extrabold text-5xl text-palette-espresso">95.5%</div>
-            <p className="text-xs font-semibold text-palette-espresso">
+            <p className="font-rowan font-bold text-xs text-palette-espresso">
               Rural Smartphone Ownership
             </p>
             <p className="text-[11px] font-rowan font-bold text-palette-clay">
@@ -60,7 +60,7 @@ export const About: React.FC = () => {
             <Award className="w-6 h-6 text-palette-clay" />
           </div>
           <div>
-            <span className="text-xs font-mono uppercase text-palette-sand font-bold">Hackathon Prototype</span>
+            <span className="text-xs font-rowan uppercase text-palette-sand font-bold tracking-wider">Hackathon Prototype</span>
             <h3 className="font-rowan font-bold text-2xl text-paper">Smart India Hackathon 2026</h3>
           </div>
         </div>
