@@ -60,7 +60,7 @@ export const ArtisanCharter: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       {/* Header */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center gap-2 bg-palette-butter text-palette-espresso px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border border-palette-sand">
+        <div className="inline-flex items-center gap-2 bg-palette-butter text-palette-espresso px-3.5 py-1.5 rounded-full text-xs font-rowan font-bold tracking-wider border border-palette-sand">
           <ShieldCheck className="w-4 h-4 text-palette-clay" />
           <span>CONSTITUTION OF ETHICAL CATALOGING</span>
         </div>
@@ -85,13 +85,13 @@ export const ArtisanCharter: React.FC = () => {
                 <Icon className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <div className="flex items-center gap-3">
-                  <span className="font-rowan text-xs text-palette-clay font-bold">ARTICLE {c.num}</span>
-                  <h3 className="font-rowan font-bold text-xl text-palette-espresso">
+                <h3 className="font-rowan font-bold text-xl flex items-baseline gap-3 flex-wrap">
+                  <span className="text-palette-clay whitespace-nowrap">ARTICLE {c.num}</span>
+                  <span className="text-palette-espresso">
                     {t(c.titleEn, c.titleHi)}
-                  </h3>
-                </div>
-                <p className="font-rowan font-bold text-xs sm:text-sm text-palette-clay leading-relaxed">
+                  </span>
+                </h3>
+                <p className="font-rowan font-bold text-sm sm:text-base text-palette-clay leading-relaxed">
                   {t(c.descEn, c.descHi)}
                 </p>
               </div>
@@ -101,11 +101,11 @@ export const ArtisanCharter: React.FC = () => {
       </div>
 
       {/* Seal Note */}
-      <div className="bg-paperAlt rounded-craft p-6 border border-palette-sand text-center space-y-2 text-xs font-mono text-palette-espresso">
-        <p className="font-bold">
+      <div className="bg-paperAlt rounded-craft p-6 border border-palette-sand text-center space-y-2 text-xs font-rowan font-bold text-palette-espresso">
+        <p>
           Smart India Hackathon 2026 Innovation Charter · Aligned with Digital Personal Data Protection (DPDP) Act 2023
         </p>
-        <p className="text-palette-wood text-[11px]">
+        <p className="text-palette-clay text-xs">
           Dedicated to the Ministry of Textiles and the Handloom Development Commissionerate.
         </p>
       </div>
