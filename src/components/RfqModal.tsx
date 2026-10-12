@@ -30,16 +30,16 @@ export const RfqModal: React.FC<RfqModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-palette-espresso/75 backdrop-blur-sm animate-fadeIn select-none">
       <div className="bg-paper border border-palette-sand/60 rounded-craft-lg shadow-2xl max-w-[540px] w-full overflow-hidden flex flex-col my-auto max-h-[92vh]">
         {/* Header */}
-        <div className="bg-palette-espresso text-paper px-6 py-4.5 flex items-center justify-between border-b border-palette-wood/40">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-palette-sand/20 flex items-center justify-center text-palette-sand flex-shrink-0">
+        <div className="bg-palette-espresso text-paper px-6 sm:px-8 pt-7 pb-6 flex items-center justify-between border-b border-palette-wood/40">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-palette-sand/20 flex items-center justify-center text-palette-sand flex-shrink-0">
               <Building className="w-5 h-5 text-palette-sand" />
             </div>
             <div>
               <h3 className="font-rowan font-bold text-lg sm:text-xl text-paper leading-snug">
                 {t('Direct Artisan Connection / RFQ', 'कारीगर से सीधा संपर्क / कोटेशन मांग')}
               </h3>
-              <p className="text-xs font-rowan text-palette-sand/90 font-medium mt-0.5">
+              <p className="text-xs font-rowan text-palette-sand/90 font-medium mt-1">
                 {craftName} · {artisanName}
               </p>
             </div>
@@ -47,7 +47,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
           <button
             onClick={onClose}
             aria-label="Close"
-            className="p-2 rounded-xl text-paper/70 hover:text-white hover:bg-white/10 transition-colors"
+            className="p-2.5 rounded-xl text-paper/70 hover:text-white hover:bg-white/10 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
