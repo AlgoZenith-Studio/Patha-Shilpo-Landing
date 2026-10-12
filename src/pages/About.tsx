@@ -54,34 +54,38 @@ export const About: React.FC = () => {
       </section>
 
       {/* SIH 2026 CONTEXT & OBJECTIVE */}
-      <section className="bg-palette-espresso text-paper rounded-craft-lg p-8 md:p-12 space-y-8">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-palette-butter flex items-center justify-center text-palette-espresso font-bold">
+      <section className="bg-palette-espresso text-paper rounded-craft-lg p-6 sm:p-8 md:p-10 space-y-8">
+        <div className="flex items-center gap-3.5">
+          <div className="w-11 h-11 rounded-xl bg-palette-butter flex items-center justify-center text-palette-espresso font-bold flex-shrink-0">
             <Award className="w-6 h-6 text-palette-clay" />
           </div>
           <div>
-            <span className="text-xs font-rowan uppercase text-palette-sand font-bold tracking-wider">Hackathon Prototype</span>
-            <h3 className="font-rowan font-bold text-2xl text-paper">Smart India Hackathon 2026</h3>
+            <span className="text-xs sm:text-sm font-rowan uppercase text-palette-sand font-bold tracking-wider block">
+              Hackathon Prototype
+            </span>
+            <h3 className="font-rowan font-bold text-2xl sm:text-3xl text-paper leading-tight mt-0.5">
+              Smart India Hackathon 2026
+            </h3>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-rowan font-bold text-paper/90 leading-relaxed">
-          <div className="space-y-2 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-rowan font-bold text-base text-palette-sand">Problem Statement</h4>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm font-rowan font-bold text-paper/90 leading-relaxed">
+          <div className="space-y-2.5 bg-white/10 p-6 rounded-xl border border-white/10">
+            <h4 className="font-rowan font-bold text-lg text-palette-sand">Problem Statement</h4>
             <p>
               AI-Driven Market Linkage and Smart Cataloging Mobile Application for Marginalized Rural Artisans.
             </p>
           </div>
 
-          <div className="space-y-2 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-rowan font-bold text-base text-palette-sand">Open Public Rails</h4>
+          <div className="space-y-2.5 bg-white/10 p-6 rounded-xl border border-white/10">
+            <h4 className="font-rowan font-bold text-lg text-palette-sand">Open Public Rails</h4>
             <p>
               Built directly on Bhashini ULCA speech models, publishing natively into the ONDC open network and GeM portal.
             </p>
           </div>
 
-          <div className="space-y-2 bg-white/10 p-5 rounded-xl border border-white/10">
-            <h4 className="font-rowan font-bold text-base text-palette-sand">Core Target Metric</h4>
+          <div className="space-y-2.5 bg-white/10 p-6 rounded-xl border border-white/10">
+            <h4 className="font-rowan font-bold text-lg text-palette-sand">Core Target Metric</h4>
             <p>
               Listing completion rate &gt; 80% with time-to-publish under 3 minutes on low-end ₹6,000 Android devices.
             </p>
