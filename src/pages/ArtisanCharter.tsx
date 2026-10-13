@@ -101,11 +101,11 @@ export const ArtisanCharter: React.FC = () => {
       </div>
 
       {/* Seal Note */}
-      <div className="bg-paperAlt rounded-craft p-6 border border-palette-sand text-center space-y-2 text-xs font-rowan font-bold text-palette-espresso">
+      <div className="bg-paperAlt rounded-craft p-6 border border-palette-sand text-center space-y-2 text-sm font-rowan font-bold text-palette-espresso">
         <p>
           Smart India Hackathon 2026 Innovation Charter · Aligned with Digital Personal Data Protection (DPDP) Act 2023
         </p>
-        <p className="text-palette-clay text-xs">
+        <p className="text-palette-clay text-sm">
           Dedicated to the Ministry of Textiles and the Handloom Development Commissionerate.
         </p>
       </div>
