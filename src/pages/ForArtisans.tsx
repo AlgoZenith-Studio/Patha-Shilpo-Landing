@@ -186,6 +186,9 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
                   <span className="font-rowan font-bold text-sm sm:text-base text-palette-espresso block leading-snug">
                     {faq.qHi}
                   </span>
+                  <span className="font-rowan font-bold text-xs sm:text-sm text-palette-wood block leading-snug">
+                    {faq.qBn}
+                  </span>
                   <span className="font-rowan font-bold text-xs sm:text-sm text-palette-clay block leading-snug">
                     {faq.qEn}
                   </span>
@@ -211,6 +214,9 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
                   <div className="px-4 py-3 sm:px-5 sm:py-4 bg-paperAlt/40 border-t border-palette-sand/40 space-y-2 leading-relaxed font-rowan">
                     <p className="font-rowan font-bold text-palette-espresso text-xs sm:text-sm">
                       {faq.aHi}
+                    </p>
+                    <p className="font-rowan font-bold text-palette-wood text-xs sm:text-sm border-t border-palette-sand/30 pt-2">
+                      {faq.aBn}
                     </p>
                     <p className="font-rowan font-bold text-palette-clay text-xs sm:text-sm border-t border-palette-sand/30 pt-2">
                       {faq.aEn}

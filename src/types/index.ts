@@ -35,8 +35,10 @@ export interface PressArticle {
 export interface FaqItem {
   qEn: string;
   qHi: string;
+  qBn: string;
   aEn: string;
   aHi: string;
+  aBn: string;
 }
 
 export interface SdgGoal {
