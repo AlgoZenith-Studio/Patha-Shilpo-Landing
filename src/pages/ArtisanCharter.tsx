@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ShieldCheck, HeartHandshake, CheckCircle2, Lock, FileCheck, Trash2, Ban } from 'lucide-react';
+import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const ArtisanCharter: React.FC = () => {
   const { t } = useLanguage();
@@ -12,7 +12,7 @@ export const ArtisanCharter: React.FC = () => {
       titleHi: '1. कारीगर से कभी कोई शुल्क नहीं',
       descEn: 'Pathashilpa is completely free for rural artisans, forever. We take ₹0 in commission, ₹0 in listing fees, and ₹0 in platform cuts.',
       descHi: 'कारीगर के लिए ऐप हमेशा मुफ़्त रहेगा। न कोई कमीशन, न कोई लिस्टिंग फीस।',
-      icon: Ban,
+      icon: ShieldCheck,
     },
     {
       num: '02',
@@ -36,7 +36,7 @@ export const ArtisanCharter: React.FC = () => {
       titleHi: '4. कारीगर की पहचान हमेशा उत्पाद के साथ',
       descEn: 'We never commoditize handloom into anonymous inventory. The weaver’s name, face, cluster, and GI tag travel with the product to every customer.',
       descHi: 'कारीगर का नाम, चेहरा और क्लस्टर हर खरीदार तक पहुंचेगा। कला को कभी बेनाम नहीं किया जाएगा।',
-      icon: HeartHandshake,
+      icon: ShieldCheck,
     },
     {
       num: '05',
@@ -44,7 +44,7 @@ export const ArtisanCharter: React.FC = () => {
       titleHi: '5. डेटा पर पूरा अधिकार व हटाने की आज़ादी',
       descEn: 'Artisans own their listings, images, and voice recordings. In compliance with the DPDP Act 2023, they can export or permanently delete all their records at any time.',
       descHi: 'अपनी तस्वीर, आवाज़ और सभी डेटा को जब चाहें डाउनलोड करें या स्थायी रूप से डिलीट करें।',
-      icon: Trash2,
+      icon: CheckCircle2,
     },
     {
       num: '06',
@@ -52,7 +52,7 @@ export const ArtisanCharter: React.FC = () => {
       titleHi: '6. कारीगर का डेटा कभी नहीं बेचा जाएगा',
       descEn: 'Artisan phone numbers, voice recordings, and cluster sales histories are never monetized, traded, or shared with third-party advertising networks.',
       descHi: 'कारीगरों की जानकारी किसी भी विज्ञापन कंपनी या तीसरे पक्ष को कभी नहीं बेची जाएगी।',
-      icon: Lock,
+      icon: ShieldCheck,
     },
   ];
 
@@ -82,7 +82,7 @@ export const ArtisanCharter: React.FC = () => {
               className="bg-white rounded-craft-lg border border-palette-sand/70 p-6 sm:p-8 shadow-soft flex flex-col sm:flex-row items-start gap-6 hover:border-palette-clay/60 transition-colors"
             >
               <div className="w-12 h-12 rounded-2xl bg-palette-butter text-palette-clay flex items-center justify-center flex-shrink-0 shadow-xs">
-                <Icon className="w-6 h-6" />
+                <Icon className="w-5 h-5" strokeWidth={1.5} />
               </div>
               <div className="space-y-2">
                 <h3 className="font-rowan font-bold text-xl flex items-baseline gap-3 flex-wrap">
