@@ -149,18 +149,18 @@ export const ForArtisans: React.FC<ForArtisansProps> = ({ onOpenDemo }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-rowan">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm font-rowan">
           <div className="bg-white/10 p-4 rounded-xl space-y-1.5 border border-white/10">
-            <span className="text-palette-sand block font-bold text-sm">1. Device</span>
-            <p className="text-paper/90 font-bold text-xs leading-relaxed">Any Android phone (Android 8+, 2 GB RAM). No computer needed.</p>
+            <span className="text-palette-sand block font-bold text-base">1. Device</span>
+            <p className="text-paper/90 font-bold text-sm leading-relaxed">Any Android phone (Android 8+, 2 GB RAM). No computer needed.</p>
           </div>
           <div className="bg-white/10 p-4 rounded-xl space-y-1.5 border border-white/10">
-            <span className="text-palette-sand block font-bold text-sm">2. Language</span>
-            <p className="text-paper/90 font-bold text-xs leading-relaxed">Your natural speaking voice in Hindi or regional dialect.</p>
+            <span className="text-palette-sand block font-bold text-base">2. Language</span>
+            <p className="text-paper/90 font-bold text-sm leading-relaxed">Your natural speaking voice in Hindi or regional dialect.</p>
           </div>
           <div className="bg-white/10 p-4 rounded-xl space-y-1.5 border border-white/10">
-            <span className="text-palette-sand block font-bold text-sm">3. Network</span>
-            <p className="text-paper/90 font-bold text-xs leading-relaxed">Zero internet required at the loom. Uploads on 2G/patchy signal.</p>
+            <span className="text-palette-sand block font-bold text-base">3. Network</span>
+            <p className="text-paper/90 font-bold text-sm leading-relaxed">Zero internet required at the loom. Uploads on 2G/patchy signal.</p>
           </div>
         </div>
       </section>
